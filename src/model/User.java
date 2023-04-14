@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class User {
@@ -8,6 +9,7 @@ public class User {
     private String nickname;
     private String Email;
     private String slogan;
+    private ArrayList<Requests> listOfRequests;
      static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
         {
             numberOfQuestionToMainQuestion.put(1, "What is my father’s name?");
@@ -24,6 +26,7 @@ public class User {
         this.nickname=nickname;
         this.numberOfRecoveryQuestion=numberOfRecoveryQuestion;
         this.answerOfRecoveryQuestion=answerOfRecoveryQuestion;
+        this.listOfRequests=new ArrayList<>();
     }
 
     public String getUsername() {

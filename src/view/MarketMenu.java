@@ -1,9 +1,8 @@
 package view;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
 
-public class LoginMenu {
+public class MarketMenu {
     public void run(Scanner scanner){
 
     }
