@@ -80,7 +80,7 @@ assignees: Arman17Babaei
 <details>
   <summary>تسک مربوطه</summary>
 طراحی uml به صورت مشارکتی ساخته شد.
-  تکمیل قسمت controller برای uml 
+  <br>تکمیل قسمت controller برای uml 
   
   <div dir="ltr" align='right'>
 
