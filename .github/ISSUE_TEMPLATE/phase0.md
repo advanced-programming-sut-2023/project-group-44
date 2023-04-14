@@ -79,7 +79,9 @@ assignees: Arman17Babaei
   **نام و نام خانوادگی: امیرحسین میرداریان**
 <details>
   <summary>تسک مربوطه</summary>
-
+طراحی uml به صورت مشارکتی ساخته شد.
+  تکمیل قسمت controller برای uml 
+  
   <div dir="ltr" align='right'>
 
   1. [ ] شروع نشده
