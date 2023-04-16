@@ -25,7 +25,6 @@ public class LoginMenuController {
             } else {
                 System.out.println("Invalid username or password.");
 
-                // if not the last attempt, delay for a certain amount of time
                 System.out.println("Please try again in " + delay + " seconds.");
                 try {
                     Thread.sleep(delay * 1000);
@@ -39,7 +38,7 @@ public class LoginMenuController {
 
     public void loginAndRedirect(String username, String password) {
         if (loginWithRetry(username, password)) {
-            NextMenu(); // login successful, show next menu
+            NextMenu(); // login successful, open next menu
         } else {
             System.out.println("Login failed!");
         }
