@@ -69,7 +69,7 @@ public class LoginMenuController {
             while (true) {
                 String answer = scanner.nextLine();
                 if (user.getAnswerOfRecoveryQuestion().equals(answer)) { // Correct Answer
-                    System.out.println("Set new password:");
+                    System.out.println("Please set new password:");
                     String newPass = scanner.nextLine();
                     if () { // Password RegEx
                         user.setPassword(newPass);
@@ -82,6 +82,8 @@ public class LoginMenuController {
                     System.out.println("Answer is wrong! Please answer again.");
                 }
             }
+        } else {
+            System.out.println("No user with this username exists!");
         }
     }
 

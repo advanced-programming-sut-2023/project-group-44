@@ -44,8 +44,7 @@ public class LoginMenu {
                 // Forgot Password
                 else if ((matcher = LoginMenuController.getMatcher(command, regexForgotPass)) != null) {
                     String username = matcher.group(1);
-
-
+                    LoginMenuController.forgotPass(username, scanner);
                 }
 
                 // Invalid Command
