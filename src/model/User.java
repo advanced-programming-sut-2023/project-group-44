@@ -10,7 +10,6 @@ public class User {
     private String Email;
     private String slogan;
     private ArrayList<Requests> listOfRequests;
-    private static ArrayList<User> users = new ArrayList<>();
      static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
         {
             numberOfQuestionToMainQuestion.put(1, "What is my father’s name?");
@@ -38,6 +37,10 @@ public class User {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getNickname() {
         return nickname;
     }
@@ -50,21 +53,16 @@ public class User {
         return numberOfQuestionToMainQuestion;
     }
 
+    public int getNumberOfRecoveryQuestion() {
+        return numberOfRecoveryQuestion;
+    }
+
+    public String getAnswerOfRecoveryQuestion() {
+        return answerOfRecoveryQuestion;
+    }
+
     public String getSlogan() {
         return slogan;
-    }
-
-    public static ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public static User getUserByUsername (String username){
-        for (User user : User.getUsers()){
-            if (user.getUsername().equals(username)){
-                return user;
-            }
-        }
-        return null;
     }
 
 }
