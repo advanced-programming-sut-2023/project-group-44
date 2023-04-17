@@ -19,4 +19,15 @@ public class App {
         }
         return null;
     }
+    public static User getUserByEmail(String email){
+        for (User x : users){
+            if (x.getEmail().toLowerCase().equals(email.toLowerCase())){
+                return x;
+            }
+        }
+        return null;
+    }
+    public static void addUser(User user){
+        users.add(user);
+    }
 }

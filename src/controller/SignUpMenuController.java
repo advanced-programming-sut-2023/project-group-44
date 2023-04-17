@@ -25,7 +25,7 @@ public class SignUpMenuController {
 
     public static String randomUsername(String name,Scanner scanner){
         for(int i=0;;i++){
-            if(App.getUserByUserName(name+i) == null){
+            if(App.getUserByUsername(name+i) == null){
                 System.out.println("If you want this username ( "+name+i+" ) type yes else no");
                 if(scanner.nextLine().equals("yes"))
                     return name+i;
@@ -105,7 +105,7 @@ public class SignUpMenuController {
         String userName = usernameValidation(matcher);
         String password = deleteQuotations(matcher.group("password"));
         if(userName == null) return "userName format is invalid";
-        if(App.getUserByUserName(userName) != null) {
+        if(App.getUserByUsername(userName) != null) {
             System.out.println("This userName already exists");
             userName = randomUsername(userName,scanner);
             if(userName == null) return "SignUp failed try again";
