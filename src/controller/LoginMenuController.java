@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class LoginMenuController {
 
-    public static Matcher getMatcher(String command, String regex) {
+    public static Matcher getMatcher(String regex , String command) {
         Matcher matcher = Pattern.compile(regex).matcher(command);
         return matcher.matches() ? matcher : null;
     }
@@ -46,7 +46,7 @@ public class LoginMenuController {
 
     public void loginAndRedirect(String username, String password) {
         if (loginWithRetry(username, password)) {
-            NextMenu(); // login successful, open next menu
+             // login successful, open next menu
         } else {
             System.out.println("Login failed!");
         }

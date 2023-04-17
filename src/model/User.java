@@ -11,22 +11,21 @@ public class User {
     private String slogan;
     private ArrayList<Requests> listOfRequests;
     private static ArrayList<User> users = new ArrayList<>();
-     static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
+    /*static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
         {
             numberOfQuestionToMainQuestion.put(1, "What is my father’s name?");
             numberOfQuestionToMainQuestion.put(2, "What was my first pet’s name?");
             numberOfQuestionToMainQuestion.put(3,"What is my mother’s last name?" );
         }
-    };
-    private int numberOfRecoveryQuestion;
-    private String answerOfRecoveryQuestion;
-    public User(String username,String password,String nickname,String Email,int numberOfRecoveryQuestion,String answerOfRecoveryQuestion){
+    };*/
+    private int numberOfSecurityQuestion;
+    private String securityQuestion;
+    private String answerOfSecurityQuestion;
+    public User(String username,String password,String nickname,String Email){
         this.username=username;
         this.password=password;
         this.Email=Email;
         this.nickname=nickname;
-        this.numberOfRecoveryQuestion=numberOfRecoveryQuestion;
-        this.answerOfRecoveryQuestion=answerOfRecoveryQuestion;
         this.listOfRequests=new ArrayList<>();
     }
 
@@ -46,9 +45,9 @@ public class User {
         return Email;
     }
 
-    public static HashMap<Integer, String> getNumberOfQuestionToMainQuestion() {
+    /*public static HashMap<Integer, String> getNumberOfQuestionToMainQuestion() {
         return numberOfQuestionToMainQuestion;
-    }
+    }*/
 
     public String getSlogan() {
         return slogan;
@@ -67,4 +66,19 @@ public class User {
         return null;
     }
 
+    public void setSlogan(String slogan) {
+        this.slogan = slogan;
+    }
+
+    public void setNumberOfSecurityQuestion(int numberOfSecurityQuestion) {
+        this.numberOfSecurityQuestion = numberOfSecurityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public void setAnswerOfSecurityQuestion(String answerOfSecurityQuestion) {
+        this.answerOfSecurityQuestion = answerOfSecurityQuestion;
+    }
 }
