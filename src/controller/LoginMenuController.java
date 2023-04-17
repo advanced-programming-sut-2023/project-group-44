@@ -14,7 +14,7 @@ public class LoginMenuController {
 
     public User loggedInUser;
     public static boolean checkCredentials (String username, String password) {
-        User user = User.getUserByUsername(username);
+        User user = App.getUserByUsername(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
                 return true; // successful login
