@@ -37,6 +37,10 @@ public class User {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getNickname() {
         return nickname;
     }
@@ -47,6 +51,14 @@ public class User {
 
     public static HashMap<Integer, String> getNumberOfQuestionToMainQuestion() {
         return numberOfQuestionToMainQuestion;
+    }
+
+    public int getNumberOfRecoveryQuestion() {
+        return numberOfRecoveryQuestion;
+    }
+
+    public String getAnswerOfRecoveryQuestion() {
+        return answerOfRecoveryQuestion;
     }
 
     public String getSlogan() {
