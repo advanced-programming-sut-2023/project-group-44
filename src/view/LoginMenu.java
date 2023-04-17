@@ -21,17 +21,17 @@ public class LoginMenu {
 
         if (flagLoggedIn == false) {
             while (true) {
-                command = Menu.getScanner().nextLine();
+                command = scanner.nextLine();
 
                 // Not Staying Logged In
-                if ((matcher = Menu.getMatcher(command, regexNotStay)) != null) {
+                if ((matcher = LoginMenuController.getMatcher(command, regexNotStay)) != null) {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     LoginMenuController.loginWithRetry(username, password);
                 }
 
                 // Staying Logged in
-                else if ((matcher = Menu.getMatcher(command, regexStay)) != null) {
+                else if ((matcher = LoginMenuController.getMatcher(command, regexStay)) != null) {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     LoginMenuController.loginWithRetry(username, password);
