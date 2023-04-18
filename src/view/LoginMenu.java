@@ -11,33 +11,38 @@ import java.util.regex.*;
 public class LoginMenu {
 
     boolean flagLoggedIn = false;
+
     public void run(Scanner scanner) {
 
-        // .:: Login Command ::.
-
         Matcher matcher;
-        String command, result;
-
+        String command;
         String regexNotStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+))$";
-        String regexStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+))$";
+        String regexStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+)) \\-\\-stay\\-logged\\-in$";
         String regexForgotPass = "^forgot my password -u \"?([^\"]*)\"?$";
 
         if (flagLoggedIn == false) {
+            int delay = 5; // initial delay in seconds
             while (true) {
                 command = scanner.nextLine();
+
+                // .::           Login Commands           ::.
 
                 // Not Staying Logged In
                 if ((matcher = LoginMenuController.getMatcher(command, regexNotStay)) != null) {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
-                    LoginMenuController.loginAndRedirect(username, password, scanner);
+                    if (LoginMenuController.loginWithRetry(username, password, scanner)) {
+                        // ---->>>> nextMenu.run();
+                    }
                 }
 
                 // Staying Logged in
                 else if ((matcher = LoginMenuController.getMatcher(command, regexStay)) != null) {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
-                    LoginMenuController.loginAndRedirect(username, password, scanner);
+                    if (LoginMenuController.loginWithRetry(username, password, scanner)) {
+                        // ---->>>> nextMenu.run();
+                    }
                     flagLoggedIn = true;
                 }
 

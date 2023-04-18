@@ -79,4 +79,13 @@ public class User {
     public void setAnswerOfSecurityQuestion(String answerOfSecurityQuestion) {
         this.answerOfSecurityQuestion = answerOfSecurityQuestion;
     }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public String getAnswerOfSecurityQuestion() {
+        return answerOfSecurityQuestion;
+    }
+
 }
