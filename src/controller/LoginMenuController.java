@@ -20,7 +20,7 @@ public class LoginMenuController {
     /* ---------- Log In Process ---------- */
 
     // A Function To Check If Password Matches The Username
-    public static int checkCredentials (String username, String password) {
+    public static int checkCredentials(String username, String password) {
         User user = App.getUserByUsername(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
@@ -40,9 +40,8 @@ public class LoginMenuController {
                 return true;
             } else if (checkCredentials(username, password) == 2) {
                 System.out.println("Username and password didn't match!");
-                System.out.println("Do you want to try again? [y/n]");
-                String want = scanner.nextLine();
-                if (want.equals("y") || want.equals("yes") || want.equals("Yes")) { // if the user wants to try again
+
+                if (LoginMenuController.wantToTryAgain(scanner)){ // wants to try again
                     System.out.println("Please try again in " + delay + " seconds.");
                     try { // delay
                         Thread.sleep(delay * 1000);
@@ -51,12 +50,10 @@ public class LoginMenuController {
                     }
                     delay += 5; // Add 5 to the delay for the next attempt
                     password = scanner.nextLine(); // input password again
-                }
-                else {
+                } else {
                     return false;
                 }
-            }
-            else if (checkCredentials(username, password) == 3){
+            } else if (checkCredentials(username, password) == 3) {
                 System.out.println("Username and password didn't match! (User not found)");
                 return false;
             }
@@ -65,7 +62,7 @@ public class LoginMenuController {
 
     /* ---------- Forgot Password Process ---------- */
 
-    public static void forgotPass (String username, Scanner scanner) {
+    public static void forgotPass(String username, Scanner scanner) {
         User user = App.getUserByUsername(username);
         if (user != null) { // user found
             String securityQuestion = user.getSecurityQuestion();
@@ -85,6 +82,9 @@ public class LoginMenuController {
                 } else { // wrong answer
                     System.out.println("Answer is wrong! Please answer again.");
                 }
+                if (!LoginMenuController.wantToTryAgain(scanner)) {
+                    return;
+                }
             }
         } else { // user not found
             System.out.println("No user with this username exists!");
@@ -92,10 +92,13 @@ public class LoginMenuController {
     }
 
 
-
-
-
-
-
-
+    public static boolean wantToTryAgain(Scanner scanner) {
+        System.out.println("Do you want to try again? [y/n]");
+        String want = scanner.nextLine();
+        if (want.equals("y") || want.equals("yes") || want.equals("Yes")) { // if the user wants to try again
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
