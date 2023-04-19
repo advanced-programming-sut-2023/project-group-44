@@ -21,7 +21,6 @@ public class LoginMenu {
         String regexForgotPass = "^forgot my password -u \"?([^\"]*)\"?$";
 
         if (flagLoggedIn == false) {
-            int delay = 5; // initial delay in seconds
             while (true) {
                 command = scanner.nextLine();
 
