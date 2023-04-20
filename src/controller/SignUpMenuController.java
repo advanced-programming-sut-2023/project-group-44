@@ -2,6 +2,7 @@ package controller;
 
 import model.App;
 import model.User;
+import view.LoginMenu;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -9,6 +10,21 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class SignUpMenuController {
+
+    public static void signUpMenuGuid(String command,Scanner scanner){
+        while(true) {
+            System.out.println("Choose a menu by number: 1.SignUpMenu 2.LoginMenu");
+            command = scanner.nextLine();
+            if(command.equals("1"))
+                break;
+            else if(command.equals("2")){
+                LoginMenu loginMenu = new LoginMenu();
+                loginMenu.run(scanner);
+                break;
+            }
+        }
+        System.out.println("entered signUpMenu");
+    }
 
     public static String deleteQuotations(String string) {
         if(string.startsWith("\""))
@@ -120,8 +136,12 @@ public class SignUpMenuController {
         if(App.getUserByEmail(matcher.group("email")) != null) return "A user with this email already exists";
         if(!matcher.group("email").matches("^[\\w_\\.]+@[\\w_]+\\.?[\\w+]+\\.[\\w_]+$")) return "Invalid email format";
         User user = new User(userName,password,deleteQuotations(matcher.group("nickname")),matcher.group("email"));
-        if(matcher.group("slogan") != null)
-            user.setSlogan(slogan(matcher));
+        if(matcher.group("slogan") != null) {
+            if(matcher.group("slogan").startsWith("-"))
+                return "Empty slogan field";
+            else
+                user.setSlogan(slogan(matcher));
+        }
         if(securityQuestion(user,scanner).equals("Question pick failed")) return "Question pick failed";
         App.addUser(user);
         return "Successful signup";
