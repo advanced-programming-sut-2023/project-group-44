@@ -30,4 +30,12 @@ public class App {
     public static void addUser(User user){
         users.add(user);
     }
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+
+    public static void setCurrentUser(User currentUser) {
+        App.currentUser = currentUser;
+    }
 }

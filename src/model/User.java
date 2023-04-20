@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class User {
@@ -9,6 +10,8 @@ public class User {
     private String nickname;
     private String Email;
     private String slogan;
+    private int score;
+    private int highScore;
     private ArrayList<Requests> listOfRequests;
     /* static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
         {
@@ -25,11 +28,25 @@ public class User {
         this.password=password;
         this.Email=Email;
         this.nickname=nickname;
+        this.score=0;
+        this.highScore=0;
         this.listOfRequests=new ArrayList<>();
     }
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public String getPassword() {
@@ -88,4 +105,32 @@ public class User {
         return answerOfSecurityQuestion;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getHighScore() {
+        return highScore;
+    }
+
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
+    }
+
+    public int getRank(){
+        ArrayList<User> listOfUsers=new ArrayList<>();
+        listOfUsers.addAll(App.getUsers());
+        for(int i=0;i<listOfUsers.size()-1;i++){
+            for(int j=0;j<listOfUsers.size()-1-i;j++){
+                if(listOfUsers.get(j).getHighScore()<listOfUsers.get(j+1).getHighScore()){
+                    Collections.swap(listOfUsers,j,j+1);
+                }
+            }
+        }
+        return listOfUsers.indexOf(this);
+    }
 }
