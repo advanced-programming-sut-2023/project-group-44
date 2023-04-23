@@ -104,10 +104,10 @@ public class SignUpMenuController {
         String command;
         Matcher matcher;
         command = scanner.nextLine();
-        if((matcher = LoginMenuController.getMatcher("^question\\s+pick((?=.*\\s+-q\\s+(?<questionNum>[123]))(?=.*\\s+-a\\s+(?<answer>\"[^\"]+\"|\\S+))(?=.*\\s+-c\\s+(?<answerCon>\"[^\"]+\"|\\S+))).*",command)) != null){
-            if(!matcher.group("answer").equals(matcher.group("answerCon")))
+        if((matcher = LoginMenuController.getMatcher(command,"^question\\s+pick((?=.*\\s+-q\\s+(?<questionNum>[123]))(?=.*\\s+-a\\s+(?<answer>\"[^\"]+\"|\\S+))(?=.*\\s+-c\\s+(?<answerCon>\"[^\"]+\"|\\S+))).*$")) != null){
+            if(!(matcher.group("answer").equals(matcher.group("answerCon"))))
                 return "Question pick failed";
-            user.setNumberOfSecurityQuestion(Integer.parseInt(matcher.group("guestionNim")));
+            user.setNumberOfSecurityQuestion(Integer.parseInt(matcher.group("questionNum")));
             user.setSecurityQuestion(question.get(Integer.parseInt(matcher.group("questionNum"))-1));
             user.setAnswerOfSecurityQuestion(deleteQuotations(matcher.group("answer")));
             return "Successful signup";
@@ -116,7 +116,7 @@ public class SignUpMenuController {
     }
 
     public static String userCreate(Matcher matcher, Scanner scanner){
-        if(matcher.group("username") == null || matcher.group("password") == null || matcher.group("passwordConfirmation") == null ||matcher.group("email")==null || matcher.group("nickname") == null)
+        if(matcher.group("username") == null || matcher.group("password") == null  ||matcher.group("email")==null || matcher.group("nickname") == null)
             return "You must enter require informations for signup";
         String userName = usernameValidation(matcher);
         String password = deleteQuotations(matcher.group("password"));

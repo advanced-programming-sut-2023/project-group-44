@@ -32,6 +32,8 @@ public class LoginMenu {
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
                         // ---->>>> nextMenu.run();
+                        MainMenu mainMenu = new MainMenu();
+                        mainMenu.run(scanner);
                     }
                 }
 
@@ -41,6 +43,8 @@ public class LoginMenu {
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
                         // ---->>>> nextMenu.run();
+                        MainMenu mainMenu = new MainMenu();
+                        mainMenu.run(scanner);
                     }
                     flagLoggedIn = true;
                 }

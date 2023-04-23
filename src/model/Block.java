@@ -2,14 +2,19 @@ package model;
 
 import model.Buildings.Building;
 
+import java.util.ArrayList;
+
 public class Block {
     int x, y;
     private String texture;
-    private Object object;
+    private Building building;
+    private Tree tree;
+    private ArrayList<Solider> solider;
 
     public Block(int x, int y) {
         this.x = x;
         this.y = y;
+        this.solider = new ArrayList<>();
     }
 
     public String getTexture() {
@@ -20,11 +25,27 @@ public class Block {
         this.texture = texture;
     }
 
-    public Object getObject() {
-        return object;
+    public Building getBuilding() {
+        return building;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
+    public Tree getTree() {
+        return tree;
+    }
+
+    public void setTree(Tree tree) {
+        this.tree = tree;
+    }
+
+    public ArrayList<Solider> getSolider() {
+        return solider;
+    }
+
+    public void addSolider(Solider solider) {
+        this.solider.add(solider);
     }
 }

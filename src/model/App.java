@@ -6,6 +6,7 @@ public class App {
     private static User currentUser;
     private static ArrayList<User> users = new ArrayList<>();
     private static ArrayList<Requests> tradeList = new ArrayList<>();
+    public static Map gameMap = new Map(400);
     
     public static ArrayList<User> getUsers() {
         return users;
