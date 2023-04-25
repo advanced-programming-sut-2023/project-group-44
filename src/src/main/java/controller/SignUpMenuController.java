@@ -64,7 +64,7 @@ public class SignUpMenuController {
         }
         password = sb.toString();
         System.out.println("Your random password is: "+password+" please rewrite it");
-        if(!scanner.nextLine().equals(password)) return null;
+        if(!(scanner.nextLine().equals(password))) return null;
         else return password;
     }
 
