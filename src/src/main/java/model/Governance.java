@@ -14,6 +14,11 @@ public class Governance {
     private ArrayList<People> people;
     private ArrayList<String> foodKinds;
     private int fearRate;
+    private int foodFactorPopularity;
+    private int taxFactorPopularity;
+    private int religionFactorPopularity;
+    private int fearFactorPopularity;
+    private Treasury treasury;
 
     public Governance(User owner) {
         this.owner = owner;
@@ -25,6 +30,10 @@ public class Governance {
         this.people = new ArrayList<>();
         this.foodKinds = new ArrayList<>();
         this.fearRate = 0;
+        this.foodFactorPopularity=0;
+        this.taxFactorPopularity=0;
+        this.fearFactorPopularity=0;
+        this.religionFactorPopularity=0;
     }
 
     public User getOwner() {
@@ -61,6 +70,54 @@ public class Governance {
 
     public int getFearRate() {
         return fearRate;
+    }
+
+    public int getFoodFactorPopularity() {
+        return foodFactorPopularity;
+    }
+
+    public void setFoodFactorPopularity(int foodFactorPopularity) {
+        this.foodFactorPopularity = foodFactorPopularity;
+    }
+
+    public int getTaxFactorPopularity() {
+        return taxFactorPopularity;
+    }
+
+    public void setTaxFactorPopularity(int taxFactorPopularity) {
+        this.taxFactorPopularity = taxFactorPopularity;
+    }
+
+    public int getReligionFactorPopularity() {
+        return religionFactorPopularity;
+    }
+
+    public void setReligionFactorPopularity(int religionFactorPopularity) {
+        this.religionFactorPopularity = religionFactorPopularity;
+    }
+
+    public int getFearFactorPopularity() {
+        return fearFactorPopularity;
+    }
+
+    public void setFearFactorPopularity(int fearFactorPopularity) {
+        this.fearFactorPopularity = fearFactorPopularity;
+    }
+
+    public void setFoodRate(int foodRate) {
+        this.foodRate = foodRate;
+    }
+
+    public void setTaxRate(int taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public void setFearRate(int fearRate) {
+        this.fearRate = fearRate;
+    }
+
+    public Treasury getTreasury() {
+        return treasury;
     }
 }
 

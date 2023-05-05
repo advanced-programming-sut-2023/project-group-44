@@ -4,29 +4,25 @@ import model.Governance;
 import model.User;
 
 public class Building {
-
-    User owner;
-    Governance government;
+    protected Governance government;
     protected String type;
     protected int hp;
-    protected int neededWood;
+    /*protected int neededWood;
     protected int neededStone;
     protected int neededGold;
     protected int neededPitch;
     protected int neededCoin;
-    protected int neededIron;
+    protected int neededIron;*/
     protected int neededWorkers;
     protected int x, y;
 
-    public Building(String type, int x, int y) {
+    public Building(Governance governance,String  type, int x, int y) {
+        this.government = governance;
         this.type = type;
         this.x = x;
         this.y=y;
     }
 
-    public User getOwner() {
-        return owner;
-    }
 
     public Governance getGovernment() {
         return government;
@@ -40,7 +36,7 @@ public class Building {
         return hp;
     }
 
-    public int getNeededWood() {
+    /*public int getNeededWood() {
         return neededWood;
     }
 
@@ -62,7 +58,7 @@ public class Building {
 
     public int getNeededIron() {
         return neededIron;
-    }
+    }*/
 
     public int getNeededWorkers() {
         return neededWorkers;

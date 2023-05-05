@@ -12,6 +12,7 @@ public class User {
     private String slogan;
     private int score;
     private int highScore;
+    private Governance governance;
     private ArrayList<Requests> listOfRequests;
     /* static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
         {
@@ -132,5 +133,13 @@ public class User {
             }
         }
         return listOfUsers.indexOf(this);
+    }
+
+    public Governance getGovernance() {
+        return governance;
+    }
+
+    public void setGovernance(Governance governance) {
+        this.governance = governance;
     }
 }

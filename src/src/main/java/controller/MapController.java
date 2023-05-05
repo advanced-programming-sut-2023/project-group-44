@@ -1,6 +1,7 @@
 package controller;
 
 import model.App;
+import model.Block;
 
 import java.util.regex.Matcher;
 
@@ -46,7 +47,7 @@ public class MapController {
         else map+="#";
         map+="#";
         if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("ground")) map+="GN";
-        else if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("gravelGroung")) map+="GG";
+        else if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("gravelGround")) map+="GG";
         else if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("rock")) map+="RO";
         else if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("stone")) map+="ST";
         else if(App.gameMap.arrayOfBlocks[x][y].getTexture().equals("iron")) map+="IR";

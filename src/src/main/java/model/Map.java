@@ -16,4 +16,7 @@ public class Map {
             }
         }
     }
+    public Block getBlock(int x,int y){
+        return arrayOfBlocks[x-1][y-1];
+    }
 }
