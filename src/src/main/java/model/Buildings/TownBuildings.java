@@ -1,21 +1,14 @@
 package model.Buildings;
 
+import model.Governance;
+
 public class TownBuildings extends Building{
-    public TownBuildings(String type,int x,int y){
-        super(type,x,y);
-        switch (type) {
-            case "typeName":
-                this.hp = 0;
-                this.neededCoin = 0;
-                this.neededGold = 0;
-                this.neededPitch = 0;
-                this.neededStone = 0;
-                this.neededWood = 0;
-                this.neededWorkers = 0;
-                this.neededIron = 0;
-                this.x = x;
-                this.y = y;
-                break;
-        }
+    public TownBuildings(Governance governance, String type, int x, int y, int hp){
+        super(governance,type,x,y);
+        this.hp = 0;
+        this.maximumHp = hp;
+        this.neededWorkers = 0;
+        this.x = x;
+        this.y = y;
     }
 }

@@ -7,12 +7,7 @@ public class Building {
     protected Governance government;
     protected String type;
     protected int hp;
-    /*protected int neededWood;
-    protected int neededStone;
-    protected int neededGold;
-    protected int neededPitch;
-    protected int neededCoin;
-    protected int neededIron;*/
+    protected int maximumHp;
     protected int neededWorkers;
     protected int x, y;
 
@@ -35,30 +30,6 @@ public class Building {
     public int getHp() {
         return hp;
     }
-
-    /*public int getNeededWood() {
-        return neededWood;
-    }
-
-    public int getNeededStone() {
-        return neededStone;
-    }
-
-    public int getNeededGold() {
-        return neededGold;
-    }
-
-    public int getNeededPitch() {
-        return neededPitch;
-    }
-
-    public int getNeededCoin() {
-        return neededCoin;
-    }
-
-    public int getNeededIron() {
-        return neededIron;
-    }*/
 
     public int getNeededWorkers() {
         return neededWorkers;

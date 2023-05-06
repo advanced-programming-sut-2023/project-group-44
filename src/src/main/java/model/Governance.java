@@ -8,10 +8,11 @@ public class Governance {
     private User owner;
     private int popularity;
     private int foodRate;
+    private int freePopulation;
     private double numberOfAllFoods;
     private int taxRate;
     private ArrayList<Building> buildings;
-    private ArrayList<People> people;
+    private ArrayList<People> workers;
     private ArrayList<String> foodKinds;
     private int fearRate;
     private int foodFactorPopularity;
@@ -26,8 +27,9 @@ public class Governance {
         this.foodRate =0;
         this.numberOfAllFoods = 0;
         this.taxRate = 0;
+        this.freePopulation = 0;
         this.buildings = new ArrayList<>();
-        this.people = new ArrayList<>();
+        this.workers = new ArrayList<>();
         this.foodKinds = new ArrayList<>();
         this.fearRate = 0;
         this.foodFactorPopularity=0;
@@ -59,9 +61,10 @@ public class Governance {
     public ArrayList<Building> getBuildings() {
         return buildings;
     }
+    public void addBuilding(Building building){ buildings.add(building);}
 
-    public ArrayList<People> getPeople() {
-        return people;
+    public ArrayList<People> getWorkers() {
+        return workers;
     }
 
     public ArrayList<String> getFoodKinds() {
@@ -118,6 +121,14 @@ public class Governance {
 
     public Treasury getTreasury() {
         return treasury;
+    }
+
+    public int getFreePopulation() {
+        return freePopulation;
+    }
+
+    public void addFreePopulation(int freePopulation) {
+        this.freePopulation += freePopulation;
     }
 }
 
