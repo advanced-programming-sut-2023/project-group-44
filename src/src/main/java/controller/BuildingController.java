@@ -1,9 +1,7 @@
 package controller;
 
 import model.App;
-import model.Buildings.Armory;
-import model.Buildings.CastleBuildings;
-import model.Buildings.FoodProcessingBuildings;
+import model.Buildings.*;
 import model.Governance;
 import model.User;
 
@@ -57,6 +55,24 @@ public class BuildingController {
             return false;
         }
         return true;
+    }
+
+    public static void foodWorkerTransfer(FoodProcessingBuildings building,int workerNeeded){
+        int index;
+        for(int i=0; i<workerNeeded; i++){
+            index = App.getCurrentUser().getGovernance().getWorkers().size()-1;
+            building.addWorkers(App.getCurrentUser().getGovernance().getWorkers().get(index));
+            App.getCurrentUser().getGovernance().getWorkers().remove(index);
+        }
+    }
+
+    public static void industryWorkerTransfer(IndustryBuildings building,int workerNeeded){
+        int index;
+        for(int i=0; i<workerNeeded; i++){
+            index = App.getCurrentUser().getGovernance().getWorkers().size()-1;
+            building.addWorkers(App.getCurrentUser().getGovernance().getWorkers().get(index));
+            App.getCurrentUser().getGovernance().getWorkers().remove(index);
+        }
     }
 
     public static void createBuilding(int x,int y,String type){
@@ -165,16 +181,37 @@ public class BuildingController {
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkNeededWorkers(1)) return;
                 if(!checkInventoryAndPurchase(0,20,100,0,0,0)) return;
-                governance.getWorkers().remove(governance.getWorkers().size()-1);
                 FoodProcessingBuildings inn = new FoodProcessingBuildings(governance,"inn",x,y,100);
+                foodWorkerTransfer(inn,1);
                 App.gameMap.getBlock(x,y).setBuilding(inn);
                 governance.addBuilding(inn);
                 break;
             case "mill":
+                if(!checkTextureForCastle(x,y)) return;
+                if(!checkNeededWorkers(3)) return;
+                if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
+                FoodProcessingBuildings mill = new FoodProcessingBuildings(governance,"mill",x,y,100);
+                foodWorkerTransfer(mill,3);
+                App.gameMap.getBlock(x,y).setBuilding(mill);
+                governance.addBuilding(mill);
                 break;
             case "iron mine":
+                if(!checkTextureForCastle(x,y)) return;
+                if(!checkNeededWorkers(2)) return;
+                if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
+                IndustryBuildings ironMine = new IndustryBuildings(governance,"ironMine",x,y,100);
+                industryWorkerTransfer(ironMine,2);
+                App.gameMap.getBlock(x,y).setBuilding(ironMine);
+                governance.addBuilding(ironMine);
                 break;
             case "market":
+                if(!checkTextureForCastle(x,y)) return;
+                if(!checkNeededWorkers(1)) return;
+                if(!checkInventoryAndPurchase(0,5,0,0,0,0)) return;
+                IndustryBuildings market = new IndustryBuildings(governance,"market",x,y,100);
+                industryWorkerTransfer(market,1);
+                App.gameMap.getBlock(x,y).setBuilding(market);
+                governance.addBuilding(market);
                 break;
             case "ox tether":
                 break;
