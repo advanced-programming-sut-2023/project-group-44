@@ -22,8 +22,4 @@ public class Martial extends People {
         super(type, owner, hp);
         this.roleMartial = role;
     }
-
-//    public Martial()
-
-
 }
