@@ -199,7 +199,7 @@ public class BuildingController {
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkNeededWorkers(2)) return;
                 if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
-                IndustryBuildings ironMine = new IndustryBuildings(governance,"ironMine",x,y,100);
+                IndustryBuildings ironMine = new IndustryBuildings(governance,"ironMine",x,y,100,30);
                 industryWorkerTransfer(ironMine,2);
                 App.gameMap.getBlock(x,y).setBuilding(ironMine);
                 governance.addBuilding(ironMine);
@@ -208,20 +208,52 @@ public class BuildingController {
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkNeededWorkers(1)) return;
                 if(!checkInventoryAndPurchase(0,5,0,0,0,0)) return;
-                IndustryBuildings market = new IndustryBuildings(governance,"market",x,y,100);
+                IndustryBuildings market = new IndustryBuildings(governance,"market",x,y,100,0);
                 industryWorkerTransfer(market,1);
                 App.gameMap.getBlock(x,y).setBuilding(market);
                 governance.addBuilding(market);
                 break;
             case "ox tether":
+                //******************************************************************************************************
                 break;
             case "pitch rig":
+                if(!(App.gameMap.getBlock(x,y).getTexture().equals("plain"))){
+                    System.out.println("texture is inappropriate");
+                    return;
+                }
+                if(!checkNeededWorkers(1)) return;
+                if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
+                IndustryBuildings pitchRig = new IndustryBuildings(governance,"pitchRig",x,y,100,30);
+                industryWorkerTransfer(pitchRig,1);
+                App.gameMap.getBlock(x,y).setBuilding(pitchRig);
+                governance.addBuilding(pitchRig);
                 break;
             case "quarry":
+                if(!(App.gameMap.getBlock(x,y).getTexture().equals("rock"))){
+                    System.out.println("texture is inappropriate");
+                    return;
+                }
+                if(!checkNeededWorkers(3)) return;
+                if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
+                IndustryBuildings quarry = new IndustryBuildings(governance,"quarry",x,y,100,30);
+                industryWorkerTransfer(quarry,3);
+                App.gameMap.getBlock(x,y).setBuilding(quarry);
+                governance.addBuilding(quarry);
                 break;
             case "stockpile":
+                if(!checkTextureForCastle(x,y)) return;
+                IndustryBuildings stockpile = new IndustryBuildings(governance,"stockpile",x,y,100,0);
+                App.gameMap.getBlock(x,y).setBuilding(stockpile);
+                governance.addBuilding(stockpile);
                 break;
             case "woodcutter":
+                if(!checkTextureForCastle(x,y)) return;
+                if(!checkNeededWorkers(3)) return;
+                if(!checkInventoryAndPurchase(0,3,0,0,0,0)) return;
+                IndustryBuildings woodCutter = new IndustryBuildings(governance,"woodCutter",x,y,100,30);
+                industryWorkerTransfer(woodCutter,3);
+                App.gameMap.getBlock(x,y).setBuilding(woodCutter);
+                governance.addBuilding(woodCutter);
                 break;
             case "hovel":
                 break;

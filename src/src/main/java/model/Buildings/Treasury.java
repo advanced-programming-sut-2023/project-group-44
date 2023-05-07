@@ -1,12 +1,26 @@
-package model;
+package model.Buildings;
 
-public class Treasury {
-    private int woods=0;
-    private int golds=0;
-    private int coins=0;
-    private int iron=0;
-    private int stones=0;
-    private int pitch=0;
+import model.Buildings.Building;
+import model.Governance;
+
+public class Treasury extends Building {
+    private int woods;
+    private int golds;
+    private int coins;
+    private int iron;
+    private int stones;
+    private int pitch;
+
+    public Treasury(Governance governance, String type, int x, int y){
+        super(governance,type,x,y);
+        this.woods = 0;
+        this.golds = 0;
+        this.coins = 0;
+        this.iron = 0;
+        this.coins = 0;
+        this.stones = 0;
+        this.pitch = 0;
+    }
 
     public int getWoods() {
         return woods;
