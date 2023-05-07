@@ -1,6 +1,7 @@
 package model;
 
 import model.Buildings.Building;
+import model.People.Martials.Martial;
 
 import java.util.ArrayList;
 
@@ -9,12 +10,12 @@ public class Block {
     private String texture;
     private Building building;
     private Tree tree;
-    private ArrayList<Solider> solider;
+    private ArrayList<Martial> martial;
 
     public Block(int x, int y) {
         this.x = x;
         this.y = y;
-        this.solider = new ArrayList<>();
+        this.martial = new ArrayList<>();
     }
 
     public String getTexture() {
@@ -41,11 +42,11 @@ public class Block {
         this.tree = tree;
     }
 
-    public ArrayList<Solider> getSolider() {
-        return solider;
+    public ArrayList<Martial> getSolider() {
+        return martial;
     }
 
-    public void addSolider(Solider solider) {
-        this.solider.add(solider);
+    public void addSolider(Martial martial) {
+        this.martial.add(martial);
     }
 }
