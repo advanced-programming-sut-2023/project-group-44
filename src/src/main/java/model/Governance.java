@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Governance {
     private User owner;
+    private int capacity;
     private int popularity;
     private int foodRate;
     private int freePopulation;
@@ -14,6 +15,7 @@ public class Governance {
     private int taxRate;
     private ArrayList<Building> buildings;
     private ArrayList<People> workers;
+    private ArrayList<People> engineers;
     private ArrayList<String> foodKinds;
     private int fearRate;
     private int foodFactorPopularity;
@@ -24,6 +26,7 @@ public class Governance {
 
     public Governance(User owner) {
         this.owner = owner;
+        this.capacity=0;
         this.popularity =0;
         this.foodRate =0;
         this.numberOfAllFoods = 0;
@@ -31,6 +34,7 @@ public class Governance {
         this.freePopulation = 0;
         this.buildings = new ArrayList<>();
         this.workers = new ArrayList<>();
+        this.engineers=new ArrayList<>();
         this.foodKinds = new ArrayList<>();
         this.fearRate = 0;
         this.foodFactorPopularity=0;
@@ -66,6 +70,10 @@ public class Governance {
 
     public ArrayList<People> getWorkers() {
         return workers;
+    }
+
+    public ArrayList<People> getEngineers() {
+        return engineers;
     }
 
     public ArrayList<String> getFoodKinds() {
@@ -130,6 +138,18 @@ public class Governance {
 
     public void addFreePopulation(int freePopulation) {
         this.freePopulation += freePopulation;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setPopularity(int popularity) {
+        this.popularity = popularity;
     }
 }
 

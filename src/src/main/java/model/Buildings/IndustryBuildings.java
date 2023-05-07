@@ -6,7 +6,6 @@ import model.People;
 import java.util.ArrayList;
 
 public class IndustryBuildings extends Building{
-    private ArrayList<People> workers;
     private int rate;
     private int maximumRate;
 
@@ -20,14 +19,6 @@ public class IndustryBuildings extends Building{
         this.x = x;
         this.y = y;
     }
-    public ArrayList<People> getWorkers() {
-        return workers;
-    }
-
-    public void addWorkers(People worker) {
-        this.workers.add(worker);
-    }
-
     public int getRate() {
         return rate;
     }

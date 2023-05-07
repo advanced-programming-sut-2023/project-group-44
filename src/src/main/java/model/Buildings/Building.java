@@ -1,7 +1,10 @@
 package model.Buildings;
 
 import model.Governance;
+import model.People;
 import model.User;
+
+import java.util.ArrayList;
 
 public class Building {
     protected Governance government;
@@ -10,15 +13,27 @@ public class Building {
     protected int maximumHp;
     protected int neededWorkers;
     protected int x, y;
+    protected ArrayList<People> workers;
+    protected ArrayList<People> engineers;
 
     public Building(Governance governance,String  type, int x, int y) {
         this.government = governance;
         this.type = type;
         this.x = x;
         this.y=y;
+        this.workers=new ArrayList<>();
+        this.engineers=new ArrayList<>();
     }
 
 
+    public ArrayList<People> getWorkers() {
+        return workers;
+    }
+
+    public void addWorkers(People worker) {
+        this.workers.add(worker);
+    }
+    public void addEngineer(People engineer){ this.engineers.add(engineer);}
     public Governance getGovernment() {
         return government;
     }
