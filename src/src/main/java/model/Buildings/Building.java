@@ -2,6 +2,7 @@ package model.Buildings;
 
 import model.Governance;
 import model.People;
+import model.People.People;
 import model.User;
 
 import java.util.ArrayList;
@@ -60,5 +61,13 @@ public class Building {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public int getMaximumHp() {
+        return maximumHp;
+    }
+
+    public void setMaximumHp(int maximumHp) {
+        this.maximumHp = maximumHp;
     }
 }

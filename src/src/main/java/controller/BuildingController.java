@@ -4,6 +4,7 @@ import model.App;
 import model.Buildings.*;
 import model.Governance;
 import model.People;
+import model.People.People;
 import model.User;
 
 public class BuildingController {
@@ -287,7 +288,7 @@ public class BuildingController {
                 if(!checkInventoryAndPurchase(0,0,0,1000,0,0)) return;
                 TownBuildings cathedral=new TownBuildings(governance,"cathedral",x,y,100);
                 governance.setPopularity(governance.getPopularity()+2);
-                People priest=new People("priest");
+                People priest=new People("priest",App.getCurrentUser(),50);
                 cathedral.getPeopleWhoWorksIn().add(priest);
                 App.gameMap.getBlock(x,y).setBuilding(cathedral);
                 governance.addBuilding(cathedral);

@@ -2,6 +2,7 @@ package model;
 
 import model.Buildings.Building;
 import model.Buildings.Treasury;
+import model.People.People;
 
 import java.util.ArrayList;
 
