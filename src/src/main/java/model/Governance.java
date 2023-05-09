@@ -2,7 +2,9 @@ package model;
 
 import model.Buildings.Building;
 import model.Buildings.Treasury;
+import model.People.Martials.Martial;
 import model.People.People;
+import model.People.Workers.Worker;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,10 @@ public class Governance {
     private double numberOfAllFoods;
     private int taxRate;
     private ArrayList<Building> buildings;
-    private ArrayList<People> workers;
-    private ArrayList<People> engineers;
+    private ArrayList<People> ordinaryPeople;
+    private ArrayList<Worker> workers;
+    private ArrayList<Worker> engineers;
+    private ArrayList<Martial> martials;
     private ArrayList<String> foodKinds;
     private int fearRate;
     private int foodFactorPopularity;
@@ -36,7 +40,9 @@ public class Governance {
         this.buildings = new ArrayList<>();
         this.workers = new ArrayList<>();
         this.engineers=new ArrayList<>();
+        this.martials=new ArrayList<>();
         this.foodKinds = new ArrayList<>();
+        this.ordinaryPeople=new ArrayList<>();
         this.fearRate = 0;
         this.foodFactorPopularity=0;
         this.taxFactorPopularity=0;
@@ -69,11 +75,11 @@ public class Governance {
     }
     public void addBuilding(Building building){ buildings.add(building);}
 
-    public ArrayList<People> getWorkers() {
+    public ArrayList<Worker> getWorkers() {
         return workers;
     }
 
-    public ArrayList<People> getEngineers() {
+    public ArrayList<Worker> getEngineers() {
         return engineers;
     }
 
@@ -151,6 +157,14 @@ public class Governance {
 
     public void setPopularity(int popularity) {
         this.popularity = popularity;
+    }
+
+    public ArrayList<Martial> getMartials() {
+        return martials;
+    }
+
+    public ArrayList<People> getOrdinaryPeople() {
+        return ordinaryPeople;
     }
 }
 

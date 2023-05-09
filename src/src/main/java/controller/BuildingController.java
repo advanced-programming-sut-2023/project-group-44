@@ -4,6 +4,7 @@ import model.App;
 import model.Buildings.*;
 import model.Governance;
 import model.People.People;
+import model.People.Type;
 import model.User;
 
 public class BuildingController {
@@ -121,14 +122,14 @@ public class BuildingController {
             case "lookout tower":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(10,0,0,0,0,0)) return;
-                CastleBuildings lookoutTower = new CastleBuildings(governance,"lookoutTower",x,y,200,0,0,0);
+                CastleBuildings lookoutTower = new CastleBuildings(governance,"lookout tower",x,y,200,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(lookoutTower);
                 governance.addBuilding(lookoutTower);
                 break;
             case "perimeter tower":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(10,0,0,0,0,0)) return;
-                CastleBuildings perimeterTower = new CastleBuildings(governance,"perimeterTower",x,y,100,0,0,0);
+                CastleBuildings perimeterTower = new CastleBuildings(governance,"perimeter tower",x,y,100,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(perimeterTower);
                 governance.addBuilding(perimeterTower);
                 break;
@@ -142,14 +143,14 @@ public class BuildingController {
             case "circular tower":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(40,0,0,0,0,0)) return;
-                CastleBuildings circularTower = new CastleBuildings(governance,"circularTower",x,y,150,0,0,0);
+                CastleBuildings circularTower = new CastleBuildings(governance,"circular tower",x,y,150,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(circularTower);
                 governance.addBuilding(circularTower);
                 break;
             case "square tower":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(35,0,0,0,0,0)) return;
-                CastleBuildings squareTower = new CastleBuildings(governance,"squareTower",x,y,120,0,0,0);
+                CastleBuildings squareTower = new CastleBuildings(governance,"square tower",x,y,120,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(squareTower);
                 governance.addBuilding(squareTower);
                 break;
@@ -170,21 +171,21 @@ public class BuildingController {
             case "mercenary barrack":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(0,10,0,0,0,0)) return;
-                CastleBuildings mercenaryBarrack = new CastleBuildings(governance,"mercenaryBarrack",x,y,120,0,0,0);
+                CastleBuildings mercenaryBarrack = new CastleBuildings(governance,"mercenary barrack",x,y,120,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(mercenaryBarrack);
                 governance.addBuilding(mercenaryBarrack);
                 break;
             case "engineer guild":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(0,10,100,0,0,0)) return;
-                CastleBuildings engineerGuild = new CastleBuildings(governance,"engineerGuild",x,y,120,0,0,0);
+                CastleBuildings engineerGuild = new CastleBuildings(governance,"engineer guild",x,y,120,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(engineerGuild);
                 governance.addBuilding(engineerGuild);
                 break;
             case "killing pit":
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkInventoryAndPurchase(0,6,0,0,0,0)) return;
-                CastleBuildings killingPit = new CastleBuildings(governance,"killingPit",x,y,120,0,0,0);
+                CastleBuildings killingPit = new CastleBuildings(governance,"killing pit",x,y,120,0,0,0);
                 App.gameMap.getBlock(x,y).setBuilding(killingPit);
                 governance.addBuilding(killingPit);
                 break;
@@ -210,7 +211,7 @@ public class BuildingController {
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkNeededWorkers(2)) return;
                 if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
-                IndustryBuildings ironMine = new IndustryBuildings(governance,"ironMine",x,y,100,30);
+                IndustryBuildings ironMine = new IndustryBuildings(governance,"iron mine",x,y,100,30);
                 workerTransfer(ironMine,2);
                 App.gameMap.getBlock(x,y).setBuilding(ironMine);
                 governance.addBuilding(ironMine);
@@ -234,7 +235,7 @@ public class BuildingController {
                 }
                 if(!checkNeededWorkers(1)) return;
                 if(!checkInventoryAndPurchase(0,20,0,0,0,0)) return;
-                IndustryBuildings pitchRig = new IndustryBuildings(governance,"pitchRig",x,y,100,30);
+                IndustryBuildings pitchRig = new IndustryBuildings(governance,"pitch rig",x,y,100,30);
                 workerTransfer(pitchRig,1);
                 App.gameMap.getBlock(x,y).setBuilding(pitchRig);
                 governance.addBuilding(pitchRig);
@@ -261,7 +262,7 @@ public class BuildingController {
                 if(!checkTextureForCastle(x,y)) return;
                 if(!checkNeededWorkers(1)) return;
                 if(!checkInventoryAndPurchase(0,3,0,0,0,0)) return;
-                IndustryBuildings woodCutter = new IndustryBuildings(governance,"woodCutter",x,y,100,30);
+                IndustryBuildings woodCutter = new IndustryBuildings(governance,"woodcutter",x,y,100,30);
                 workerTransfer(woodCutter,1);
                 App.gameMap.getBlock(x,y).setBuilding(woodCutter);
                 governance.addBuilding(woodCutter);
@@ -287,7 +288,7 @@ public class BuildingController {
                 if(!checkInventoryAndPurchase(0,0,0,1000,0,0)) return;
                 TownBuildings cathedral=new TownBuildings(governance,"cathedral",x,y,100);
                 governance.setPopularity(governance.getPopularity()+2);
-                People priest=new People("priest",App.getCurrentUser(),50);
+                People priest=new People(Type.OTHER,App.getCurrentUser(),50);
                 cathedral.getPeopleWhoWorksIn().add(priest);
                 App.gameMap.getBlock(x,y).setBuilding(cathedral);
                 governance.addBuilding(cathedral);

@@ -1,6 +1,7 @@
 package model.People;
 import model.Block;
 import model.Buildings.Building;
+import model.People.Martials.Enums.RoleMartial;
 import model.User;
 
 public class People {
@@ -66,6 +67,16 @@ public class People {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+    public static Type convertEnumPeople(String type){
+        for(Type x:Type.values()){
+            if(x.toString().replaceAll("_","").equalsIgnoreCase(type.replaceAll("[\\s_-]",""))) return x;
+        }
+        return null;
     }
     /* _____________________________ */
 

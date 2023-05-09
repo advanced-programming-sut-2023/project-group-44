@@ -22,4 +22,10 @@ public class Martial extends People {
         super(type, owner, hp);
         this.roleMartial = role;
     }
+    public static RoleMartial convertEnumRoleMartial(String roleMartial){
+        for(RoleMartial x:RoleMartial.values()){
+            if(x.toString().replaceAll("_","").equalsIgnoreCase(roleMartial.replaceAll("[\\s_-]",""))) return x;
+        }
+        return null;
+    }
 }

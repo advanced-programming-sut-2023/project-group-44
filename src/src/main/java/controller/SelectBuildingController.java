@@ -2,6 +2,12 @@ package controller;
 
 import model.App;
 import model.Buildings.CastleBuildings;
+import model.Governance;
+import model.People.Martials.Martial;
+import model.People.People;
+import model.People.Type;
+import model.People.Workers.RoleWorker;
+import model.People.Workers.Worker;
 
 public class SelectBuildingController {
 
@@ -34,4 +40,51 @@ public class SelectBuildingController {
         }else System.out.println("this command is not for this building");
     }
 
+
+    public static void drawBridge(String position,int x,int y){
+        if(App.gameMap.getBlock(x,y).getBuilding().getType().equals("drawbridge")){
+            CastleBuildings drawbridge= (CastleBuildings) App.gameMap.getBlock(x, y).getBuilding();
+            drawbridge.setPositionOfTheDrawBridge(position);
+        }
+        else
+            System.out.println("invalid command!");
+    }
+
+    public static void mercenaryBarrack(String typeOfSoldier,int numberOfArabSoldier,int x,int y){
+        if(App.gameMap.getBlock(x,y).getBuilding().getType().equals("mercenary barrack")){
+            Governance governance=App.getCurrentUser().getGovernance();
+            if(governance.getTreasury().getGolds()<numberOfArabSoldier*30){
+                System.out.println("You don't have enough gold!");
+            }
+            else{
+                governance.getTreasury().addGolds(-30*numberOfArabSoldier);
+                for(int i=0;i<numberOfArabSoldier;i++){
+                    Martial martial=new Martial(Type.MARTIAL,App.getCurrentUser(),20,Martial.convertEnumRoleMartial(typeOfSoldier));
+                    governance.getMartials().add(martial);
+                }
+            }
+        }
+        else System.out.println("invalid command!");
+    }
+
+    public static void engineerGuild(String typeOfWorker,int numberOfPeople,int x,int y){
+        if(App.gameMap.getBlock(x,y).getBuilding().getType().equals("engineer guild")){
+            Governance governance=App.getCurrentUser().getGovernance();
+            if(numberOfPeople>governance.getOrdinaryPeople().size())
+                System.out.println("the governance don't have enough people!");
+            else {
+                for(int i=0;i<numberOfPeople;i++){
+                    Worker person= (Worker) governance.getOrdinaryPeople().remove(governance.getOrdinaryPeople().size()-1);
+                    person.setType(Type.WORKER);
+                    person.setWorkPlace(App.gameMap.getBlock(x,y).getBuilding());
+                    person.setRoleWorker(Worker.convertEnumRoleWorker(typeOfWorker));
+                    if(Worker.convertEnumRoleWorker(typeOfWorker).equals(RoleWorker.ENGINEER))
+                        governance.getEngineers().add(person);
+                    else
+                        governance.getWorkers().add(person);
+                }
+            }
+        }
+        else System.out.println("invalid command!");
+    }
 }
