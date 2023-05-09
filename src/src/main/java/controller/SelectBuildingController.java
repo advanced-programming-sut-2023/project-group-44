@@ -27,6 +27,11 @@ public class SelectBuildingController {
         }else System.out.println("only castle buildings are repairable");
     }
 
-
+    public static void stoneGateHouse(int taxRate,int x,int y){
+        if(App.gameMap.getBlock(x,y).getBuilding().getType().equals("small stone gatehouse") ||
+             App.gameMap.getBlock(x,y).getBuilding().getType().equals("big stone gatehouse")){
+            App.getCurrentUser().getGovernance().setTaxRate(taxRate);
+        }else System.out.println("this command is not for this building");
+    }
 
 }

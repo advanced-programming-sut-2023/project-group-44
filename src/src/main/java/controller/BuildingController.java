@@ -3,7 +3,6 @@ package controller;
 import model.App;
 import model.Buildings.*;
 import model.Governance;
-import model.People;
 import model.People.People;
 import model.User;
 

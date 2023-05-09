@@ -1,7 +1,6 @@
 package model.Buildings;
 
 import model.Governance;
-import model.People;
 
 import java.util.ArrayList;
 
