@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf370e4-c6b9-4939-a796-1712fa7bcff8" name="Changes" comment="add base of select building">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SelectBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SelectBuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/FoodProcessingBuildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/FoodProcessingBuildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/IndustryBuildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/IndustryBuildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/TownBuildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/TownBuildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SelectBuildingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SelectBuildingMenu.java" afterDir="false" />
-    </list>
+    <list default="true" id="acf370e4-c6b9-4939-a796-1712fa7bcff8" name="Changes" comment="add base of select building" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,8 +51,33 @@
       <option name="project" value="LOCAL" />
       <updated>1683627476702</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add base of select building">
+      <created>1683629400611</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683629400611</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add base of select building">
+      <created>1683629502319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683629502319</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add base of select building" />
