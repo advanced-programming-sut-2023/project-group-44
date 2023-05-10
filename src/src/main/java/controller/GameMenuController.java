@@ -14,7 +14,7 @@ public class GameMenuController {
     public static Map currentMap; // Not sure
 
     public static UnitMenuMessages selectUnit (int x, int y) {
-        if (!UnitMenuController.checkIndex(x, y)) { // If the block does not exist in the map
+        if (!UnitMenuController.checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
         Block block = currentMap.getBlock(x, y);
