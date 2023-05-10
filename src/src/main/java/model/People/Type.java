@@ -1,7 +1,7 @@
 package model.People;
 
 public enum Type {
-    MARTIAL,
+    UNIT,
     WORKER,
     OTHER;
 }

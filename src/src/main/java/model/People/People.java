@@ -1,8 +1,8 @@
 package model.People;
 import model.Block;
-import model.Buildings.Building;
-import model.People.Martials.Enums.RoleMartial;
+import model.Governance;
 import model.User;
+import view.Commands.GameMenuCommands;
 
 public class People {
 
@@ -11,8 +11,8 @@ public class People {
     private boolean busy;
     private float foodPortion;
     private float tax; // positive=receive, negative=pay
-    private Block position;
-    private User owner;
+    private Block block;
+    private Governance owner;
     private int hp;
     /* _________________________________________ */
 
@@ -34,11 +34,11 @@ public class People {
         return tax;
     }
 
-    public Block getPosition() {
-        return position;
+    public Block getBlock() {
+        return block;
     }
 
-    public User getOwner() {
+    public Governance getOwner() {
         return owner;
     }
 
@@ -61,8 +61,8 @@ public class People {
         this.tax = tax;
     }
 
-    public void setPosition(Block position) {
-        this.position = position;
+    public void setBlock(Block block) {
+        this.block = block;
     }
 
     public void setHp(int hp) {
@@ -81,7 +81,7 @@ public class People {
     /* _____________________________ */
 
     // .:: Constructor ::.
-    public People(Type type, User owner, int hp) {
+    public People(Type type, Governance owner, int hp) {
         this.type = type;
         this.owner = owner;
         this.hp = hp;

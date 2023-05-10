@@ -2,8 +2,8 @@ package model;
 
 import model.Buildings.Building;
 import model.Buildings.Treasury;
-import model.People.Martials.Martial;
 import model.People.People;
+import model.People.Units.Unit;
 import model.People.Workers.Worker;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class Governance {
     private ArrayList<People> ordinaryPeople;
     private ArrayList<Worker> workers;
     private ArrayList<Worker> engineers;
-    private ArrayList<Martial> martials;
+    private ArrayList<Unit> units;
     private ArrayList<String> foodKinds;
     private int fearRate;
     private int foodFactorPopularity;
@@ -31,23 +31,23 @@ public class Governance {
 
     public Governance(User owner) {
         this.owner = owner;
-        this.capacity=0;
-        this.popularity =0;
-        this.foodRate =0;
+        this.capacity = 0;
+        this.popularity = 0;
+        this.foodRate = 0;
         this.numberOfAllFoods = 0;
         this.taxRate = 0;
         this.freePopulation = 0;
         this.buildings = new ArrayList<>();
         this.workers = new ArrayList<>();
-        this.engineers=new ArrayList<>();
-        this.martials=new ArrayList<>();
+        this.engineers = new ArrayList<>();
+        this.units = new ArrayList<>();
         this.foodKinds = new ArrayList<>();
-        this.ordinaryPeople=new ArrayList<>();
+        this.ordinaryPeople = new ArrayList<>();
         this.fearRate = 0;
-        this.foodFactorPopularity=0;
-        this.taxFactorPopularity=0;
-        this.fearFactorPopularity=0;
-        this.religionFactorPopularity=0;
+        this.foodFactorPopularity = 0;
+        this.taxFactorPopularity = 0;
+        this.fearFactorPopularity = 0;
+        this.religionFactorPopularity = 0;
     }
 
     public User getOwner() {
@@ -159,8 +159,8 @@ public class Governance {
         this.popularity = popularity;
     }
 
-    public ArrayList<Martial> getMartials() {
-        return martials;
+    public ArrayList<Unit> getUnits() {
+        return units;
     }
 
     public ArrayList<People> getOrdinaryPeople() {

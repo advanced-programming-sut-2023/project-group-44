@@ -3,8 +3,8 @@ package controller;
 import model.App;
 import model.Buildings.CastleBuildings;
 import model.Governance;
-import model.People.Martials.Martial;
-import model.People.People;
+import model.People.Units.Enums.RoleUnit;
+import model.People.Units.Unit;
 import model.People.Type;
 import model.People.Workers.RoleWorker;
 import model.People.Workers.Worker;
@@ -59,8 +59,8 @@ public class SelectBuildingController {
             else{
                 governance.getTreasury().addGolds(-30*numberOfArabSoldier);
                 for(int i=0;i<numberOfArabSoldier;i++){
-                    Martial martial=new Martial(Type.MARTIAL,App.getCurrentUser(),20,Martial.convertEnumRoleMartial(typeOfSoldier));
-                    governance.getMartials().add(martial);
+                    Unit Unit=new Unit(Type.UNIT, App.getCurrentUser().getGovernance(),20, RoleUnit.convertEnumRoleUnit(typeOfSoldier));
+                    governance.getUnits().add(Unit);
                 }
             }
         }

@@ -1,7 +1,7 @@
 package model.People.Workers;
 
 import model.Buildings.Building;
-import model.People.Martials.Enums.RoleMartial;
+import model.Governance;
 import model.People.People;
 import model.People.Type;
 import model.User;
@@ -10,7 +10,7 @@ public class Worker extends People {
     private RoleWorker roleWorker;
     private Building workPlace;
 
-    public Worker(Type type, User owner, int hp, Building workPlace,RoleWorker roleWorker) {
+    public Worker(Type type, Governance owner, int hp, Building workPlace, RoleWorker roleWorker) {
         super(type, owner, hp);
         this.workPlace = workPlace;
         this.roleWorker = roleWorker;
