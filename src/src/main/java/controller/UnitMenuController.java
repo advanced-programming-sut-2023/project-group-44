@@ -10,10 +10,10 @@ public class UnitMenuController {
 
     // .:: Move Unit Controller ::.
     public static UnitMenuMessages moveUnit(int x, int y) {
-        if (!checkIndex(x, y)) { // If the block does not exist in the map.
+        if (!checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { // If there is no unit in that block.
+        if (!checkUnitExistence(x, y)) { 
             return UnitMenuMessages.NO_UNIT;
         }
         for (Unit unit : GameMenuController.selectedUnits) {
@@ -25,10 +25,10 @@ public class UnitMenuController {
 
     // .:: Set State Controller ::.
     public static UnitMenuMessages setUnitState(int x, int y, State state) {
-        if (!checkIndex(x, y)) { // If the block does not exist in the map.
+        if (!checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { // If there is no unit in that block.
+        if (!checkUnitExistence(x, y)) { 
             return UnitMenuMessages.NO_UNIT;
         }
         for (Unit unit : GameMenuController.selectedUnits) {
@@ -39,10 +39,10 @@ public class UnitMenuController {
 
     // .:: Patrol Unit Controller ::.
     public static UnitMenuMessages patrolUnit(int x1, int y1, int x2, int y2) {
-        if (!checkIndex(x1, y1) || !checkIndex(x2, y2)) { // If the block does not exist in the map.
+        if (!checkIndex(x1, y1) || !checkIndex(x2, y2)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x1, y1)) { // If there is no unit in that block.
+        if (!checkUnitExistence(x1, y1)) { 
             return UnitMenuMessages.NO_UNIT;
         }
         // ....
@@ -53,10 +53,10 @@ public class UnitMenuController {
 
     // .:: Attack Enemy Controller ::.
     public static UnitMenuMessages attackEnemy(int x, int y) {
-        if (!checkIndex(x, y)) { // If the block does not exist in the map.
+        if (!checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { // If there is no unit in that block.
+        if (!checkUnitExistence(x, y)) { 
             return UnitMenuMessages.NO_UNIT;
         }
         // ....
@@ -67,10 +67,10 @@ public class UnitMenuController {
 
     // .:: Attack Air Controller ::.
     public static UnitMenuMessages attackAir(int x, int y) {
-        if (!checkIndex(x, y)) { // If the block does not exist in the map.
+        if (!checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { // If there is no unit in that block.
+        if (!checkUnitExistence(x, y)) { 
             return UnitMenuMessages.NO_UNIT;
         }
         // ....
