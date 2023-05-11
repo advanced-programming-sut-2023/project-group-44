@@ -69,4 +69,5 @@ public class Treasury extends Building {
     public void addPitch(int pitch) {
         this.pitch += pitch;
     }
+
 }

@@ -1,4 +1,4 @@
-package model.People.Martials.Enums;
+package model.People.Units.Enums;
 
 public enum AttackDistance {
     FAR(10),

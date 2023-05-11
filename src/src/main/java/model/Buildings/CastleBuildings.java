@@ -7,6 +7,7 @@ public class CastleBuildings extends Building{
     private int fireRange;
     private int defendRange;
     private int rate;
+    private String positionOfTheDrawBridge=null;
 
     public CastleBuildings(Governance governance, String type, int x, int y,int hp,int fireRange,int defendRange,int rate){
         super(governance,type,x,y);
@@ -30,5 +31,13 @@ public class CastleBuildings extends Building{
 
     public int getRate() {
         return rate;
+    }
+
+    public String getPositionOfTheDrawBridge() {
+        return positionOfTheDrawBridge;
+    }
+
+    public void setPositionOfTheDrawBridge(String positionOfTheDrawBridge) {
+        this.positionOfTheDrawBridge = positionOfTheDrawBridge;
     }
 }

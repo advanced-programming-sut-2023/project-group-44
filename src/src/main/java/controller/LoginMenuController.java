@@ -41,7 +41,7 @@ public class LoginMenuController {
             } else if (checkCredentials(username, password) == 2) {
                 System.out.println("Username and password didn't match!");
 
-                if (LoginMenuController.wantToTryAgain(scanner)){ // wants to try again
+                if (LoginMenuController.wantToTryAgain(scanner)) { // wants to try again
                     System.out.println("Please try again in " + delay + " seconds.");
                     try { // delay
                         Thread.sleep(delay * 1000);

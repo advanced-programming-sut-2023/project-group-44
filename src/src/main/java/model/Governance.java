@@ -3,6 +3,8 @@ package model;
 import model.Buildings.Building;
 import model.Buildings.Treasury;
 import model.People.People;
+import model.People.Units.Unit;
+import model.People.Workers.Worker;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,10 @@ public class Governance {
     private double numberOfAllFoods;
     private int taxRate;
     private ArrayList<Building> buildings;
-    private ArrayList<People> workers;
-    private ArrayList<People> engineers;
+    private ArrayList<People> ordinaryPeople;
+    private ArrayList<Worker> workers;
+    private ArrayList<Worker> engineers;
+    private ArrayList<Unit> units;
     private ArrayList<String> foodKinds;
     private int fearRate;
     private int foodFactorPopularity;
@@ -27,21 +31,23 @@ public class Governance {
 
     public Governance(User owner) {
         this.owner = owner;
-        this.capacity=0;
-        this.popularity =0;
-        this.foodRate =0;
+        this.capacity = 0;
+        this.popularity = 0;
+        this.foodRate = 0;
         this.numberOfAllFoods = 0;
         this.taxRate = 0;
         this.freePopulation = 0;
         this.buildings = new ArrayList<>();
         this.workers = new ArrayList<>();
-        this.engineers=new ArrayList<>();
+        this.engineers = new ArrayList<>();
+        this.units = new ArrayList<>();
         this.foodKinds = new ArrayList<>();
+        this.ordinaryPeople = new ArrayList<>();
         this.fearRate = 0;
-        this.foodFactorPopularity=0;
-        this.taxFactorPopularity=0;
-        this.fearFactorPopularity=0;
-        this.religionFactorPopularity=0;
+        this.foodFactorPopularity = 0;
+        this.taxFactorPopularity = 0;
+        this.fearFactorPopularity = 0;
+        this.religionFactorPopularity = 0;
     }
 
     public User getOwner() {
@@ -69,11 +75,11 @@ public class Governance {
     }
     public void addBuilding(Building building){ buildings.add(building);}
 
-    public ArrayList<People> getWorkers() {
+    public ArrayList<Worker> getWorkers() {
         return workers;
     }
 
-    public ArrayList<People> getEngineers() {
+    public ArrayList<Worker> getEngineers() {
         return engineers;
     }
 
@@ -151,6 +157,14 @@ public class Governance {
 
     public void setPopularity(int popularity) {
         this.popularity = popularity;
+    }
+
+    public ArrayList<Unit> getUnits() {
+        return units;
+    }
+
+    public ArrayList<People> getOrdinaryPeople() {
+        return ordinaryPeople;
     }
 }
 
