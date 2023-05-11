@@ -7,18 +7,12 @@
     <list default="true" id="acf370e4-c6b9-4939-a796-1712fa7bcff8" name="Changes" comment="add base of select building">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SelectBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SelectBuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/CastleBuildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/CastleBuildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Buildings/Treasury.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Buildings/Treasury.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Governance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Governance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/Martials/Martial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/People/Martials/Martial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/OtherPeople/OtherPeople.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/OtherPeople/RoleOtherPeople.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/People/People.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/Workers/RoleWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/People/Workers/RoleWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/People/Workers/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/People/Workers/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SelectBuildingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SelectBuildingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Commands/GameMenuCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Commands/GameMenuCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MapMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/SignUpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SignUpMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

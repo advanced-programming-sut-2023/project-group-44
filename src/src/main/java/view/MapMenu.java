@@ -23,7 +23,7 @@ public class MapMenu {
                 y = MapController.moveMapY(matcher,command,y);
                 MapController.showMap(x,y);
             }else if((mapMatcher = LoginMenuController.getMatcher(command,mapDetailRegex)) != null){
-
+                MapController.showDetails(Integer.parseInt(matcher.group("x")),Integer.parseInt(matcher.group("y")));
             }else if((mapMatcher = LoginMenuController.getMatcher(command,"^exit$")) != null){
                 return;
             }else System.out.println("Invalid command");

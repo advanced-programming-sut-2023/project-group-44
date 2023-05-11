@@ -14,10 +14,14 @@ public enum GameMenuCommands {
     TAX_RATE_DETERMINATION ("^tax\\s+rate\\s+-r\\s+(?<rateNumber>[0-8]|\\-[1-3])$"),
     TAX_RATE_SHOW ("^tax\\s+rate\\s+show$"),
     FEAR_RATE_DETERMINATION ("^fear\\s+rate\\s+-r\\s+(?<rateNumber>[0-5]|\\-[1-5])$"),
-    DROP_BUILDING ("^dropbuilding(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[^\"]+\"|\\S+)).*$"),
+    DROP_BUILDING ("^dropbuilding(?=.*\\s+-x\\s+(<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[^\"]+\"|\\S+)).*$"),
     SELECT_BUILDING ("^select\\s+building(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
-    SELECT_UNIT ("^select\\s+unit(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$");
-
+    SELECT_UNIT ("^select\\s+unit(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
+    SET_TEXTURE_1 ("^settexture(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[\"]+\"|\\S+)).*$"),
+    SET_TEXTURE_2 ("^settexture(?=.*\\s+-x1\\s+(?<x1>[0-9]+))(?=.*\\s+-y1\\s+(?<y1>[0-9]+))(?=.*\\s+-x2\\s+(?<x2>[0-9]+))(?=.*\\s+-y2\\s+(?<y2>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[\"]+\"|\\S+)).*$"),
+    CLEAR ("^clear(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
+    DROP_ROCK("^drop\\s+rock(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-d\\s+(?<direction>[wens]|random)).*$"),
+    DROP_TREE("^drop\\s+tree(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>shrub|cherry|olive|coconut|date)).*$");
     public String RegEx;
     GameMenuCommands (String RegEx){
         this.RegEx = RegEx;

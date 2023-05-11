@@ -2,7 +2,10 @@ package controller;
 
 import model.App;
 import model.Block;
+import model.Tree;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 
 public class MapController {
@@ -103,5 +106,68 @@ public class MapController {
             else y = y + 1;
         }
         return y;
+    }
+
+    public static void showDetails(int x,int y){
+        Block block = App.gameMap.getBlock(x,y);
+        String output = "";
+        output += "texture: " + block.getTexture() + "\n";
+        if(block.getBuilding() != null) output += "building: " + block.getBuilding().getType() + "\n";
+        output += "number of units: "+block.getUnits().size() + "\n";
+        for(int i = 0; i<block.getUnits().size(); i++) {
+            output += "owner: " + block.getUnits().get(i).getOwner().getOwner().getNickname() + " unitName: " +
+                    block.getUnits().get(i).getType();
+        }
+    }
+
+    public static String setTexture(int x1,int y1,int x2,int y2,String type){
+        ArrayList<String> textures = new ArrayList<>(Arrays.asList("ground","gravelGround","rock","stone",
+                                                                   "iron","grass","grassland","denseGrassland",
+                                                                   "oil","plain","shallowWater","river","smallPond",
+                                                                   "bigPond","beach","sea"));
+        if(x1>x2 || y1>y2 || x1>400 || x2>400 || y1>400 || y2>400) return "Invalid coordinate";
+        if(!textures.contains(type)) return "Invalid type";
+        for(int i = x1; i<=x2; i++) {
+            for (int j = y1; j <= y2; j++) {
+                if (App.gameMap.getBlock(i, j).getBuilding() != null)
+                    return "there is a building in block (" + i + "," + j + ")";
+            }
+        }
+        for(int i = x1; i<=x2; i++)
+            for(int j = y1; j<=y2; j++) App.gameMap.getBlock(i,j).setTexture(type);
+        return "Successful set texture";
+    }
+
+    public static String clear(int x,int y){
+        if(App.gameMap.getBlock(x,y).getBuilding() != null && !App.gameMap.getBlock(x,y).getBuilding().getGovernment().equals(App.getCurrentUser().getGovernance()))
+            return "you cant clear this block";
+        App.gameMap.getBlock(x,y).setTexture("ground");
+        App.gameMap.getBlock(x,y).setBuilding(null);
+        App.gameMap.getBlock(x,y).setTree(null);
+        App.gameMap.getBlock(x,y).setUnits(new ArrayList<>());
+        return "Clear the block was successful";
+    }
+
+    public static String dropRock(int x,int y,String direction){
+        if(App.gameMap.getBlock(x,y).getBuilding() != null && !App.gameMap.getBlock(x,y).getBuilding().getGovernment().equals(App.getCurrentUser().getGovernance()))
+            return "you cant clear this block";
+        App.gameMap.getBlock(x,y).setTexture("rock");
+        App.gameMap.getBlock(x,y).setBuilding(null);
+        App.gameMap.getBlock(x,y).setTree(null);
+        App.gameMap.getBlock(x,y).setUnits(new ArrayList<>());
+        if(direction.equals("random")) App.gameMap.getBlock(x,y).setRockDirection("n");
+        else App.gameMap.getBlock(x,y).setRockDirection(direction);
+        return "drop rock was successful";
+    }
+    public static String  dropTree(int x,int y,String type){
+        if (!(App.gameMap.getBlock(x, y).getTexture().equals("ground") ||
+                App.gameMap.getBlock(x, y).getTexture().equals("gravelGround") ||
+                App.gameMap.getBlock(x, y).getTexture().equals("grass") ||
+                App.gameMap.getBlock(x, y).getTexture().equals("grassland") ||
+                App.gameMap.getBlock(x, y).getTexture().equals("denseGrassland"))) {
+            return "Inappropriate texture for tree";
+        }
+        App.gameMap.getBlock(x,y).setTree(new Tree(type,x,y));
+        return "drop tree was successful";
     }
 }
