@@ -49,7 +49,16 @@ public class GameMenu {
                 BuildingController.createBuilding(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")), SignUpMenuController.deleteQuotations(matcher.group("type")));
             }
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SELECT_BUILDING)) != null) {
-                // TODO
+                int x=Integer.parseInt(matcher.group("x"));
+                int y=Integer.parseInt(matcher.group("y"));
+                if(App.gameMap.getBlock(x,y).getBuilding().getType().equals("market")){
+                    MarketMenu marketMenu=new MarketMenu();
+                    marketMenu.run(scanner);
+                }
+                else {
+                    SelectBuildingMenu selectBuildingMenu = new SelectBuildingMenu();
+                    selectBuildingMenu.run(scanner, x, y);
+                }
             }
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SELECT_UNIT)) != null) {
                 int x = Integer.parseInt(matcher.group("x"));
