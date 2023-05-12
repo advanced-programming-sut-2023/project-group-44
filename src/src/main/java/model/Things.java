@@ -31,7 +31,7 @@ public enum Things {
     private final String name;
     private final String type;
     private final String storageName;
-    private int count;
+    private double count;
     private final int numberOfSalesPerBuyOrSell;
     private final double purchasePrice;
     private final double sellPrice;
@@ -54,7 +54,7 @@ public enum Things {
         return type;
     }
 
-    public int getCount() {
+    public double getCount() {
         return count;
     }
 
@@ -70,7 +70,7 @@ public enum Things {
         return sellPrice;
     }
 
-    public void setCount(int count) {
+    public void setCount(double count) {
         this.count = count;
     }
     public String getStorageName() {

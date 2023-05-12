@@ -43,4 +43,12 @@ public class Unit extends People {
     public void setState(State state) {
         this.state = state;
     }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void addAttackPower(int attackPower) {
+        this.attackPower += attackPower;
+    }
 }
