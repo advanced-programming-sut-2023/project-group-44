@@ -31,6 +31,7 @@ public enum Things {
     MELTING_POT("melting pot","weapon","armory",5,4,2,1);
     private final String name;
     private final String type;
+    private final String storageName;
     private int count;
     private final int numberOfSalesPerBuyOrSell;
     private final double purchasePrice;
@@ -39,6 +40,7 @@ public enum Things {
     Things(String name, String type, String storageName, int count, int numberOfSalesPerBuyOrSell, double purchasePrice, double sellPrice) {
         this.name = name;
         this.type = type;
+        this.storageName=storageName;
         this.count = count;
         this.numberOfSalesPerBuyOrSell=numberOfSalesPerBuyOrSell;
         this.purchasePrice = purchasePrice;
@@ -71,5 +73,9 @@ public enum Things {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getStorageName() {
+        return storageName;
     }
 }
