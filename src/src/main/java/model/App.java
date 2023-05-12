@@ -60,4 +60,8 @@ public class App {
     public static void setGameMap(Map gameMap) {
         App.gameMap = gameMap;
     }
+
+    public static ArrayList<Requests> getTradeList() {
+        return tradeList;
+    }
 }

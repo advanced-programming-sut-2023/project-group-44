@@ -142,4 +142,8 @@ public class User {
     public void setGovernance(Governance governance) {
         this.governance = governance;
     }
+
+    public ArrayList<Requests> getListOfRequests() {
+        return listOfRequests;
+    }
 }

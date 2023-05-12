@@ -30,6 +30,7 @@ public class MarketMenu {
                             break;
                         case "sell(?=.*\\s+-i\\s+(?<item>.+))(?=.*\\s+-a\\s+(?<amount>.+))$":
                             result=MarketMenuController.sellItem(matcher);
+                            break;
                         case "back":
                             return;
                     }

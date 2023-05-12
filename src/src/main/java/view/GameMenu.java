@@ -124,6 +124,11 @@ public class GameMenu {
                     case FORBIDDEN -> System.out.println("Select unit failed. Opponents' unit!");
                 }
             }
+            // .:: Open TradeMenu ::.
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU))!=null) {
+                TradeMenu tradeMenu=new TradeMenu();
+                tradeMenu.run(scanner);
+            }
 
             // .:: Back ::.
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.BACK)) != null) {
