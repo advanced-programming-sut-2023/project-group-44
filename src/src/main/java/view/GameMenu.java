@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 
 public class GameMenu {
     public void run(Scanner scanner) {
-        String command = "";
+        String command;
         Matcher matcher;
 
         while (true) {
@@ -22,12 +22,12 @@ public class GameMenu {
             }
 
             // .:: Show Popularity Factors ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_POPULARITY_FACTORS)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_POPULARITY_FACTORS) != null) {
                 GovernanceController.showPopularityFactors();
             }
 
             // .:: Show Popularity ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_POPULARITY)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_POPULARITY) != null) {
                 GovernanceController.showPopularity();
             }
 
@@ -43,7 +43,7 @@ public class GameMenu {
             }
 
             // .:: Food Rate Show ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.FOOD_RATE_SHOW)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.FOOD_RATE_SHOW) != null) {
                 System.out.println(App.getCurrentUser().getGovernance().getFoodRate());
             }
 
@@ -53,7 +53,7 @@ public class GameMenu {
             }
 
             // .:: Tax Rate Show ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.TAX_RATE_SHOW)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.TAX_RATE_SHOW) != null) {
                 System.out.println(App.getCurrentUser().getGovernance().getTaxRate());
             }
 
@@ -64,50 +64,79 @@ public class GameMenu {
 
             // .:: Drop Building ::.
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_BUILDING)) != null) {
-                BuildingController.createBuilding(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")), SignUpMenuController.deleteQuotations(matcher.group("type")));
+                int x = Integer.parseInt(matcher.group("x"));
+                int y = Integer.parseInt(matcher.group("y"));
+                String type = SignUpMenuController.deleteQuotations(matcher.group("type"));
+                BuildingController.createBuilding(x, y, type);
+            }
+
+            // .:: Drop Unit ::.
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_UNIT)) != null) {
+                int x = Integer.parseInt(matcher.group("x"));
+                int y = Integer.parseInt(matcher.group("y"));
+                String type = matcher.group("type");
+                int count = Integer.parseInt(matcher.group("count"));
+                switch (GameMenuController.dropUnit(x, y, type, count)) {
+                    case SUCCESS -> System.out.println("Drop unit successful.");
+                    case IMPROPER_GROUND -> System.out.println("Drop Unit failed. Can not drop a unit on this ground.");
+                    case INVALID_COUNT -> System.out.println("Drop unit failed. Invalid count.");
+                    case INVALID_ROLE -> System.out.println("Drop unit failed. Invalid type of unit entered.");
+                    case INVALID_COORDINATION -> System.out.println("Drop unit failed. The entered block is not in the map.");
+                }
             }
 
             // .:: Set Texture Of A Single Cell ::.
-            else if((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SET_TEXTURE_MONO)) != null) {
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SET_TEXTURE_MONO)) != null) {
                 int x = Integer.parseInt(matcher.group("x"));
                 int y = Integer.parseInt(matcher.group("y"));
-                System.out.println(MapController.setTexture(x,y,x,y,matcher.group("type")));
+                System.out.println(MapController.setTexture(x, y, x, y, matcher.group("type")));
             }
 
             // .:: Set Texture Of A Rectangle Of Cells ::.
-            else if((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SET_TEXTURE_POLY)) != null) {
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SET_TEXTURE_POLY)) != null) {
                 int x1 = Integer.parseInt(matcher.group("x1"));
                 int y1 = Integer.parseInt(matcher.group("y1"));
                 int x2 = Integer.parseInt(matcher.group("x2"));
                 int y2 = Integer.parseInt(matcher.group("y2"));
-                System.out.println(MapController.setTexture(x1,y1,x2,y2,matcher.group("type")));
+                System.out.println(MapController.setTexture(x1, y1, x2, y2, matcher.group("type")));
             }
 
             // .:: Clear Cell ::.
-            else if((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.CLEAR)) != null) {
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.CLEAR)) != null) {
                 int x = Integer.parseInt(matcher.group("x"));
                 int y = Integer.parseInt(matcher.group("y"));
-                System.out.println(MapController.clear(x,y));
+                System.out.println(MapController.clear(x, y));
             }
 
             // .:: Drop Rock ::.
-            else if((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_ROCK)) != null) {
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_ROCK)) != null) {
                 int x = Integer.parseInt(matcher.group("x"));
                 int y = Integer.parseInt(matcher.group("y"));
-                System.out.println(MapController.dropRock(x,y,matcher.group("direction")));
+                System.out.println(MapController.dropRock(x, y, matcher.group("direction")));
             }
 
             // .:: Drop Tree ::.
-            else if((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_TREE)) != null) {
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.DROP_TREE)) != null) {
                 int x = Integer.parseInt(matcher.group("x"));
                 int y = Integer.parseInt(matcher.group("y"));
-                System.out.println(MapController.dropTree(x,y,matcher.group("direction")));
+                System.out.println(MapController.dropTree(x, y, matcher.group("direction")));
             }
 
             // .:: Select Building ::. (And Then Open Building Menu)
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SELECT_BUILDING)) != null) {
-                BuildingMenu buildingMenu = new BuildingMenu();
-                buildingMenu.run(scanner,Integer.parseInt(matcher.group("x")),Integer.parseInt(matcher.group("y")));
+
+                int x = Integer.parseInt(matcher.group("x"));
+                int y = Integer.parseInt(matcher.group("y"));
+                switch (GameMenuController.selectBuilding(x, y)) {
+                    case SUCCESS -> {
+                        System.out.println("Building selected successfully.");
+                        BuildingMenu.run(scanner, x, y);
+                    }
+                    case NO_BUILDING -> System.out.println("Select building failed. There is no building in this block.");
+                    case INVALID_COORDINATION ->
+                            System.out.println("Select building failed. This block is not in the map.");
+                    case FORBIDDEN -> System.out.println("Select building failed. Opponents' building!");
+                }
             }
 
             // .:: Select Unit (And Engineers) ::. (And Then Open Unit Menu)
@@ -126,17 +155,15 @@ public class GameMenu {
                 }
             }
             // .:: Open TradeMenu ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU))!=null) {
-                TradeMenu tradeMenu=new TradeMenu();
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU)) != null) {
+                TradeMenu tradeMenu = new TradeMenu();
                 tradeMenu.run(scanner);
-            }
-
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN)) != null) {
+            } else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN)) != null) {
                 Controller.nextTurn();
             }
 
             // .:: Back ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.BACK)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.BACK) != null) {
                 return;
             }
 

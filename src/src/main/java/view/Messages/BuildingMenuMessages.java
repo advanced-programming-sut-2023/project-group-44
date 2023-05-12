@@ -1,0 +1,14 @@
+package view.Messages;
+
+public enum BuildingMenuMessages {
+    INVALID_COORDINATION,
+    NO_BUILDING,
+    FORBIDDEN,
+    INVALID_COUNT,
+    INVALID_ROLE,
+    IMPROPER_GROUND,
+    INSUFFICIENT_WEAPON,
+    INSUFFICIENT_HUMAN_RESOURCE,
+    SUCCESS;
+
+}

@@ -88,7 +88,7 @@ public class BuildingController {
     }
 
     public static void createBuilding(int x, int y, String type) {
-        if (x > 400 || y > 400) {
+        if (x > 400 || y > 400 || x < 0 || y < 0) {
             System.out.println("InvalidCoordinates");
             return;
         }
