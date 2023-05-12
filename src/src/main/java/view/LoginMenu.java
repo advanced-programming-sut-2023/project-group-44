@@ -20,6 +20,7 @@ public class LoginMenu {
         String regexStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+)) \\-\\-stay\\-logged\\-in$";
         String regexForgotPass = "^forgot my password -u \"?([^\"]*)\"?$";
         while (true) {
+                System.out.println("entered login menu");
 
                 command = scanner.nextLine();
 
@@ -55,9 +56,9 @@ public class LoginMenu {
                 }
 
                 // Invalid Command
-                else {
-                    System.out.println("Invalid command");
-                }
+                else if((matcher = LoginMenuController.getMatcher(command,"^exit$")) != null){
+                    return;
+                }else System.out.println("Invalid command");
 
         }
     }

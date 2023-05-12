@@ -13,7 +13,7 @@ public class MainMenu {
         Matcher matcher;
 
         while(true){
-            System.out.println("You are in main menu select a menu or type exit to back to SignUp/login");
+            System.out.println("You are in main menu select game or profile menu or type exit to back to SignUp/login");
             command = scanner.nextLine();
             if((matcher = LoginMenuController.getMatcher(command,"^game\\s+menu$")) != null){
                 GameMenu gameMenu = new GameMenu();

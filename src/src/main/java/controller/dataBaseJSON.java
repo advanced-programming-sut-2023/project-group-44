@@ -56,4 +56,10 @@ public class dataBaseJSON {
         if(map != null)
             App.setGameMap(map);
     }
+
+    public static void emptyMapJSOn() throws IOException {
+        FileWriter fileWriter = new FileWriter("map.json");
+        fileWriter.write("");
+        fileWriter.close();
+    }
 }

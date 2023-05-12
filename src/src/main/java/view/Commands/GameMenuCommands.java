@@ -23,6 +23,7 @@ public enum GameMenuCommands {
     DROP_ROCK("^drop\\s+rock(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-d\\s+(?<direction>[wens]|random)).*$"),
     DROP_TREE("^drop\\s+tree(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>shrub|cherry|olive|coconut|date)).*$"),
     OPEN_TRADE_MENU("^open\\s+trade\\s+menu$"),
+    NEXT_TURN("^nextturn$"),
     BACK ("^back$");
     public String RegEx;
     GameMenuCommands (String RegEx){

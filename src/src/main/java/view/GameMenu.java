@@ -33,7 +33,7 @@ public class GameMenu {
 
             // .:: Show Food List ::.
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_FOOD_LIST)) != null) {
-                // TODO
+                GovernanceController.showFoodList();
             }
 
             // .:: Food Rate Determination ::.
@@ -106,7 +106,8 @@ public class GameMenu {
 
             // .:: Select Building ::. (And Then Open Building Menu)
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SELECT_BUILDING)) != null) {
-                // TODO
+                BuildingMenu buildingMenu = new BuildingMenu();
+                buildingMenu.run(scanner,Integer.parseInt(matcher.group("x")),Integer.parseInt(matcher.group("y")));
             }
 
             // .:: Select Unit (And Engineers) ::. (And Then Open Unit Menu)
@@ -128,6 +129,10 @@ public class GameMenu {
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU))!=null) {
                 TradeMenu tradeMenu=new TradeMenu();
                 tradeMenu.run(scanner);
+            }
+
+            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN)) != null) {
+                Controller.nextTurn();
             }
 
             // .:: Back ::.

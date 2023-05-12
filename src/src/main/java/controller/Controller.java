@@ -65,6 +65,21 @@ public class Controller {
         for(int i=0; i<App.getCurrentUser().getGovernance().getUnits().size(); i++){
             App.getCurrentUser().getGovernance().getUnits().get(i).addAttackPower(App.getCurrentUser().getGovernance().getFearRate());
         }
+
+        int x=0,y=0;
+        for(int i=0; i<App.getCurrentUser().getGovernance().getBuildings().size(); i++){
+            if(App.getCurrentUser().getGovernance().getBuildings().get(i).getType().equals("small stone gatehouse")){
+                x = App.getCurrentUser().getGovernance().getBuildings().get(i).getX();
+                y = App.getCurrentUser().getGovernance().getBuildings().get(i).getY();
+            }
+        }
+
+        for(int i=x-3; i<x+3; i++){
+            for(int j=y-3; j<y+3; i++){
+                if(App.gameMap.getBlock(x,y).getBuilding() != null)
+                    App.getCurrentUser().getGovernance().setPopularity(App.getCurrentUser().getGovernance().getPopularity()+1);
+            }
+        }
     }
 
     public static void foodEffect(){
@@ -137,4 +152,12 @@ public class Controller {
 
         }
     }
+
+    public static void nextTurn(){
+        taxCollect();
+        foodEffect();
+        fearEffect();
+        religionEffect();
+    }
+
 }

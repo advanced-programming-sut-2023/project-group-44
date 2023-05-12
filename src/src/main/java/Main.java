@@ -17,6 +17,7 @@ public class Main {
         SignUpMenu signUpMenu = new SignUpMenu();
         signUpMenu.run(scanner);
 
+        dataBaseJSON.emptyMapJSOn();
         dataBaseJSON.saveUsersInJSON();
         //dataBaseJSON.saveStayLoggedInUserInJSON();
         dataBaseJSON.saveMapInJSON();
