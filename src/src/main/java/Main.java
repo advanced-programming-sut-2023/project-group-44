@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         dataBaseJSON.initializeUsers();
-        dataBaseJSON.initializeStayLoggInUser();
+        //dataBaseJSON.initializeStayLoggInUser();
         dataBaseJSON.initializeMap();
 
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class Main {
         signUpMenu.run(scanner);
 
         dataBaseJSON.saveUsersInJSON();
-        dataBaseJSON.saveStayLoggedInUserInJSON();
+        //dataBaseJSON.saveStayLoggedInUserInJSON();
         dataBaseJSON.saveMapInJSON();
 
     }

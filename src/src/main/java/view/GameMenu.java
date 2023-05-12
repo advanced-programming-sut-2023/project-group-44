@@ -24,7 +24,6 @@ public class GameMenu {
             }
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_POPULARITY)) != null) {
                 GovernanceController.showPopularity();
-
             }
             else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_FOOD_LIST)) != null) {
                 // TODO
