@@ -1,8 +1,6 @@
 package model.Buildings;
 
 import model.Governance;
-import model.Market.MarketItem;
-import model.User;
 
 import java.util.ArrayList;
 

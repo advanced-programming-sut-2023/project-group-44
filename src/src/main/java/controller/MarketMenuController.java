@@ -2,11 +2,7 @@ package controller;
 
 import model.App;
 import model.Governance;
-import model.Market.ItemType;
-import model.Market.MarketItem;
-import model.People.Units.Enums.AttackPower;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class MarketMenuController {
