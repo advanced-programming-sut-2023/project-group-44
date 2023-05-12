@@ -11,9 +11,6 @@ public class Treasury extends Building {
     private Things iron;
     private Things stones;
     private Things pitch;
-    private int x;
-    private int y;
-    private int hp;
     private int maximumRate;
 
     public Treasury(Governance governance, String type, int x, int y,int hp){
@@ -29,7 +26,7 @@ public class Treasury extends Building {
 
     }
 
-    public int getWoods() {
+    public double getWoods() {
         return woods.getCount();
     }
 
@@ -37,7 +34,7 @@ public class Treasury extends Building {
         this.woods.setCount(this.woods.getCount()+woods);
     }
 
-    public int getGolds() {
+    public double getGolds() {
         return golds.getCount();
     }
 
@@ -53,7 +50,7 @@ public class Treasury extends Building {
         this.coins += coins;
     }
 
-    public int getIron() {
+    public double getIron() {
         return iron.getCount();
     }
 
@@ -61,7 +58,7 @@ public class Treasury extends Building {
         this.iron.setCount(this.iron.getCount()+iron);
     }
 
-    public int getStones() {
+    public double getStones() {
         return stones.getCount();
     }
 
@@ -69,7 +66,7 @@ public class Treasury extends Building {
         this.stones.setCount(this.stones.getCount()+stones);
     }
 
-    public int getPitch() {
+    public double getPitch() {
         return pitch.getCount();
     }
 

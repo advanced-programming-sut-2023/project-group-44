@@ -20,7 +20,6 @@ public class Unit extends People {
     private int attackDistance;
     private int defencePower;
     private int speed;
-    private int hp;
     private boolean canClimb;
 
     public Unit(Type type, Governance owner, int hp, RoleUnit role) {
@@ -42,5 +41,13 @@ public class Unit extends People {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void addAttackPower(int attackPower) {
+        this.attackPower += attackPower;
     }
 }
