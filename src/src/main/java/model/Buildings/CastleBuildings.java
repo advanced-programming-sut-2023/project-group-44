@@ -64,4 +64,20 @@ public class CastleBuildings extends Building{
     public ArrayList<Things> getWeapons() {
         return weapons;
     }
+    public void addWeaponInStorage(String weaponName,int amount){
+        for(Things x:weapons){
+            if(x.getName().equals(weaponName))
+                x.setCount(x.getCount()+amount);
+        }
+    }
+
+    public boolean checkIfWeaponIsEnoughForSell(String weaponName,int amount){
+        for(Things x:weapons){
+            if(x.getName().equals(weaponName)) {
+                if(x.getCount()<amount)
+                    return false;
+            }
+        }
+        return true;
+    }
 }

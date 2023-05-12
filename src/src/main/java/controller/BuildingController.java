@@ -252,11 +252,11 @@ public class BuildingController {
                 App.gameMap.getBlock(x, y).setBuilding(quarry);
                 governance.addBuilding(quarry);
                 break;
-            case "stockpile":
+            case "treasury":
                 if (!checkTextureForCastle(x, y)) return;
-                IndustryBuildings stockpile = new IndustryBuildings(governance, "stockpile", x, y, 100, 0);
-                App.gameMap.getBlock(x, y).setBuilding(stockpile);
-                governance.addBuilding(stockpile);
+                Treasury treasury = new Treasury(governance,"treasury",x,y,100);
+                App.gameMap.getBlock(x, y).setBuilding(treasury);
+                governance.addBuilding(treasury);
                 break;
             case "woodcutter":
                 if (!checkTextureForCastle(x, y)) return;

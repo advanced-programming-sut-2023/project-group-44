@@ -69,6 +69,13 @@ public class Governance {
     public int getTaxRate() {
         return taxRate;
     }
+    public Building getBuildingByName(String name){
+        for(Building building: buildings){
+            if(building.getType().equals(name))
+                return building;
+        }
+        return null;
+    }
 
     public ArrayList<Building> getBuildings() {
         return buildings;

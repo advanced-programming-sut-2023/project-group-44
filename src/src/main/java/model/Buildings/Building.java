@@ -25,7 +25,6 @@ public class Building {
         this.engineers=new ArrayList<>();
     }
 
-
     public ArrayList<People> getWorkers() {
         return workers;
     }

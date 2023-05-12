@@ -1,7 +1,12 @@
 package controller;
 
 import model.App;
+import model.Buildings.Building;
+import model.Buildings.CastleBuildings;
+import model.Buildings.FoodProcessingBuildings;
+import model.Buildings.Treasury;
 import model.Governance;
+import model.Things;
 
 import java.util.regex.Matcher;
 
@@ -40,17 +45,45 @@ public class MarketMenuController {
     public static String buyItem(Matcher matcher){
         String nameOfItem= matcher.group("item");
         int amount=Integer.parseInt(matcher.group("amount"));
-        int governanceCoins=App.getCurrentUser().getGovernance().getTreasury().getCoins();
+        double governanceCoins=App.getCurrentUser().getGovernance().getTreasury().getCoins();
         Governance governance=App.getCurrentUser().getGovernance();
-        if(MarketItem.convertEnumItem(nameOfItem)==null)
+        if(Things.searchItemNames(nameOfItem) ==null)
             return "This item is invalid in shop! ";
-        MarketItem marketItem=new MarketItem(MarketItem.convertEnumItem(nameOfItem));
-        if(governanceCoins< marketItem.getBuyPrice()*amount)
+        Things things=Things.searchItemNames(nameOfItem);
+        if(governanceCoins< things.getPurchasePrice()*amount/things.getNumberOfSalesPerBuyOrSell())
             return "You don't have enough coins!";
-        governance.getTreasury().addCoins(-marketItem.getBuyPrice()*amount);
-        for(int i=0;i<amount;i++){
-            MarketItem marketItem1=new MarketItem(MarketItem.convertEnumItem(nameOfItem));
-            /*Must be added*/
+        if(governance.getBuildingByName(things.getStorageName())==null)
+            return "There is no "+things.getStorageName()+"in your governance!";
+        governance.getTreasury().addCoins(-things.getPurchasePrice()*amount/things.getNumberOfSalesPerBuyOrSell());
+        switch (things.getStorageName()){
+            case "treasury":
+                Treasury storage1= (Treasury) governance.getBuildingByName(things.getStorageName());
+                switch (things.getName()){
+                    case "wood":
+                        storage1.addWoods(amount);
+                        break;
+                    case "stone":
+                        storage1.addStones(amount);
+                        break;
+                    case "iron":
+                        storage1.addIron(amount);
+                        break;
+                    case "gold":
+                        storage1.addGolds(amount);
+                        break;
+                    case "pitch":
+                        storage1.addPitch(amount);
+                        break;
+                }
+                break;
+            case "food stockpile":
+                FoodProcessingBuildings storage2= (FoodProcessingBuildings) governance.getBuildingByName(things.getStorageName());
+                storage2.addFoodInStorage(things.getName(),amount);
+                break;
+            case "armory":
+                CastleBuildings storage3= (CastleBuildings) governance.getBuildingByName(things.getStorageName());
+                storage3.addWeaponInStorage(things.getName(),amount);
+                break;
         }
         return "purchased successfully!";
     }
@@ -59,14 +92,56 @@ public class MarketMenuController {
         String nameOfItem= matcher.group("item");
         int amount=Integer.parseInt(matcher.group("amount"));
         Governance governance=App.getCurrentUser().getGovernance();
-        if(MarketItem.convertEnumItem(nameOfItem)==null)
+        if(Things.searchItemNames(nameOfItem) ==null)
             return "This item is invalid in shop! ";
-        MarketItem marketItem=new MarketItem(MarketItem.convertEnumItem(nameOfItem));
-        governance.getTreasury().addCoins(marketItem.getSellPrice()*amount);
-        for(int i=0;i<amount;i++){
-            MarketItem marketItem1=new MarketItem(MarketItem.convertEnumItem(nameOfItem));
-            /*Must be added*/
+        Things things=Things.searchItemNames(nameOfItem);
+        if(governance.getBuildingByName(things.getStorageName())==null)
+            return "There is no "+things.getStorageName()+"in your governance!";
+        switch (things.getStorageName()){
+            case "treasury":
+                Treasury storage1= (Treasury) governance.getBuildingByName(things.getStorageName());
+                switch (things.getName()){
+                    case "wood":
+                        if(storage1.getWoods()<amount)
+                            return "You don't have enough wood!";
+                        storage1.addWoods(-amount);
+                        break;
+                    case "stone":
+                        if(storage1.getStones()<amount)
+                            return "You don't have enough stone!";
+                        storage1.addStones(-amount);
+                        break;
+                    case "iron":
+                        if(storage1.getIron()<amount)
+                            return "You don't have enough iron!";
+                        storage1.addIron(-amount);
+                        break;
+                    case "gold":
+                        if(storage1.getGolds()<amount)
+                            return "You don't have enough gold!";
+                        storage1.addGolds(-amount);
+                        break;
+                    case "pitch":
+                        if(storage1.getPitch()<amount)
+                            return "You don't have enough pitch!";
+                        storage1.addPitch(-amount);
+                        break;
+                }
+                break;
+            case "food stockpile":
+                FoodProcessingBuildings storage2= (FoodProcessingBuildings) governance.getBuildingByName(things.getStorageName());
+                if(!storage2.checkIfFoodIsEnoughForSell(things.getName(),amount))
+                    return "You don't have enough "+things.getName()+"!";
+                storage2.addFoodInStorage(things.getName(),-amount);
+                break;
+            case "armory":
+                CastleBuildings storage3= (CastleBuildings) governance.getBuildingByName(things.getStorageName());
+                if(!storage3.checkIfWeaponIsEnoughForSell(things.getName(),amount))
+                    return "You don't have enough "+things.getName()+"!";
+                storage3.addWeaponInStorage(things.getName(),-amount);
+                break;
         }
+        governance.getTreasury().addCoins(things.getPurchasePrice()*amount/things.getNumberOfSalesPerBuyOrSell());
         return "sold successfully!";
     }
 }

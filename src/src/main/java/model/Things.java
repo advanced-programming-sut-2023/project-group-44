@@ -1,7 +1,5 @@
 package model;
 
-import model.Buildings.Building;
-
 public enum Things {
 
     // Resources
@@ -9,6 +7,7 @@ public enum Things {
     STONE("stone", "resource","treasury",500,10, 5, 3 ),
     IRON("iron", "resource","treasury",250,10, 8, 6),
     PITCH("pitch", "resource","treasury",750,10, 6, 4),
+    GOLD("gold", "resource","treasury",50,1, 2, 1),
     // Foods
     WHEAT("wheat","food","food stockpile", 1000,25, 5, 4),
     HOP("hop","food","food stockpile",1000,25,5,4),
@@ -74,8 +73,14 @@ public enum Things {
     public void setCount(int count) {
         this.count = count;
     }
-
     public String getStorageName() {
         return storageName;
+    }
+
+    public static Things searchItemNames(String name){
+        for(Things x:Things.values()){
+            if(x.getName().equals(name)) return x;
+        }
+        return null;
     }
 }

@@ -59,4 +59,19 @@ public class FoodProcessingBuildings extends Building{
     public ArrayList<Things> getFoods() {
         return foods;
     }
+    public void addFoodInStorage(String foodName,int amount){
+        for(Things x:foods){
+            if(x.getName().equals(foodName))
+                x.setCount(x.getCount()+amount);
+        }
+    }
+    public boolean checkIfFoodIsEnoughForSell(String foodName,int amount){
+        for(Things x:foods){
+            if(x.getName().equals(foodName)) {
+                if(x.getCount()<amount)
+                    return false;
+            }
+        }
+        return true;
+    }
 }
