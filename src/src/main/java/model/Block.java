@@ -1,6 +1,7 @@
 package model;
 
 import model.Buildings.Building;
+import model.People.Engineer;
 import model.People.Units.Unit;
 
 import java.util.ArrayList;
@@ -12,11 +13,13 @@ public class Block {
     private Building building;
     private Tree tree;
     private ArrayList<Unit> units;
+    private ArrayList<Engineer> engineers;
 
     public Block(int x, int y) {
         this.x = x;
         this.y = y;
         this.units = new ArrayList<>();
+        this.engineers = new ArrayList<>();
     }
 
     public String getTexture() {
@@ -47,10 +50,17 @@ public class Block {
         return units;
     }
 
+    public ArrayList<Engineer> getEngineers() {
+        return engineers;
+    }
+
     public void addUnit(Unit unit) {
         this.units.add(unit);
     }
-    public void setUnits(ArrayList<Unit> units){ this.units = units;}
+
+    public void addEngineer(Engineer engineer) {
+        this.engineers.add(engineer);
+    }
 
     public String getRockDirection() {
         return rockDirection;

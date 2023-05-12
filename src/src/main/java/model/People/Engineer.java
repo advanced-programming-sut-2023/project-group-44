@@ -1,6 +1,11 @@
 package model.People;
 
+import controller.GameMenuController;
+import model.Block;
 import model.Governance;
+import model.People.Units.Unit;
+
+import java.util.ArrayList;
 
 public class Engineer extends People {
     private int buildSpeed;
@@ -14,5 +19,10 @@ public class Engineer extends People {
         this.repairSpeed = repairSpeed;
         this.canBuild = canBuild;
         this.canRepair = canRepair;
+    }
+
+    public static ArrayList<Engineer> getEngineersByBlock(int x, int y) {
+        Block block = GameMenuController.currentMap.getBlock(x, y);
+        return block.getEngineers();
     }
 }
