@@ -1,8 +1,10 @@
 package controller;
 
 import model.Block;
+import model.People.Engineer;
 import model.People.Units.Enums.State;
 import model.People.Units.Unit;
+import view.GameMenu;
 import view.Messages.UnitMenuMessages;
 
 public class UnitMenuController {
@@ -10,10 +12,10 @@ public class UnitMenuController {
 
     // .:: Move Unit Controller ::.
     public static UnitMenuMessages moveUnitTo(int x, int y) {
-        if (!checkIndex(x, y)) { 
+        if (!checkIndex(x, y)) {
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        for (Unit unit : GameMenuController.selectedUnits) {
+        for (Unit unit : GameMenuController.getSelectedUnits()) {
             Block destination = GameMenuController.currentMap.getBlock(x, y);
             unit.setBlock(destination);
         }
@@ -22,7 +24,7 @@ public class UnitMenuController {
 
     // .:: Set State Controller ::.
     public static UnitMenuMessages setUnitState(State state) {
-        for (Unit unit : GameMenuController.selectedUnits) {
+        for (Unit unit : GameMenuController.getSelectedUnits()) {
             unit.setState(state);
         }
         return UnitMenuMessages.SUCCESS;
@@ -41,10 +43,10 @@ public class UnitMenuController {
 
     // .:: Attack Enemy Controller ::.
     public static UnitMenuMessages attackEnemy(int x, int y) {
-        if (!checkIndex(x, y)) { 
+        if (!checkIndex(x, y)) {
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { 
+        if (!checkUnitExistence(x, y)) {
             return UnitMenuMessages.NO_UNIT;
         }
         // ....
@@ -55,10 +57,10 @@ public class UnitMenuController {
 
     // .:: Attack Air Controller ::.
     public static UnitMenuMessages attackAir(int x, int y) {
-        if (!checkIndex(x, y)) { 
+        if (!checkIndex(x, y)) {
             return UnitMenuMessages.INVALID_COORDINATION;
         }
-        if (!checkUnitExistence(x, y)) { 
+        if (!checkUnitExistence(x, y)) {
             return UnitMenuMessages.NO_UNIT;
         }
         // ....
@@ -66,7 +68,6 @@ public class UnitMenuController {
         // After they attacked ^_^
         return UnitMenuMessages.SUCCESS;
     }
-
 
 
     /* ___________________________________ AUXILIARY METHODS ___________________________________ */
