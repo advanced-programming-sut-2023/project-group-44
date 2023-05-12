@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class App {
+    private static User stayedLoggedInUser;
     private static User currentUser;
     private static ArrayList<User> users = new ArrayList<>();
     private static ArrayList<Requests> tradeList = new ArrayList<>();
@@ -38,5 +39,25 @@ public class App {
 
     public static void setCurrentUser(User currentUser) {
         App.currentUser = currentUser;
+    }
+
+    public static void setUsers(ArrayList<User> users) {
+        App.users = users;
+    }
+
+    public static User getStayedLoggedInUser() {
+        return stayedLoggedInUser;
+    }
+
+    public static void setStayedLoggedInUser(User stayedLoggedInUser) {
+        App.stayedLoggedInUser = stayedLoggedInUser;
+    }
+
+    public static Map getGameMap() {
+        return gameMap;
+    }
+
+    public static void setGameMap(Map gameMap) {
+        App.gameMap = gameMap;
     }
 }

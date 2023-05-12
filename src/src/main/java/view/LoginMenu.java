@@ -19,9 +19,8 @@ public class LoginMenu {
         String regexNotStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+))$";
         String regexStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+)) \\-\\-stay\\-logged\\-in$";
         String regexForgotPass = "^forgot my password -u \"?([^\"]*)\"?$";
+        while (true) {
 
-        if (flagLoggedIn == false) {
-            while (true) {
                 command = scanner.nextLine();
 
                 // .::           Login Commands           ::.
@@ -31,9 +30,9 @@ public class LoginMenu {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
-                        // ---->>>> nextMenu.run();
                         MainMenu mainMenu = new MainMenu();
                         mainMenu.run(scanner);
+                        return;
                     }
                 }
 
@@ -42,9 +41,9 @@ public class LoginMenu {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
-                        // ---->>>> nextMenu.run();
                         MainMenu mainMenu = new MainMenu();
                         mainMenu.run(scanner);
+                        return;
                     }
                     flagLoggedIn = true;
                 }
@@ -59,7 +58,7 @@ public class LoginMenu {
                 else {
                     System.out.println("Invalid command");
                 }
-            }
+
         }
     }
 }
