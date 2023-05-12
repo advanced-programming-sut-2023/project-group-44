@@ -20,7 +20,6 @@ public class Unit extends People {
     private int attackDistance;
     private int defencePower;
     private int speed;
-    private int hp;
     private boolean canClimb;
 
     public Unit(Type type, Governance owner, int hp, RoleUnit role) {

@@ -144,7 +144,7 @@ public class MapController {
         App.gameMap.getBlock(x,y).setTexture("ground");
         App.gameMap.getBlock(x,y).setBuilding(null);
         App.gameMap.getBlock(x,y).setTree(null);
-        App.gameMap.getBlock(x,y).setUnits(new ArrayList<>());
+        App.gameMap.getBlock(x,y).getUnits().clear();
         return "Clear the block was successful";
     }
 
@@ -154,7 +154,7 @@ public class MapController {
         App.gameMap.getBlock(x,y).setTexture("rock");
         App.gameMap.getBlock(x,y).setBuilding(null);
         App.gameMap.getBlock(x,y).setTree(null);
-        App.gameMap.getBlock(x,y).setUnits(new ArrayList<>());
+        App.gameMap.getBlock(x,y).getUnits().clear();
         if(direction.equals("random")) App.gameMap.getBlock(x,y).setRockDirection("n");
         else App.gameMap.getBlock(x,y).setRockDirection(direction);
         return "drop rock was successful";
