@@ -9,7 +9,7 @@ import model.People.Type;
 import model.People.Workers.RoleWorker;
 import model.People.Workers.Worker;
 
-public class SelectBuildingController {
+public class BuildingMenuController {
 
     public static boolean selectErrors(int x, int y){
         if(App.gameMap.getBlock(x,y).getBuilding() == null){
