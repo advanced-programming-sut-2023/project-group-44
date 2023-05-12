@@ -9,12 +9,9 @@ public class UnitMenuController {
 
 
     // .:: Move Unit Controller ::.
-    public static UnitMenuMessages moveUnit(int x, int y) {
+    public static UnitMenuMessages moveUnitTo(int x, int y) {
         if (!checkIndex(x, y)) { 
             return UnitMenuMessages.INVALID_COORDINATION;
-        }
-        if (!checkUnitExistence(x, y)) { 
-            return UnitMenuMessages.NO_UNIT;
         }
         for (Unit unit : GameMenuController.selectedUnits) {
             Block destination = GameMenuController.currentMap.getBlock(x, y);
@@ -24,13 +21,7 @@ public class UnitMenuController {
     }
 
     // .:: Set State Controller ::.
-    public static UnitMenuMessages setUnitState(int x, int y, State state) {
-        if (!checkIndex(x, y)) { 
-            return UnitMenuMessages.INVALID_COORDINATION;
-        }
-        if (!checkUnitExistence(x, y)) { 
-            return UnitMenuMessages.NO_UNIT;
-        }
+    public static UnitMenuMessages setUnitState(State state) {
         for (Unit unit : GameMenuController.selectedUnits) {
             unit.setState(state);
         }
@@ -38,12 +29,9 @@ public class UnitMenuController {
     }
 
     // .:: Patrol Unit Controller ::.
-    public static UnitMenuMessages patrolUnit(int x1, int y1, int x2, int y2) {
-        if (!checkIndex(x1, y1) || !checkIndex(x2, y2)) { 
+    public static UnitMenuMessages patrolUnit(int x, int y) {
+        if (!checkIndex(x, y)) {
             return UnitMenuMessages.INVALID_COORDINATION;
-        }
-        if (!checkUnitExistence(x1, y1)) { 
-            return UnitMenuMessages.NO_UNIT;
         }
         // ....
         // ....
