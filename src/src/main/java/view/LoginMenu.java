@@ -19,9 +19,9 @@ public class LoginMenu {
         String regexNotStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+))$";
         String regexStay = "^user login (?=.*-u\\s)(?=.*-p\\s)(?:.*-u\\s(\\S+)\\s?-p\\s(\\S+)|.*-p\\s(\\S+)\\s?-u\\s(\\S+)) \\-\\-stay\\-logged\\-in$";
         String regexForgotPass = "^forgot my password -u \"?([^\"]*)\"?$";
+        while (true) {
+            if (App.getStayedLoggedInUser() == null) {
 
-        if (flagLoggedIn == false) {
-            while (true) {
                 command = scanner.nextLine();
 
                 // .::           Login Commands           ::.
@@ -59,6 +59,11 @@ public class LoginMenu {
                 else {
                     System.out.println("Invalid command");
                 }
+            }else {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.run(scanner);
+                App.setStayedLoggedInUser(null);
+                return;
             }
         }
     }

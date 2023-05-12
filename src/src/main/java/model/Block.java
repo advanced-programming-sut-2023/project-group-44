@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Block {
     int x, y;
     private String texture;
+    private String rockDirection;
     private Building building;
     private Tree tree;
     private ArrayList<Unit> units;
@@ -48,6 +49,15 @@ public class Block {
 
     public void addUnit(Unit unit) {
         this.units.add(unit);
+    }
+    public void setUnits(ArrayList<Unit> units){ this.units = units;}
+
+    public String getRockDirection() {
+        return rockDirection;
+    }
+
+    public void setRockDirection(String rockDirection) {
+        this.rockDirection = rockDirection;
     }
 }
 
