@@ -3,41 +3,42 @@ package model;
 public enum Things {
 
     // Resources
-    WOOD("wood", "resource", 1000, 1, 1),
-    STONE("stone", "resource",500, 2, 1 ),
-    IRON("iron", "resource",250, 4, 2),
-    PITCH("pitch", "resource",750, 2, 2),
-    // Raw Materials
-    WHEAT("wheat","raw", 1000, 5, 3),
-    FLOUR("flour", "raw",1000, 10, 5),
+    WOOD("wood", "resource", 1000,10, 3, 2),
+    STONE("stone", "resource",500,10, 5, 3 ),
+    IRON("iron", "resource",250,10, 8, 6),
+    PITCH("pitch", "resource",750,10, 6, 4),
     // Foods
-    MEAT("meat", "food",50, 10, 5),
-    DAIRY("dairy",  "food",100, 9, 4),
-    FRUIT("fruit",  "food",100, 3, 2),
-    BREAD("bread",  "food",50, 5, 3),
-    DRINK("drink",  "food",25, 3, 2),
+    WHEAT("wheat","raw", 1000,25, 5, 4),
+    HOP("hop","raw",1000,25,5,4),
+    FLOUR("flour", "raw",1000,20, 5, 4),
+    MEAT("meat", "food",50,7, 2, 1),
+    CHEESE("cheese",  "food",100,30, 5, 4),
+    APPLE("apple",  "food",100,50, 5, 3),
+    BREAD("bread",  "food",50,15, 5, 4),
+    BEER("beer",  "food",25,15, 5, 4),
     // Herd
-    HORSE("horse", "herd", 10, 0, 0),
-    COW("cow", "herd", 3, 0, 0),
+    HORSE("horse", "herd", 10,3, 2, 1),
+    COW("cow", "herd", 3,3, 2, 1),
     // Weapons
-    BOW("bow", "weapon", 5, 16, 8),
-    CROSSBOW("crossbow",  "weapon", 5, 16, 8),
-    SPEAR("spear",  "weapon", 5, 12, 6),
-    PIKE("pike",  "weapon", 5, 24, 12),
-    MACE("mace",  "weapon", 5, 32, 16),
-    SWORD("swords",  "weapon", 5, 32, 16),
-    LEATHER_ARMOR("Leather armor",  "weapon", 5, 24, 12),
-    METAL_ARMOR("metal armor",  "weapon", 5, 32, 16);
+    BOW("bow", "weapon", 5,5, 4, 2),
+    SPEAR("spear",  "weapon", 5,5, 4, 2),
+    MACE("mace",  "weapon", 5,5, 3, 2),
+    SWORD("swords",  "weapon", 5,5, 3, 2),
+    LEATHER_ARMOR("Leather armor",  "weapon", 5,10, 2, 1),
+    METAL_ARMOR("metal armor",  "weapon", 5,5, 2, 1),
+    MELTING_POT("melting pot","weapon",5,4,2,1);
     private final String name;
     private final String type;
     private int count;
+    private final int numberOfSalesPerBuyOrSell;
     private final double purchasePrice;
     private final double sellPrice;
 
-    Things(String name, String type, int count, double purchasePrice, double sellPrice) {
+    Things(String name, String type, int count, int numberOfSalesPerBuyOrSell, double purchasePrice, double sellPrice) {
         this.name = name;
         this.type = type;
         this.count = count;
+        this.numberOfSalesPerBuyOrSell=numberOfSalesPerBuyOrSell;
         this.purchasePrice = purchasePrice;
         this.sellPrice = sellPrice;
     }
@@ -52,6 +53,10 @@ public enum Things {
 
     public int getCount() {
         return count;
+    }
+
+    public int getNumberOfSalesPerBuyOrSell() {
+        return numberOfSalesPerBuyOrSell;
     }
 
     public double getPurchasePrice() {
