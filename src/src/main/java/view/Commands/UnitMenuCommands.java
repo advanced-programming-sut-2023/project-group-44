@@ -12,7 +12,7 @@ public enum UnitMenuCommands {
     ATTACK_ENEMY ("^attack -e (?<x>[0-9]+) (?<y>[0-9]+)$"),
     ATTACK_AIR ("^attack(?=.*\\s+-x\\s+(?<enemyX>[0-9]+))(?=.*\\s+-y\\s+(?<enemyY>[0-9]+)).*$"),
     POUR_OIL ("^pour oil -d (?<direction>[n|s|w|e])"),
-    DIF_TUNNEL ("^dig tunnel(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
+    DIG_TUNNEL ("^dig tunnel(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
     BUILD_EQUIPMENT ("^build \\-q (?<equipment>\\S+)$"),
     DISBAND ("^disband$");
 
