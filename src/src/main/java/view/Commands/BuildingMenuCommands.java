@@ -12,15 +12,6 @@ public enum BuildingMenuCommands {
     HIRE_SOLDIERS ("hire\\s+number:\\s+(?<numberOfPeople>\\d+)\\s+type:\\s+(?<typeOfPeople>\\w+)"),
     CREATE_UNIT ("^create unit(?=.*\\s+-t\\s+(?<type>\\S+))(?=.*\\s+-c\\s+(?<count>[0-9]+)).*$");
 
-
-
-
-
-
-
-
-
-
     public String RegEx;
     BuildingMenuCommands (String RegEx){
         this.RegEx = RegEx;
