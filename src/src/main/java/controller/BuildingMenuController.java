@@ -85,6 +85,32 @@ public class BuildingMenuController {
                 }
             }
         }
+        
+            public static BuildingMenuMessages createUnit(String type, int count, int x, int y) {
+        Governance governance = App.getCurrentUser().getGovernance();
+        Block block = App.gameMap.getBlock(x, y);
+        if (count <= 0) {
+            return BuildingMenuMessages.INVALID_COUNT;
+        } else if (governance.getFreePopulation() < count) {
+            return BuildingMenuMessages.INSUFFICIENT_HUMAN_RESOURCE;
+        }
+//        else if ()
+        else if (type.equalsIgnoreCase("engineer")) {
+            Engineer engineer = new Engineer(governance, 100, 10, 10, false, true);
+            block.addEngineer(engineer);
+            engineer.setBlock(block);
+            return BuildingMenuMessages.SUCCESS;
+        } else if (RoleUnit.convertEnumRoleUnit(type) == null) {
+            return BuildingMenuMessages.INVALID_ROLE;
+        } else {
+            RoleUnit role = RoleUnit.convertEnumRoleUnit(type);
+            Unit unit = new Unit(Type.UNIT, governance, 100, role);
+            block.addUnit(unit);
+            unit.setBlock(block);
+            return BuildingMenuMessages.SUCCESS;
+        }
+    }
+        
         else System.out.println("invalid command!");
     }
 }
