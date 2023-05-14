@@ -1,5 +1,6 @@
 package controller;
 
+import model.App;
 import model.Block;
 import model.People.Engineer;
 import model.People.Units.Enums.State;
@@ -16,7 +17,7 @@ public class UnitMenuController {
             return UnitMenuMessages.INVALID_COORDINATION;
         }
         for (Unit unit : GameMenuController.getSelectedUnits()) {
-            Block destination = GameMenuController.currentMap.getBlock(x, y);
+            Block destination = App.gameMap.getBlock(x, y);
             unit.setBlock(destination);
         }
         return UnitMenuMessages.SUCCESS;
@@ -74,7 +75,7 @@ public class UnitMenuController {
 
     /* This method checks whether the given indices are inside the map.*/
     public static boolean checkIndex(int x, int y) {
-        if (GameMenuController.currentMap.getLengthOfMap() < x || GameMenuController.currentMap.getLengthOfMap() < y || x < 0 || y < 0) {
+        if (App.gameMap.getLengthOfMap() < x || App.gameMap.getLengthOfMap() < y || x < 0 || y < 0) {
             return false;
         }
         return true;
@@ -82,7 +83,7 @@ public class UnitMenuController {
 
     /* This method checks if there is any unit in the given block.*/
     public static boolean checkUnitExistence(int x, int y) {
-        Block block = GameMenuController.currentMap.getBlock(x, y);
+        Block block = App.gameMap.getBlock(x, y);
         if (block.getUnits().isEmpty()) {
             return false;
         }
