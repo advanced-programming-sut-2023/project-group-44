@@ -32,7 +32,7 @@ public class GameMenu {
             }
 
             // .:: Show Food List ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_FOOD_LIST)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.SHOW_FOOD_LIST) != null) {
                 GovernanceController.showFoodList();
             }
 
@@ -155,12 +155,14 @@ public class GameMenu {
                 }
             }
             // .:: Open TradeMenu ::.
-            else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU)) != null) {
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.OPEN_TRADE_MENU) != null) {
                 TradeMenu tradeMenu = new TradeMenu();
                 tradeMenu.run(scanner);
-            } else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN)) != null) {
+            }
+
+            // .:: Next Turn ::.
+            else if (GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN) != null) {
                 Controller.nextTurn();
-                return;
             }
 
             // .:: Back ::.
@@ -171,6 +173,7 @@ public class GameMenu {
             // .:: Invalid Command ::.
             else {
                 System.out.println("Invalid command");
+                break;
             }
         }
     }
