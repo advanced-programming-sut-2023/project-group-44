@@ -226,7 +226,7 @@ public class BuildingController {
                 governance.addBuilding(market);
                 break;
             case "ox tether":
-                //******************************************************************************************************
+
                 break;
             case "pitch rig":
                 if (!(App.gameMap.getBlock(x, y).getTexture().equals("plain"))) {

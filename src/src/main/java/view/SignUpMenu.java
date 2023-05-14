@@ -38,17 +38,5 @@ public class SignUpMenu {
                 return;
             }
         }
-        //System.out.println("entered signUpMenu");
-         /*SignUpMenuController.signUpMenuGuid(command,scanner);
-         while(true){
-             command = scanner.nextLine();
-             if((matcher = LoginMenuController.getMatcher(command,userCreateRegex)) != null){
-                 String output = SignUpMenuController.userCreate(matcher,scanner);
-                 System.out.println(output);
-                 if(output.equals("Successful signup"))
-                     SignUpMenuController.signUpMenuGuid(command,scanner);
-             }else if((matcher = LoginMenuController.getMatcher(command,"^end$")) != null){
-                 return;
-             }else System.out.println("Invalid command");*/
     }
 }

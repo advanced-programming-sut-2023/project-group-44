@@ -9,7 +9,6 @@ import model.People.Workers.Worker;
 import java.util.ArrayList;
 
 public class Governance {
-    private User owner;
     private int capacity;
     private int popularity;
     private int foodRate;
@@ -30,7 +29,7 @@ public class Governance {
     private Treasury treasury;
 
     public Governance(User owner) {
-        this.owner = owner;
+
         this.capacity = 0;
         this.popularity = 0;
         this.foodRate = 0;
@@ -50,9 +49,7 @@ public class Governance {
         this.religionFactorPopularity = 0;
     }
 
-    public User getOwner() {
-        return owner;
-    }
+
 
     public int getPopularity() {
         return popularity;

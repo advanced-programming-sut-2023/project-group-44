@@ -1,6 +1,7 @@
 package controller;
 
 import model.App;
+import model.Governance;
 import model.User;
 import view.LoginMenu;
 
@@ -137,6 +138,8 @@ public class SignUpMenuController {
         if (App.getUserByEmail(matcher.group("email")) != null) return "A user with this email already exists";
         if (!matcher.group("email").matches("^[\\w_\\.]+@[\\w_]+\\.?[\\w+]+\\.[\\w_]+$")) return "Invalid email format";
         User user = new User(userName, password, deleteQuotations(matcher.group("nickname")), matcher.group("email"));
+        Governance governance = new Governance(user);
+        user.setGovernance(governance);
         if (matcher.group("slogan") != null) {
             if (matcher.group("slogan").startsWith("-"))
                 return "Empty slogan field";

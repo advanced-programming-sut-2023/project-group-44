@@ -1,5 +1,7 @@
 package model;
 
+import controller.dataBaseJSON;
+
 import java.util.ArrayList;
 
 public class App {
@@ -8,6 +10,8 @@ public class App {
     private static ArrayList<User> users = new ArrayList<>();
     private static ArrayList<Requests> tradeList = new ArrayList<>();
     public static Map gameMap = new Map(400);
+
+    public static boolean nextTurn = false;
     
     public static ArrayList<User> getUsers() {
         return users;

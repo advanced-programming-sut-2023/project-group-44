@@ -62,4 +62,9 @@ public class dataBaseJSON {
         fileWriter.write("");
         fileWriter.close();
     }
+    public static void emptyUserJSOn() throws IOException {
+        FileWriter fileWriter = new FileWriter("usersData.json");
+        fileWriter.write("");
+        fileWriter.close();
+    }
 }

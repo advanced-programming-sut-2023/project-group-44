@@ -160,6 +160,7 @@ public class GameMenu {
                 tradeMenu.run(scanner);
             } else if ((matcher = GameMenuCommands.getMatcher(command, GameMenuCommands.NEXT_TURN)) != null) {
                 Controller.nextTurn();
+                return;
             }
 
             // .:: Back ::.
@@ -170,7 +171,6 @@ public class GameMenu {
             // .:: Invalid Command ::.
             else {
                 System.out.println("Invalid command");
-                break;
             }
         }
     }

@@ -18,6 +18,10 @@ public class MainMenu {
             if((matcher = LoginMenuController.getMatcher(command,"^game\\s+menu$")) != null){
                 GameMenu gameMenu = new GameMenu();
                 gameMenu.run(scanner);
+                if(App.nextTurn){
+                    App.nextTurn = false;
+                    return;
+                }
             }else if((matcher = LoginMenuController.getMatcher(command,"^profile\\s+menu$")) != null){
                 ProfileMenu profileMenu = new ProfileMenu();
                 profileMenu.run(scanner);

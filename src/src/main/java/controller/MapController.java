@@ -13,25 +13,25 @@ public class MapController {
         String map = "";
         for (int j = 0; j < 5; j++) {
             for (int i = 0; i < 11; i++) {
-                if (x - 6 + i >= 0 && y - 3 + j >= 0) {
-                    map += "|" + mapObj(x - 6 + i - 1, y - 3 + j - 1);
+                if ((x - 5 + i) >= 0 && (y - 2 + j) >= 0) {
+                    map += "|" + mapObj(x - 5 + i , y - 2 + j );
                     if (i == 10) map += "|\n";
                 }
             }
             for (int i = 0; i < 11; i++) {
-                if (x - 6 + i >= 0 && y - 3 + j >= 0) {
+                if (x - 5 + i >= 0 && y - 2 + j >= 0) {
                     map += "|######";
                     if (i == 10) map += "|\n";
                 }
             }
             for (int i = 0; i < 11; i++) {
-                if (x - 6 + i >= 0 && y - 3 + j >= 0) {
+                if (x - 5 + i >= 0 && y - 2 + j >= 0) {
                     map += "|######";
                     if (i == 10) map += "|\n";
                 }
             }
             for (int i = 0; i < 11; i++) {
-                if (x - 6 + i >= 0 && y - 3 + j >= 0) {
+                if (x - 5 + i >= 0 && y - 2 + j >= 0) {
                     map += "-------";
                 }
             }
@@ -42,11 +42,12 @@ public class MapController {
 
     public static String mapObj(int x, int y) {
         String map = "";
-        if (App.gameMap.arrayOfBlocks[x][y].getBuilding() != null) map += "B";
-        else if (App.gameMap.arrayOfBlocks[x][y].getTree() != null) map += "T";
+        if (App.gameMap.getBlock(x,y).getBuilding() != null) map += "B";
         else map += "#";
-        map += "#";
-        if (!App.gameMap.arrayOfBlocks[x][y].getUnits().isEmpty()) map += "S";
+        if (App.gameMap.getBlock(x,y).getTree() != null) map += "T";
+        else map += "#";
+        //map += "#";
+        if (!App.gameMap.getBlock(x,y).getUnits().isEmpty()) map += "S";
         else map += "#";
         map += "#";
         if (App.gameMap.arrayOfBlocks[x][y].getTexture().equals("ground")) map += "GN";
@@ -115,9 +116,10 @@ public class MapController {
         if(block.getBuilding() != null) output += "building: " + block.getBuilding().getType() + "\n";
         output += "number of units: "+block.getUnits().size() + "\n";
         for(int i = 0; i<block.getUnits().size(); i++) {
-            output += "owner: " + block.getUnits().get(i).getOwner().getOwner().getNickname() + " unitName: " +
+            output += " unitName: " +
                     block.getUnits().get(i).getType();
         }
+        System.out.println(output);
     }
 
     public static String setTexture(int x1,int y1,int x2,int y2,String type){

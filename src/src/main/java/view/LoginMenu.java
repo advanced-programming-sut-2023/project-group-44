@@ -31,6 +31,7 @@ public class LoginMenu {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
+                        App.setCurrentUser(App.getUserByUsername(matcher.group(1)));
                         MainMenu mainMenu = new MainMenu();
                         mainMenu.run(scanner);
                         return;
@@ -42,6 +43,7 @@ public class LoginMenu {
                     String username = matcher.group(1) != null ? matcher.group(1) : matcher.group(4);
                     String password = matcher.group(2) != null ? matcher.group(2) : matcher.group(3);
                     if (LoginMenuController.loginWithRetry(username, password, scanner)) {
+                        App.setCurrentUser(App.getUserByUsername(matcher.group(1)));
                         MainMenu mainMenu = new MainMenu();
                         mainMenu.run(scanner);
                         return;

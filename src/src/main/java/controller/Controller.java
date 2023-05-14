@@ -1,10 +1,13 @@
 package controller;
 
 import model.App;
+import model.Buildings.Armory;
 import model.Buildings.Building;
 import model.Buildings.FoodProcessingBuildings;
+import model.Buildings.Treasury;
 import model.Governance;
 import model.Things;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -154,10 +157,71 @@ public class Controller {
     }
 
     public static void nextTurn(){
+        Governance governance = App.getCurrentUser().getGovernance();
+        FoodProcessingBuildings foodStockpile = null;
+        Treasury treasury = null;
+        Armory armory = null;
         taxCollect();
         foodEffect();
         fearEffect();
         religionEffect();
+        for(Building x: governance.getBuildings()){
+            if(x.getType().equals("food stockpile")){
+                foodStockpile = (FoodProcessingBuildings) x;
+                break;
+            }
+        }
+        for(Building x: governance.getBuildings()){
+            if(x.getType().equals("treasury")){
+                treasury = (Treasury) x;
+                break;
+            }
+        }
+        for(Building x: governance.getBuildings()){
+            if(x.getType().equals("armory")){
+                armory = (Armory) x;
+                break;
+            }
+        }
+        for(Building x: governance.getBuildings()){
+            if(x.getType().equals("inn"))
+                governance.setPopularity(governance.getPopularity()+1);
+            else if(x.getType().equals("mill"))
+                foodStockpile.addFoodInStorage("flour",30);
+            else if(x.getType().equals("iron mine"))
+                treasury.addIron(30);
+            else if(x.getType().equals("pitch rig"))
+                treasury.addPitch(30);
+            else if(x.getType().equals("quarry"))
+                treasury.addStones(30);
+            else if(x.getType().equals("woodcutter"))
+                treasury.addWoods(30);
+            else if(x.getType().equals("armourer")){
+                treasury.addIron(-10);
+                armory.addMetalArmor(10);
+            }else if(x.getType().equals("blacksmith")){
+                treasury.addIron(-20);
+                armory.addSword(10);
+                armory.addMace(10);
+            }else if(x.getType().equals("fletcher")){
+                treasury.addWoods(-10);
+                armory.addBow(10);
+            }else if(x.getType().equals("apple garden"))
+                foodStockpile.addFoodInStorage("apple",10);
+            else if(x.getType().equals("dairy products")){
+                armory.addLeatherArmor(10);
+                foodStockpile.addFoodInStorage("cheese",10);
+            }else if(x.getType().equals("hop farm"))
+                foodStockpile.addFoodInStorage("hop",10);
+            else if(x.getType().equals("hunting post"))
+                foodStockpile.addFoodInStorage("meat",10);
+            else if(x.getType().equals("wheat farm"))
+                foodStockpile.addFoodInStorage("wheat",10);
+            else if(x.getType().equals("bakery"))
+                foodStockpile.addFoodInStorage("bread",10);
+            else if(x.getType().equals("brewery"))
+                foodStockpile.addFoodInStorage("beer",10);
+        }
+        App.nextTurn = true;
     }
-
 }

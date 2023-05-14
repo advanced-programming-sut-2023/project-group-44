@@ -10,7 +10,6 @@ public class Main {
 
 
         dataBaseJSON.initializeUsers();
-        //dataBaseJSON.initializeStayLoggInUser();
         dataBaseJSON.initializeMap();
 
         Scanner scanner = new Scanner(System.in);
@@ -19,7 +18,6 @@ public class Main {
 
         dataBaseJSON.emptyMapJSOn();
         dataBaseJSON.saveUsersInJSON();
-        //dataBaseJSON.saveStayLoggedInUserInJSON();
         dataBaseJSON.saveMapInJSON();
 
     }

@@ -14,13 +14,7 @@ public class User {
     private int highScore;
     private Governance governance;
     private ArrayList<Requests> listOfRequests;
-    /* static private HashMap<Integer,String> numberOfQuestionToMainQuestion=new HashMap<>(){
-        {
-            numberOfQuestionToMainQuestion.put(1, "What is my father’s name?");
-            numberOfQuestionToMainQuestion.put(2, "What was my first pet’s name?");
-            numberOfQuestionToMainQuestion.put(3,"What is my mother’s last name?" );
-        }
-    };*/
+
     private int numberOfSecurityQuestion;
     private String securityQuestion;
     private String answerOfSecurityQuestion;
@@ -66,17 +60,7 @@ public class User {
         return Email;
     }
 
-    /*public static HashMap<Integer, String> getNumberOfQuestionToMainQuestion() {
-        return numberOfQuestionToMainQuestion;
-    }*/
 
-    /*public int getNumberOfRecoveryQuestion() {
-        return numberOfRecoveryQuestion;
-    }
-
-    public String getAnswerOfRecoveryQuestion() {
-        return answerOfRecoveryQuestion;
-    }*/
 
     public String getSlogan() {
         return slogan;
