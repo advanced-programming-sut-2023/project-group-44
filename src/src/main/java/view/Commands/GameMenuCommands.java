@@ -14,7 +14,7 @@ public enum GameMenuCommands {
     TAX_RATE_DETERMINATION ("^tax\\s+rate\\s+-r\\s+(?<rateNumber>[0-8]|\\-[1-3])$"),
     TAX_RATE_SHOW ("^tax\\s+rate\\s+show$"),
     FEAR_RATE_DETERMINATION ("^fear\\s+rate\\s+-r\\s+(?<rateNumber>[0-5]|\\-[1-5])$"),
-    DROP_BUILDING ("^drop building(?=.*\\s+-x\\s+(<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[^\"]+\"|\\S+)).*$"),
+    DROP_BUILDING ("^drop building(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+))(?=.*\\s+-type\\s+(?<type>\"[^\"]+\"|\\S+)).*$"),
     DROP_UNIT("^drop unit \\-x (?<x>\\d+) \\-y (?<y>\\d+) \\-t (?<type>\\S+) \\-c (?<count>\\d+)$"),
     SELECT_BUILDING ("^select\\s+building(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),
     SELECT_UNIT ("^select\\s+unit(?=.*\\s+-x\\s+(?<x>[0-9]+))(?=.*\\s+-y\\s+(?<y>[0-9]+)).*$"),

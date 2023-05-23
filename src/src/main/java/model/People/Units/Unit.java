@@ -1,6 +1,7 @@
 package model.People.Units;
 
 import controller.GameMenuController;
+import model.App;
 import model.Block;
 import model.Governance;
 import model.People.Units.Enums.RoleUnit;
@@ -35,7 +36,7 @@ public class Unit extends People {
     }
 
     public static ArrayList<Unit> getUnitsByBlock(int x, int y) {
-        Block block = GameMenuController.currentMap.getBlock(x, y); // What block do we want?
+        Block block = App.gameMap.getBlock(x, y); // What block do we want?
         return block.getUnits();
     }
 
