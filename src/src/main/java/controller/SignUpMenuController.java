@@ -40,6 +40,12 @@ public class SignUpMenuController {
         else return userName;
     }
 
+    public static boolean usernameValidationFx(String username) {
+        if (!username.matches("^[a-zA-Z0-9\\s_]+$"))
+            return false;
+        else return true;
+    }
+
     public static String randomUsername(String name, Scanner scanner) {
         for (int i = 0; ; i++) {
             if (App.getUserByUsername(name + i) == null) {
@@ -80,6 +86,16 @@ public class SignUpMenuController {
         if (!password.equals(deleteQuotations(matcher.group("passwordConfirmation"))))
             return "Incorrect password confirmation";
         return null;
+    }
+
+    public static boolean passwordValidationFx(String password) {
+        if (!password.matches("(?=.*[a-z]).+")) return false;
+        if (!password.matches("(?=.*[A-Z]).+")) return false;
+        if (!password.matches("(?=.*[0-9]).+")) return false;
+        if (!password.matches("(?=.*[\\W]).+")) return false;
+        if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W]).{6,}$"))
+            return false;
+        return true;
     }
 
     public static String slogan(Matcher matcher) {
