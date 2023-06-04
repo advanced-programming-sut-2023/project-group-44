@@ -63,3 +63,8 @@ PasswordField{
 .button:default {
     -fx-base: -fx-accent ;
 }
+
+.check-box {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}

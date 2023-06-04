@@ -75,6 +75,23 @@ public class SignUpMenuController {
         else return password;
     }
 
+    public static String randomPasswordFx(){
+        String password;
+        String randomCapitalLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String randomSmallLetter = "abcdefghijklmnopqrstuvwxyz";
+        String randomNumber = "0123456789";
+        String randomCharacter = "~!@#$%^&*_/";
+        StringBuilder sb = new StringBuilder(16);
+        for (int i = 0; i < 4; i++) {
+            sb.append(randomSmallLetter.charAt((int) (randomSmallLetter.length() * Math.random())));
+            sb.append(randomCharacter.charAt((int) (randomCharacter.length() * Math.random())));
+            sb.append(randomCapitalLetter.charAt((int) (randomCapitalLetter.length() * Math.random())));
+            sb.append(randomNumber.charAt((int) (randomNumber.length() * Math.random())));
+        }
+        password = sb.toString();
+        return password;
+    }
+
     public static String passwordValidation(Matcher matcher) {
         String password = deleteQuotations(matcher.group("password"));
         if (!password.matches("(?=.*[a-z]).+")) return "Weak password: small letter leak";
@@ -96,6 +113,12 @@ public class SignUpMenuController {
         if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W]).{6,}$"))
             return false;
         return true;
+    }
+
+    public static boolean emailValidationFx(String email){
+        if(email.matches("^[\\w_\\.]+@[\\w_]+\\.?[\\w+]+\\.[\\w_]+$"))
+            return true;
+        else  return false;
     }
 
     public static String slogan(Matcher matcher) {

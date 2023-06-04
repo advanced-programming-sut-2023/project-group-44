@@ -25,12 +25,13 @@
                 <PasswordField promptText="password" fx:id="password"/>
                 <Label text="" styleClass="label-small" id="passwordLabel" fx:id="passwordLabel"/>
                 <HBox alignment="CENTER" spacing="5">
-                <Button text="show password" />
-                <Button text="random password" />
+                <Button text="show password" onMouseClicked="#showPassword"/>
+                <Button text="random password" onMouseClicked="#randomPassword"/>
                 </HBox>
                 <TextField promptText="nickname" styleClass="nickname" fx:id="nickname"/>
                 <TextField promptText="email" styleClass="text-input" fx:id="email"/>
-
+                <Label text="" styleClass="label-small" id="emailLabel" fx:id="emailLabel"/>
+                <CheckBox text="slogan" onMouseClicked="#slogan"/>
             </VBox>
         </VBox>
     </center>

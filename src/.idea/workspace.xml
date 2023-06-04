@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="start javafx">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
+    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="fxml for signup">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/wallpaper.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +42,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Asus/Desktop/JAVA programs/aa"
+    "last_opened_file_path": "C:/Users/Asus/Desktop/AP-project/src/src/main/resources/images"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\Desktop\AP-project\src\src\main\resources\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\Desktop\AP-project\src\.idea" />
     </key>
@@ -107,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685882561171</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fxml for signup">
+      <created>1685887222362</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685887222362</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +137,7 @@
     <MESSAGE value="add placement of elements" />
     <MESSAGE value="add JSON" />
     <MESSAGE value="start javafx" />
-    <option name="LAST_COMMIT_MESSAGE" value="start javafx" />
+    <MESSAGE value="fxml for signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fxml for signup" />
   </component>
 </project>
