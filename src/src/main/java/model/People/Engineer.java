@@ -23,7 +23,7 @@ public class Engineer extends People {
     }
 
     public static ArrayList<Engineer> getEngineersByBlock(int x, int y) {
-        Block block = App.gameMap.getBlock(x, y);
+        Block block = App.getGameMap().getBlock(x, y);
         return block.getEngineers();
     }
 }

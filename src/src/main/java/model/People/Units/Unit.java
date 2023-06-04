@@ -36,7 +36,7 @@ public class Unit extends People {
     }
 
     public static ArrayList<Unit> getUnitsByBlock(int x, int y) {
-        Block block = App.gameMap.getBlock(x, y); // What block do we want?
+        Block block = App.getGameMap().getBlock(x, y); // What block do we want?
         return block.getUnits();
     }
 
