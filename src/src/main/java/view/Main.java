@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Main extends Application{
+public class Main extends Application {
     public Label usernameLabel;
     public Label passwordLabel;
     public Label emailLabel;
@@ -30,6 +30,7 @@ public class Main extends Application{
     public Tooltip toolTip = new Tooltip();
     public boolean hidePassword = true;
     public static Stage stage;
+
     public static void main(String[] args) throws IOException {
 
         //File file = new File("usersData.json");
@@ -70,27 +71,28 @@ public class Main extends Application{
         Background bGround = new Background(bImg);
         pane.setBackground(bGround);
 
-        
+
         Scene scene = new Scene(pane);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
     public void initialize() {
-        username.textProperty().addListener((observable, oldText, newText)->{
-            if(SignUpMenuController.usernameValidationFx(newText))
+        username.textProperty().addListener((observable, oldText, newText) -> {
+            if (SignUpMenuController.usernameValidationFx(newText))
                 usernameLabel.setText("*valid username format");
             else usernameLabel.setText("*Invalid username format");
         });
-        password.textProperty().addListener((observable, oldText, newText)->{
-            if(SignUpMenuController.passwordValidationFx(newText))
+        password.textProperty().addListener((observable, oldText, newText) -> {
+            if (SignUpMenuController.passwordValidationFx(newText))
                 passwordLabel.setText("*valid password format");
             else passwordLabel.setText("*Invalid password format");
-            if(!hidePassword) toolTip.setText(newText);
+            if (!hidePassword) toolTip.setText(newText);
         });
-        email.textProperty().addListener((observable, oldText, newText)->{
-            if(SignUpMenuController.emailValidationFx(newText))
+        email.textProperty().addListener((observable, oldText, newText) -> {
+            if (SignUpMenuController.emailValidationFx(newText))
                 emailLabel.setText("*valid email format");
             else emailLabel.setText("*Invalid email format");
         });
@@ -104,7 +106,7 @@ public class Main extends Application{
                     p.getX() + stage.getScene().getX() + stage.getX(),
                     p.getY() + stage.getScene().getY() + stage.getY());
             hidePassword = false;
-        }else{
+        } else {
             toolTip.setText("");
             toolTip.hide();
             hidePassword = true;
@@ -113,7 +115,7 @@ public class Main extends Application{
 
     public void randomPassword(MouseEvent mouseEvent) {
         String randomPassword = SignUpMenuController.randomPasswordFx();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Random password is : "+ randomPassword, ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Random password is : " + randomPassword, ButtonType.YES, ButtonType.NO);
         alert.showAndWait();
 
         if (alert.getResult() == ButtonType.YES) {
