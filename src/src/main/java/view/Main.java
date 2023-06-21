@@ -7,15 +7,20 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import view.SignUpMenu;
+import java.io.File;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,6 +57,8 @@ public class Main extends Application {
     public Tooltip toolTip = new Tooltip();
     public boolean hidePassword = true;
     public static Stage stage;
+    private Popup popup = new Popup();
+    private Label pLabel = new Label();
     private boolean problem1, problem2, problem3, problem4, problem5 = false; // false is OK
 
 
@@ -75,8 +82,7 @@ public class Main extends Application {
                 BackgroundSize.DEFAULT);
         Background bGround = new Background(bImg);
         pane.setBackground(bGround);
-
-
+        
         Scene scene = new Scene(pane);
         stage.setResizable(false);
         stage.setScene(scene);
@@ -178,6 +184,14 @@ public class Main extends Application {
 
 //        MainLabel.setVisible(false);
 //        MainLabel.setVisible(true);
+
+        pLabel.setText("Successful SignUp!");
+        pLabel.setMinWidth(300);
+        pLabel.setMinWidth(130);
+        pLabel.setStyle("-fx-background-color: #08f080; -fx-font-color: #075238; -fx-font-size: 25; -fx-font-weight: bold");
+        pLabel.setPadding(new Insets(20));
+        popup.getContent().add(pLabel);
+        popup.setAutoHide(true);
     }
 
 
@@ -254,6 +268,7 @@ public class Main extends Application {
                 MainLabel.setText(SignUpMenuController.createUser(aUsername, aPassword, aNickname, anEmail, null));
             else
                 MainLabel.setText(SignUpMenuController.createUser(aUsername, aPassword, aNickname, anEmail, sloganBox.getText()));
+            popup.show(stage);
         }
     }
 
@@ -276,7 +291,6 @@ public class Main extends Application {
         //dataBaseJSON.emptyMapJSOn();
         //dataBaseJSON.saveUsersInJSON();
         //dataBaseJSON.saveMapInJSON();
-
     }
 }
 
