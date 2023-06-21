@@ -65,6 +65,30 @@ public class LoginMenuController {
 
     /* ---------- Forgot Password Process ---------- */
 
+    public static int forgotPassFirstStep (String username, String answer) {
+        User user = App.getUserByUsername(username);
+        if (user != null) { // user found
+            if (user.getAnswerOfSecurityQuestion().equals(answer)) {
+                return 1; // answer matched
+            }
+            return 2; //answer didn't match
+        }
+        return 3; // user not found
+    }
+
+    public static String forgotPassSecondStep (User user, String newPass, String confirmNewPass) {
+        if (newPass.equals(confirmNewPass)) {
+            if (SignUpMenuController.passwordValidationFx(newPass)) {
+                user.setPassword(newPass);
+                return "Password Changed Successfully!";
+            } else {
+                return "Weak Password!";
+            }
+        } else {
+            return "Password Mismatch!";
+        }
+    }
+
     public static void forgotPass(String username, Scanner scanner) {
         User user = App.getUserByUsername(username);
         if (user != null) { // user found

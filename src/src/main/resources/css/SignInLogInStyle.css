@@ -1,0 +1,88 @@
+.bigButton {
+     -fx-padding: 8 15 15 15;
+        -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+        -fx-background-radius: 8;
+        -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #585726 0%, #585726 100%),
+            #727122,
+            #727122,
+            radial-gradient(center 50% 50%, radius 100%, #727122, #727122);
+        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+        -fx-font-weight: bold;
+        -fx-font-family: "Cochin";
+        -fx-font-size: 24;
+
+}
+
+.bigButton:pressed {
+    -fx-padding: 10 15 13 15;
+    -fx-background-insets: 2 0 0 0,2 0 3 0, 2 0 4 0, 2 0 5 0;
+    -fx-font-size: 24;
+
+}
+TextField{
+    -fx-max-width: 300;
+    -fx-min-width: 300;
+    -fx-max-height: 44;
+    -fx-min-height: 44;
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-background-color: #f3f1f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 35;
+    -fx-border-color: #616161 #616161 #616161 #616161;
+    -fx-border-width: 10;
+    -fx-border-insets: 0 0 1 0;
+    -fx-border-style: hidden hidden hidden hidden;
+    -fx-cursor: text;
+    -fx-padding: 0.166667em 1em 0.333333em 1em;
+}
+
+PasswordField {
+    -fx-max-width: 300;
+    -fx-min-width: 300;
+    -fx-max-height: 44;
+    -fx-min-height: 44;
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-background-color: #f3f1f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 35;
+    -fx-border-color: transparent transparent #616161 transparent;
+    -fx-border-width: 1;
+    -fx-border-insets: 0 0 1 0;
+    -fx-border-style: hidden hidden hidden hidden;
+    -fx-cursor: text;
+    -fx-padding: 0.166667em 1em 0.333333em 1em;
+}
+
+.twinButtons {
+    -fx-min-width: 145;
+    -fx-max-width: 145;
+    -fx-max-height: 26;
+    -fx-min-height: 26;
+    -fx-font-family: "Cochin";
+    -fx-font-size: 22px;
+    -fx-background-color: #727122;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+}
+
+.errorField {
+    -fx-prompt-text-fill: red;
+    -fx-background-color: #f7cccc;
+}
+
+.acceptedField {
+-fx-prompt-text-fill: green;
+    -fx-background-color: #b5f1c3;
+}

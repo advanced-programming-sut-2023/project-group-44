@@ -8,10 +8,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginMenu">
-   <center>
+<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginMenu">
       <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="652.0" fitWidth="467.0" layoutX="319.0" layoutY="129.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="414.0" AnchorPane.topAnchor="100.0">
@@ -19,18 +20,27 @@
                   <Image url="@../images/list.png" />
                </image>
             </ImageView>
+         <VBox alignment="CENTER" layoutX="496.0" layoutY="327.0" prefHeight="200.0" prefWidth="216.0">
+            <children>
+                  <Label fx:id="loginStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="185.0">
+                  <font>
+                     <Font name="Cochin" size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
             <Label layoutX="550.0" layoutY="93.0" prefHeight="110.0" prefWidth="137.0" text="Log In">
                <font>
                   <Font name="Cochin" size="40.0" />
                </font>
             </Label>
             <TextField fx:id="username" layoutX="475.0" layoutY="298.0" prefHeight="44.0" prefWidth="260.0" promptText="Username" style="-fx-background-radius: 35;" />
-            <Label layoutX="549.0" layoutY="224.0" text="Enter your">
+            <Label fx:id="text1" layoutX="549.0" layoutY="224.0" text="Enter your">
                <font>
                   <Font name="Cochin" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="logInButton" layoutX="477.0" layoutY="418.0" mnemonicParsing="false" onAction="#onLogInButtonClick" prefHeight="26.0" prefWidth="260.0" style="-fx-background-color: #727122;" text="Log In" textFill="WHITE">
+            <Button fx:id="logInButton" layoutX="477.0" layoutY="446.0" mnemonicParsing="false" onAction="#onLogInButtonClick" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="Log In" textFill="WHITE">
                <font>
                   <Font name="Cochin" size="22.0" />
                </font>
@@ -40,17 +50,34 @@
                <font>
                   <Font name="Cochin" size="13.0" />
                </font></Button>
-            <Label fx:id="forgotPassword" layoutX="517.0" layoutY="474.0" onMouseClicked="#onForgotPassClick" text="Forgot your password?">
+            <Label fx:id="forgotPassword" layoutX="517.0" layoutY="504.0" onMouseClicked="#onForgotPassClick" text="Forgot your password?">
                <font>
                   <Font name="Cochin" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="498.0" layoutY="254.0" text="username and password" textAlignment="CENTER">
+            <Label fx:id="text2" layoutX="500.0" layoutY="254.0" text="username and password" textAlignment="CENTER">
                <font>
                   <Font name="Cochin" size="22.0" />
                </font>
             </Label>
+            <PasswordField fx:id="answerBox" layoutX="476.0" layoutY="535.0" prefHeight="30.0" prefWidth="231.0" promptText="Answer" style="-fx-background-radius: 5;" />
+         <ImageView fx:id="OKButton1" fitHeight="82.0" fitWidth="28.0" layoutX="713.0" layoutY="537.0" onMouseClicked="#onFirstOKClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/OKButton.png" />
+            </image>
+         </ImageView>
+         <PasswordField fx:id="newPass" layoutX="476.0" layoutY="535.0" prefHeight="30.0" prefWidth="231.0" promptText="New Password" style="-fx-background-radius: 5;" />
+         <PasswordField fx:id="confirmNewPass" layoutX="476.0" layoutY="569.0" prefHeight="30.0" prefWidth="231.0" promptText="New Password" style="-fx-background-radius: 5;" />
+         <ImageView fx:id="OKButton2" fitHeight="82.0" fitWidth="28.0" layoutX="713.0" layoutY="573.0" onMouseClicked="#onSecondOKClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/OKButton.png" />
+            </image>
+         </ImageView>
+         <Label fx:id="forgotPassLabel" layoutX="585.0" layoutY="610.0">
+            <font>
+               <Font name="Cochin" size="14.0" />
+            </font>
+         </Label>
          </children>
       </AnchorPane>
-   </center>
-</BorderPane>
+</Pane>

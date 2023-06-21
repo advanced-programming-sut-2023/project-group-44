@@ -2,33 +2,68 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800" prefWidth="1200" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Main">
+<BorderPane prefHeight="800" prefWidth="1200" stylesheets="@../css/SignInLogInStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Main">
     <center>
-        <VBox alignment="CENTER" spacing="15" stylesheets="@../css/style.css">
-            <VBox alignment="CENTER" spacing="5">
-                <TextField fx:id="username" prefHeight="30.0" prefWidth="300.0" promptText="username" style="-fx-background-color:#f3f1f0; -fx-background-radius: 15; -fx-border-radius: 15;" />
-                <Label id="usernameLabel" fx:id="usernameLabel" styleClass="label-small" text="" />
-                <PasswordField fx:id="password" prefHeight="30.0" prefWidth="300.0" promptText="password" style="-fx-background-color: #f3f1f0; -fx-background-radius: 15; -fx-border-radius: 15;" />
-                <Label id="passwordLabel" fx:id="passwordLabel" styleClass="label-small" text="" />
-                <HBox alignment="CENTER" prefHeight="48.0" prefWidth="700.0" spacing="5">
-                <Button minWidth="130.0" onMouseClicked="#showPassword" prefHeight="23.0" prefWidth="130.0" text="show password" />
-                <Button minWidth="128.0" onMouseClicked="#randomPassword" prefHeight="23.0" prefWidth="128.0" text="random password" />
-                </HBox>
-                <TextField fx:id="nickname" maxWidth="320.0" prefHeight="30.0" prefWidth="300.0" promptText="nickname" style="-fx-background-color: #f3f1f0; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="nickname" />
-                <TextField fx:id="email" prefHeight="30.0" prefWidth="300.0" promptText="email" style="-fx-background-color: #f3f1f0; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="text-input" />
-                <Label id="emailLabel" fx:id="emailLabel" styleClass="label-small" text="" />
-                <CheckBox onMouseClicked="#slogan" style="-fx-background-color: #f2e9e7;" text="slogan" />
+        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="655.0" fitWidth="867.0" layoutX="188.0" layoutY="-2.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="22.0960693359375" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="162.0" AnchorPane.topAnchor="-2.0">
+                    <image>
+                        <Image url="@../images/list0.png" />
+                    </image>
+                </ImageView>
+            <VBox alignment="CENTER" layoutX="414.0" layoutY="42.0" prefHeight="200.0" prefWidth="411.0">
+               <children>
+                  <Label fx:id="MainLabel" alignment="CENTER" contentDisplay="CENTER" text="The battle wants a new Kingdom!">
+                     <font>
+                        <Font name="Cochin" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
             </VBox>
-        </VBox>
+                <TextField fx:id="username" layoutX="280.0" layoutY="170.0" prefHeight="30.0" prefWidth="300.0" promptText="   Username" />
+                <Label id="usernameLabel" fx:id="usernameLabel" layoutX="350.0" layoutY="220.0" styleClass="label-small" text="" />
+                <Label id="passwordLabel" fx:id="passwordLabel" layoutX="735.0" layoutY="220.0" styleClass="label-small" text="" />
+                <TextField fx:id="nickname" layoutX="280.0" layoutY="295.0" maxWidth="320.0" prefHeight="30.0" prefWidth="300.0" promptText="   Nickname" />
+                <TextField fx:id="email" layoutX="660.0" layoutY="295.0" prefHeight="30.0" prefWidth="300.0" promptText="   Email" />
+                <Label id="emailLabel" fx:id="emailLabel" layoutX="735.0" layoutY="345.0" styleClass="label-small" text="" />
+                <CheckBox layoutX="585.0" layoutY="505.0" onMouseClicked="#slogan" text="slogan">
+               <font>
+                  <Font name="Cochin" size="13.0" />
+               </font></CheckBox>
+            <Label layoutX="518.0" layoutY="10.0" text="Sign Up">
+               <font>
+                  <Font name="Cochin" size="64.0" />
+               </font>
+            </Label>
+             <Button layoutX="461.0" layoutY="250.0" minWidth="130.0" onMouseClicked="#showPassword" prefHeight="23.0" prefWidth="100.0" styleClass="twinButtons" text="Show Password" />
+             <Button layoutX="624.0" layoutY="250.0" minHeight="100.0" minWidth="84.0" onMouseClicked="#randomPassword" prefHeight="26.0" prefWidth="84.0" styleClass="twinButtons" text="Random Password" />
+                <PasswordField fx:id="password" layoutX="660.0" layoutY="170.0" prefHeight="30.0" prefWidth="300.0" promptText="   Password" />
+            <Label layoutX="486.0" layoutY="532.0" onMouseClicked="#onAlreadyHaveClick" text="Already have an account? Log In">
+               <font>
+                  <Font name="Cochin" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sloganBox" layoutX="280.0" layoutY="370.0" promptText="Your Slogan" />
+            <ComboBox fx:id="popularSlogansComboBox" layoutX="747.0" layoutY="381.0" prefHeight="26.0" prefWidth="213.0" promptText="                   Popular Slogans" style="-fx-background-color: #a9d8d1;" />
+            <CheckBox fx:id="randomSloganCheckBox" layoutX="662.0" layoutY="381.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #a9d8d1; -fx-background-radius: 3;" text="Random" />
+            <Button fx:id="RegisterButton" layoutX="520.0" layoutY="435.0" maxHeight="68.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="59.0" prefWidth="202.0" text="Register" textFill="WHITE" styleClass="bigButton">
+               <font>
+                  <Font name="Cochin" size="24.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
     </center>
    <top>
       <ImageView fitHeight="161.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">

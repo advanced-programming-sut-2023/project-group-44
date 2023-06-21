@@ -2,17 +2,20 @@ package view;
 
 import controller.Controller;
 import controller.LoginMenuController;
+import controller.SignUpMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -21,15 +24,15 @@ import model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.channels.NetworkChannel;
 import java.util.Scanner;
 import java.util.regex.*;
 
 
 public class LoginMenu extends Application {
 
-    /* ____________________ GRAPHICS ____________________ */
-    private BorderPane root;
 
+    /* ________________________________________ GRAPHICS ________________________________________ */
     @FXML
     private Label text1;
     @FXML
@@ -46,13 +49,59 @@ public class LoginMenu extends Application {
     private Button back;
     @FXML
     private Label loginStatus;
+    @FXML
+    private PasswordField answerBox;
+    @FXML
+    private PasswordField newPass;
+    @FXML
+    private PasswordField confirmNewPass;
+    @FXML
+    private Label forgotPassLabel;
+    @FXML
+    private ImageView OKButton1;
+    @FXML
+    private ImageView OKButton2;
 
+    // .:: START ::.
+    @Override
+    public void start(Stage stage) throws Exception {
+        URL url = LoginMenu.class.getResource("/fxml/LogInMenuFXML.fxml");
+        Pane root = FXMLLoader.load(url);
+        root.setPadding(new Insets(10));
+        Scene scene = new Scene(root, 1200, 800);
+        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
+        BackgroundImage bImg = new BackgroundImage(img,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bGround = new Background(bImg);
+        root.setBackground(bGround);
+
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    // .:: INITIALIZE ::.
+    @FXML
+    public void initialize(){
+        answerBox.setVisible(false);
+        newPass.setVisible(false);
+        confirmNewPass.setVisible(false);
+        OKButton1.setVisible(false);
+        OKButton2.setVisible(false);
+        forgotPassLabel.setVisible(false);
+    }
+
+
+    // .:: ACTION EVENT METHODS ::.
     public void onLogInButtonClick(ActionEvent event) throws IOException {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
         switch (LoginMenuController.checkCredentials(enteredUsername, enteredPassword)) {
             case 1:
-                // GOTO next menu
+                loginStatus.setText("Successful Log In!");
                 break;
             case 2:
                 loginStatus.setText("Wrong Password!");
@@ -69,39 +118,50 @@ public class LoginMenu extends Application {
 
     public void onForgotPassClick (MouseEvent event) throws Exception {
         forgotPassword.setText("Security Question");
-        // TextField Process ...
-
-    }
-    private void addTextField() {
-        // Create a new TextField
-        TextField textField = new TextField();
-        textField.setLayoutX(100);
-        textField.setLayoutY(100);
-
-        // Add the TextField to the root pane
-        root.getChildren().add(textField);
+        answerBox.setVisible(!answerBox.isVisible());
+        OKButton1.setVisible(!OKButton1.isVisible());
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        URL url = LoginMenu.class.getResource("/fxml/LogInMenuFXML.fxml");
-        root = FXMLLoader.load(url);
-        root.setPadding(new Insets(10));
-        Scene scene = new Scene(root, 1200, 800);
-        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
-        BackgroundImage bImg = new BackgroundImage(img,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bGround = new Background(bImg);
-        root.setBackground(bGround);
-
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-
+    public void onFirstOKClick (MouseEvent event) throws Exception {
+        // There might be a bug: changing the username after answering the security question :(
+        String UserName = username.getText();
+        String answer = answerBox.getText();
+        switch (LoginMenuController.forgotPassFirstStep(UserName, answer)) {
+            case 1:
+                answerBox.setVisible(false);
+                OKButton1.setVisible(false);
+                newPass.setVisible(true);
+                confirmNewPass.setVisible(true);
+                OKButton2.setVisible(true);
+                break;
+            case 2:
+                forgotPassLabel.setText("Incorrect Answer!");
+                break;
+            case 3:
+                forgotPassLabel.setText("User Not Found!");
+        }
     }
+
+    public void onSecondOKClick (MouseEvent event) throws Exception {
+        String UserName = username.getText();
+        User user = App.getUserByUsername(UserName);
+        String NewPass = newPass.getText();
+        String ConfirmNewPass = confirmNewPass.getText();
+        String result = LoginMenuController.forgotPassSecondStep(user, NewPass, ConfirmNewPass);
+        forgotPassLabel.setText(result);
+        Thread.sleep(3000);
+        if (result.equals("Password Changed Successfully!")) {
+            forgotPassword.setText("Forgot your password?");
+            answerBox.setVisible(false);
+            newPass.setVisible(false);
+            confirmNewPass.setVisible(false);
+            OKButton1.setVisible(false);
+            OKButton2.setVisible(false);
+        }
+    }
+
+    /* __________________________________________________________________________________________ */
+
 
     boolean flagLoggedIn = false;
 

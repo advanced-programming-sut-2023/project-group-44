@@ -7,6 +7,7 @@ import view.LoginMenu;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
@@ -186,6 +187,32 @@ public class SignUpMenuController {
                 user.setSlogan(slogan(matcher));
         }
         if (securityQuestion(user, scanner).equals("Question pick failed")) return "Question pick failed";
+        App.addUser(user);
+        return "Successful signup";
+    }
+
+    /* */
+    private static final String[] slogans = {
+            "Victory is the only option.",
+            "Play hard, fight harder.",
+            "Live to fight another day.",
+            "Conquer or be conquered.",
+            "In battle, we trust."
+    };
+
+    public static String generateSlogan() {
+        Random random = new Random();
+        int index = random.nextInt(slogans.length);
+        return slogans[index];
+    }
+
+    public static String createUser(String username, String password, String nickname, String email, String slogan) {
+        if (App.getUserByUsername(username) != null) return "Username already exists!";
+        if (App.getUserByEmail(email) != null) return "Email already exists!";
+        User user = new User(username, password, nickname, email);
+        Governance governance = new Governance(user);
+        user.setGovernance(governance);
+        user.setSlogan(slogan);
         App.addUser(user);
         return "Successful signup";
     }
