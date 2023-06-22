@@ -82,7 +82,7 @@ public class Main extends Application {
                 BackgroundSize.DEFAULT);
         Background bGround = new Background(bImg);
         pane.setBackground(bGround);
-        
+
         Scene scene = new Scene(pane);
         stage.setResizable(false);
         stage.setScene(scene);

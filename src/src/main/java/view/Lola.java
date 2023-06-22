@@ -12,70 +12,10 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.Popup;
 
-public class Lola extends Application {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
-    // launch the application
-    public void start(Stage stage)
-    {
+public class Lola {
 
-        // set title for the stage
-        stage.setTitle("Creating Popup");
-
-        // create a button
-        Button button = new Button("popup");
-
-        // create a tile pane
-        TilePane tilepane = new TilePane();
-
-        // create a label
-        Label label = new Label("This is a Popup");
-
-        // create a popup
-        Popup popup = new Popup();
-
-        // set background
-        label.setStyle(" -fx-background-color: white;");
-
-        // add the label
-        popup.getContent().add(label);
-
-        // set size of label
-        label.setMinWidth(80);
-        label.setMinHeight(50);
-
-        // set auto hide
-        popup.setAutoHide(true);
-
-        // action event
-        EventHandler<ActionEvent> event =
-                new EventHandler<ActionEvent>() {
-                    public void handle(ActionEvent e)
-                    {
-                        if (!popup.isShowing())
-                            popup.show(stage);
-                    }
-                };
-
-        // when button is pressed
-        button.setOnAction(event);
-
-        // add button
-        tilepane.getChildren().add(button);
-
-        // create a scene
-        Scene scene = new Scene(tilepane, 200, 200);
-
-        // set the scene
-        stage.setScene(scene);
-
-        stage.show();
-    }
-
-    // Main Method
-    public static void main(String args[])
-    {
-
-        // launch the application
-        launch(args);
-    }
 }

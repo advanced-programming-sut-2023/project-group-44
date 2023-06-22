@@ -21,5 +21,6 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac-aarch64:17.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:17.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac-aarch64:17.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cage:cage-core:0.1.4" level="project" />
   </component>
 </module>

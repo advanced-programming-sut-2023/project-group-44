@@ -25,6 +25,9 @@ import model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.channels.NetworkChannel;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.*;
 
@@ -61,6 +64,9 @@ public class LoginMenu extends Application {
     private ImageView OKButton1;
     @FXML
     private ImageView OKButton2;
+    public static boolean captchaVerification = false;
+    private Captcha captcha = new Captcha();
+
 
     // .:: START ::.
     @Override
@@ -96,12 +102,18 @@ public class LoginMenu extends Application {
 
 
     // .:: ACTION EVENT METHODS ::.
-    public void onLogInButtonClick(ActionEvent event) throws IOException {
+    public void onLogInButtonClick(ActionEvent event) throws Exception {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
         switch (LoginMenuController.checkCredentials(enteredUsername, enteredPassword)) {
             case 1:
-                loginStatus.setText("Successful Log In!");
+                captcha.start(Captcha.captchaStage);
+                if (captchaVerification == true) {
+                    loginStatus.setText("Successful Log In!");
+                }
+                else{
+                    loginStatus.setText("You Might Not Be A Human!");
+                }
                 break;
             case 2:
                 loginStatus.setText("Wrong Password!");
@@ -159,6 +171,8 @@ public class LoginMenu extends Application {
             OKButton2.setVisible(false);
         }
     }
+
+
 
     /* __________________________________________________________________________________________ */
 
