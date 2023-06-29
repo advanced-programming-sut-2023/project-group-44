@@ -107,13 +107,14 @@ public class LoginMenu extends Application {
         String enteredPassword = password.getText();
         switch (LoginMenuController.checkCredentials(enteredUsername, enteredPassword)) {
             case 1:
-                captcha.start(Captcha.captchaStage);
-                if (captchaVerification == true) {
-                    loginStatus.setText("Successful Log In!");
-                }
-                else{
-                    loginStatus.setText("You Might Not Be A Human!");
-                }
+//                captcha.start(Captcha.captchaStage);
+//                if (captchaVerification == true) {
+//                    loginStatus.setText("Successful Log In!");
+//                }
+                new MapMenu().start(Main.stage);
+//                else{
+//                    loginStatus.setText("You Might Not Be A Human!");
+//                }
                 break;
             case 2:
                 loginStatus.setText("Wrong Password!");

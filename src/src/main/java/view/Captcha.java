@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Captcha extends Application {
-    public static Stage captchaStage;
+    public static Stage captchaStage ;
     @FXML
     private ImageView captchaImage;
     @FXML
@@ -163,4 +163,5 @@ public class Captcha extends Application {
         captchaImage.setImage(image);
     }
 }
+
 
