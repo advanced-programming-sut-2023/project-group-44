@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="Avatar Menu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu/MainMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu/MainMenuRun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainMenu.fxml" afterDir="false" />
+    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="MainMenu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/text-1/Files/Layout1.bjl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/text-1/Files/Style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/text-1/Files/img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/text-1/text-1.b4j" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/text-1/text-1.b4j.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688214434547</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="MainMenu">
+      <created>1688215897694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688215897694</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +159,7 @@
     <MESSAGE value="fxml for signup" />
     <MESSAGE value="assign profile menu" />
     <MESSAGE value="Avatar Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avatar Menu" />
+    <MESSAGE value="MainMenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="MainMenu" />
   </component>
 </project>
