@@ -99,6 +99,7 @@ public class LoginMenu extends Application {
     public void onLogInButtonClick(ActionEvent event) throws Exception {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
+        App.setCurrentUser(App.getUserByUsername(enteredUsername));
         switch (LoginMenuController.checkCredentials(enteredUsername, enteredPassword)) {
             case 1:
 //                captcha.start(Captcha.captchaStage);

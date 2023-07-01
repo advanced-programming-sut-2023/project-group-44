@@ -214,7 +214,7 @@ public class SignUpMenuController {
         user.setGovernance(governance);
         user.setSlogan(slogan);
         App.addUser(user);
-        App.setCurrentUser(user);
+        //App.setCurrentUser(user);
         return "Successful signup";
     }
 }
