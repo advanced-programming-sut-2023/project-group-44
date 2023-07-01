@@ -1,4 +1,4 @@
-package view;
+package view.ProfileMenu;
 
 import controller.LoginMenuController;
 import controller.ProfileMenuController;

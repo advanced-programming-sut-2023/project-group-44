@@ -1,8 +1,8 @@
 package view;
 
-import controller.GovernanceController;
 import controller.LoginMenuController;
 import model.App;
+import view.ProfileMenu.ProfileMenu;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;

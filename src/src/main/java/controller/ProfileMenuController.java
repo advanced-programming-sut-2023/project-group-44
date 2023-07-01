@@ -19,7 +19,7 @@ public class ProfileMenuController {
 
     public static String changeUsername(Matcher matcher, Scanner scanner) {
         if (matcher.group("username") == null)
-            return "You must enter require informations for changing userName";
+            return "You must enter require information for changing userName";
         String userName = SignUpMenuController.usernameValidation(matcher);
         if (userName == null)
             return "userName format is invalid";
