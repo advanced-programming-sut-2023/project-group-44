@@ -6,15 +6,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="view.ProfileMenu.ChangeSlogan.ChangeSloganMenuController"
             prefHeight="400.0" prefWidth="600.0">
     <center>
-    <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
-        <TextField fx:id="sloganBox" layoutX="280.0" layoutY="370.0" promptText="Your Slogan" />
-        <ComboBox fx:id="popularSlogansComboBox" layoutX="747.0" layoutY="381.0" prefHeight="26.0" prefWidth="213.0" promptText="                   Popular Slogans" style="-fx-background-color: #a9d8d1;" />
-        <CheckBox fx:id="randomSloganCheckBox" layoutX="662.0" layoutY="381.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #a9d8d1; -fx-background-radius: 3;" text="Random" />
-    </AnchorPane>
+
+        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="652.0" fitWidth="414.0" layoutX="373.0" layoutY="103.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="103.0">
+                    <image>
+                        <Image url="@../images/list.png" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER" layoutX="396.0" layoutY="55.0" prefHeight="192.0" prefWidth="408.0">
+                    <children>
+                        <Label prefHeight="63.0" prefWidth="195.0" text="Slogan Setting">
+                            <font>
+                                <Font name="Webdings" size="18.0" />
+                            </font>
+                        </Label>
+                    </children></VBox>
+                <Label layoutX="431.0" layoutY="235.0" prefHeight="90.0" prefWidth="299.0" text="     Enter your new slogan">
+                    <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="sloganBox"  promptText="Your Slogan" layoutX="451.0" layoutY="348.0" prefHeight="44.0" prefWidth="260.0" style="-fx-background-radius: 35;"/>
+                <ComboBox fx:id="popularSlogansComboBox"  layoutX="451.0" layoutY="402.0" prefHeight="26.0" prefWidth="213.0" promptText="                   Popular Slogans" style="-fx-background-color: #a9d8d1;" />
+                <CheckBox fx:id="randomSloganCheckBox" layoutX="451.0" layoutY="438.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #a9d8d1; -fx-background-radius: 3;" text="Random" />
+                <Button fx:id="changeSloganButton" layoutX="451.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="change slogan" textFill="WHITE" />
+                <Button mnemonicParsing="false" layoutX="551.0" layoutY="541.0" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
+                <Label fx:id="finalResult" prefHeight="42.0" prefWidth="192.0" textFill="#16ae46">
+                    <font>
+                        <Font name="Gadugi Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
     </center>
 </BorderPane>

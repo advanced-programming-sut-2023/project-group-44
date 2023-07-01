@@ -13,6 +13,8 @@ module Project {
     opens view.ProfileMenu.ChangeUsername to javafx.fxml;
     exports view.ProfileMenu.ChangePassword;
     opens view.ProfileMenu.ChangePassword to javafx.fxml;
+    exports view.ProfileMenu.ChangeSlogan;
+    opens view.ProfileMenu.ChangeSlogan to javafx.fxml;
     exports view.ProfileMenu.ChangeNickname;
     opens view.ProfileMenu.ChangeNickname to javafx.fxml;
     exports view.ProfileMenu.ChangeAvatar;
