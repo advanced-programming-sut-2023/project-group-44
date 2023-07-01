@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ChangeAvatar.ChangeAvatarMenuController">
+    <center>
+        <AnchorPane prefHeight="666.0" prefWidth="1217.0" scaleShape="false" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="756.0" fitWidth="866.0" layoutX="148.0" layoutY="56.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="118.31854248046875" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="56.0">
+                    <image>
+                        <Image url="@../images/list0.png" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER" layoutX="376.0" layoutY="6.0" prefHeight="200.0" prefWidth="411.0">
+               <children>
+                      <Label text="Avatar Menu">
+                          <font>
+                              <Font name="Cochin" size="64.0" />
+                          </font>
+                      </Label>
+               </children></VBox>
+            <ImageView fitHeight="142.0" fitWidth="142.0" layoutX="247.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/image1.png" />
+                </image>
+            </ImageView>
+            <Label layoutX="439.0" layoutY="181.0" prefHeight="43.0" prefWidth="277.0" text="Choose a picture for your profile">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="142.0" fitWidth="142.0" layoutX="426.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/image2.png" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="143.0" fitWidth="142.0" layoutX="609.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/image3.png" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="142.0" fitWidth="142.0" layoutX="787.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/image4.png" />
+                </image>
+            </ImageView>
+            <CheckBox fx:id="one" layoutX="310.0" layoutY="400.0" mnemonicParsing="false" />
+            <CheckBox fx:id="two" layoutX="489.0" layoutY="400.0" mnemonicParsing="false" />
+            <CheckBox fx:id="three" layoutX="672.0" layoutY="400.0" mnemonicParsing="false" />
+            <CheckBox fx:id="four" layoutX="850.0" layoutY="400.0" mnemonicParsing="false" />
+                <Button fx:id="RegisterButton" layoutX="478.0" layoutY="495.0" maxHeight="68.0" mnemonicParsing="false" onAction="#submit" prefHeight="59.0" prefWidth="202.0" styleClass="bigButton" text="submit" textFill="WHITE">
+                    <font>
+                        <Font name="Cochin" size="24.0" />
+                    </font>
+                </Button>
+                <Button layoutX="558.0" layoutY="566.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
+            <Label layoutX="505.0" layoutY="433.0" prefHeight="40.0" prefWidth="229.0" textFill="#0c9a2b" fx:id="result">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+
+</BorderPane>

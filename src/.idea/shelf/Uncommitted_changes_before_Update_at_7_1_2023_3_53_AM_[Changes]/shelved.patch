@@ -1,0 +1,1356 @@
+Index: src/main/resources/fxml/ChangeUsernameMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangeUsernameMenu.fxml b/src/main/resources/fxml/ChangeUsernameMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1688120772787)
++++ b/src/main/resources/fxml/ChangeUsernameMenu.fxml	(date 1688120772787)
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
++
++<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ChangeUsername.ChangeUsernameMenuController">
++    <center>
++        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
++            <children>
++                <ImageView fitHeight="652.0" fitWidth="414.0" layoutX="373.0" layoutY="103.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="103.0">
++                    <image>
++                        <Image url="@../images/list.png" />
++                    </image>
++                </ImageView>
++                <VBox alignment="CENTER" layoutX="396.0" layoutY="55.0" prefHeight="192.0" prefWidth="408.0">
++               <children>
++                      <Label prefHeight="63.0" prefWidth="195.0" text="Username Setting">
++                          <font>
++                              <Font name="Webdings" size="18.0" />
++                          </font>
++                      </Label>
++               </children></VBox>
++            <Label layoutX="431.0" layoutY="235.0" prefHeight="90.0" prefWidth="299.0" text="     Enter your new username">
++               <font>
++                  <Font name="Trebuchet MS" size="20.0" />
++               </font>
++            </Label>
++                <TextField fx:id="username" layoutX="451.0" layoutY="348.0" prefHeight="44.0" prefWidth="260.0" promptText="Username" style="-fx-background-radius: 35;" />
++                <Button fx:id="submitButton" layoutX="451.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="Submit" textFill="WHITE" />
++                <Button layoutX="553.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
++            <Label fx:id="result" layoutX="493.0" layoutY="400.0" prefHeight="31.0" prefWidth="214.0" />
++            <Label fx:id="result2" layoutX="492.0" layoutY="605.0" prefHeight="42.0" prefWidth="192.0" textFill="#16ae46">
++               <font>
++                  <Font name="Gadugi Bold" size="18.0" />
++               </font>
++            </Label>
++            </children>
++        </AnchorPane>
++    </center>
++</BorderPane>
+Index: src/main/resources/fxml/ChangePasswordMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangePasswordMenu.fxml b/src/main/resources/fxml/ChangePasswordMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1688123730312)
++++ b/src/main/resources/fxml/ChangePasswordMenu.fxml	(date 1688123730312)
+@@ -0,0 +1,60 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
++
++<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ChangePassword.ChangePasswordMenuController">
++    <center>
++        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
++            <children>
++                <ImageView fitHeight="652.0" fitWidth="414.0" layoutX="373.0" layoutY="103.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="103.0">
++                    <image>
++                        <Image url="@../images/list.png" />
++                    </image>
++                </ImageView>
++                <VBox alignment="CENTER" layoutX="396.0" layoutY="55.0" prefHeight="192.0" prefWidth="408.0">
++                    <children>
++                        <Label prefHeight="63.0" prefWidth="195.0" text="Password Setting">
++                            <font>
++                                <Font name="Webdings" size="18.0" />
++                            </font>
++                        </Label>
++                    </children></VBox>
++                <Label layoutX="511.0" layoutY="260.0" prefHeight="88.0" prefWidth="299.0" text=" new password">
++                    <font>
++                        <Font name="Trebuchet MS" size="18.0" />
++                    </font>
++                </Label>
++                <PasswordField fx:id="currentPassword" layoutX="423.0" layoutY="348.0" prefHeight="44.0" prefWidth="260.0" promptText="Current password" style="-fx-background-radius: 35;" />
++                <PasswordField fx:id="newPassword" layoutX="423.0" layoutY="440.0" prefHeight="44.0" prefWidth="260.0" promptText="New password" style="-fx-background-radius: 35;" />
++                <Button fx:id="submitButton" layoutX="451.0" layoutY="531.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="Submit" textFill="WHITE" />
++                <Button layoutX="553.0" layoutY="599.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
++                <Label fx:id="result1" layoutX="487.0" layoutY="400.0" prefHeight="31.0" prefWidth="214.0" />
++                <Label fx:id="result2" layoutX="493.0" layoutY="491.0" prefHeight="31.0" prefWidth="214.0" />
++                <Label fx:id="finalResult" layoutX="485.0" layoutY="647.0" prefHeight="42.0" prefWidth="192.0" textFill="#16ae46">
++                    <font>
++                        <Font name="Gadugi Bold" size="18.0" />
++                    </font>
++                </Label>
++                <Label layoutX="451.0" layoutY="225.0" prefHeight="88.0" prefWidth="299.0" text="     Enter your current and">
++                    <font>
++                        <Font name="Trebuchet MS" size="18.0" />
++                    </font>
++                </Label>
++            <CheckBox layoutX="687.0" layoutY="362.0" mnemonicParsing="false" text="show" fx:id="checkBox1" onMouseClicked="#checkBox1">
++               <font>
++                  <Font name="Droid Serif" size="12.0" />
++               </font>
++            </CheckBox>
++            <CheckBox layoutX="687.0" layoutY="454.0" mnemonicParsing="false" text="show" fx:id="checkBox2" onMouseClicked="#checkBox2">
++               <font>
++                  <Font name="Droid Serif" size="12.0" />
++               </font>
++            </CheckBox>
++            </children>
++        </AnchorPane>
++    </center>
++
++</BorderPane>
+Index: src/main/resources/fxml/ChangeSloganMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangeSloganMenu.fxml b/src/main/resources/fxml/ChangeSloganMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1687902422020)
++++ b/src/main/resources/fxml/ChangeSloganMenu.fxml	(date 1687902422020)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import java.lang.*?>
++<?import java.util.*?>
++<?import javafx.scene.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
++
++<BorderPane xmlns="http://javafx.com/javafx"
++            xmlns:fx="http://javafx.com/fxml"
++            fx:controller="view.ProfileMenu.ChangeSlogan.ChangeSloganMenuController"
++            prefHeight="400.0" prefWidth="600.0">
++
++</BorderPane>
+Index: src/main/resources/fxml/ChangeEmailMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangeEmailMenu.fxml b/src/main/resources/fxml/ChangeEmailMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1688127141399)
++++ b/src/main/resources/fxml/ChangeEmailMenu.fxml	(date 1688127141399)
+@@ -0,0 +1,43 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
++
++<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ChangeEmail.ChangeEmailMenuController">
++    <center>
++        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
++            <children>
++                <ImageView fitHeight="652.0" fitWidth="414.0" layoutX="373.0" layoutY="103.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="103.0">
++                    <image>
++                        <Image url="@../images/list.png" />
++                    </image>
++                </ImageView>
++                <VBox alignment="CENTER" layoutX="396.0" layoutY="55.0" prefHeight="192.0" prefWidth="408.0">
++                    <children>
++                        <Label prefHeight="63.0" prefWidth="195.0" text="   Email Setting">
++                            <font>
++                                <Font name="Webdings" size="18.0" />
++                            </font>
++                        </Label>
++                    </children></VBox>
++                <Label layoutX="431.0" layoutY="235.0" prefHeight="90.0" prefWidth="299.0" text="     Enter your new email">
++                    <font>
++                        <Font name="Trebuchet MS" size="20.0" />
++                    </font>
++                </Label>
++                <TextField fx:id="email" layoutX="451.0" layoutY="348.0" prefHeight="44.0" prefWidth="260.0" promptText="Email" style="-fx-background-radius: 35;" />
++                <Button fx:id="submitButton" layoutX="451.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="Submit" textFill="WHITE" />
++                <Button layoutX="553.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
++                <Label fx:id="result1" layoutX="493.0" layoutY="400.0" prefHeight="31.0" prefWidth="214.0" />
++                <Label fx:id="result2" layoutX="492.0" layoutY="605.0" prefHeight="42.0" prefWidth="192.0" textFill="#16ae46">
++                    <font>
++                        <Font name="Gadugi Bold" size="18.0" />
++                    </font>
++                </Label>
++            </children>
++        </AnchorPane>
++    </center>
++
++</BorderPane>
+Index: src/main/resources/fxml/ChangeNicknameMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangeNicknameMenu.fxml b/src/main/resources/fxml/ChangeNicknameMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1688126816940)
++++ b/src/main/resources/fxml/ChangeNicknameMenu.fxml	(date 1688126816940)
+@@ -0,0 +1,50 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import java.lang.*?>
++<?import java.util.*?>
++<?import javafx.scene.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
++
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.image.Image?>
++<BorderPane xmlns="http://javafx.com/javafx"
++            xmlns:fx="http://javafx.com/fxml"
++            fx:controller="view.ProfileMenu.ChangeNickname.ChangeNicknameMenuController"
++            prefHeight="800.0" prefWidth="1200.0">
++    <center>
++        <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
++            <children>
++                <ImageView fitHeight="652.0" fitWidth="414.0" layoutX="373.0" layoutY="103.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="103.0">
++                    <image>
++                        <Image url="@../images/list.png" />
++                    </image>
++                </ImageView>
++                <VBox alignment="CENTER" layoutX="396.0" layoutY="55.0" prefHeight="192.0" prefWidth="408.0">
++                    <children>
++                        <Label prefHeight="63.0" prefWidth="195.0" text="Nickname Setting">
++                            <font>
++                                <Font name="Webdings" size="18.0" />
++                            </font>
++                        </Label>
++                    </children></VBox>
++                <Label layoutX="431.0" layoutY="235.0" prefHeight="90.0" prefWidth="299.0" text="     Enter your new nickname">
++                    <font>
++                        <Font name="Trebuchet MS" size="20.0" />
++                    </font>
++                </Label>
++                <TextField fx:id="nickname" layoutX="451.0" layoutY="348.0" prefHeight="44.0" prefWidth="260.0" promptText="Nickname" style="-fx-background-radius: 35;" />
++                <Button fx:id="submitButton" layoutX="451.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="26.0" prefWidth="260.0" styleClass="bigButton" stylesheets="@../css/bigButton.css" text="Submit" textFill="WHITE" />
++                <Button layoutX="553.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
++                <Label fx:id="result1" layoutX="493.0" layoutY="400.0" prefHeight="31.0" prefWidth="214.0" />
++                <Label fx:id="result2" layoutX="492.0" layoutY="605.0" prefHeight="42.0" prefWidth="192.0" textFill="#16ae46">
++                    <font>
++                        <Font name="Gadugi Bold" size="18.0" />
++                    </font>
++                </Label>
++            </children>
++        </AnchorPane>
++    </center>
++
++</BorderPane>
+Index: src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java b/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java
+new file mode 100644
+--- /dev/null	(date 1687902422059)
++++ b/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java	(date 1687902422059)
+@@ -0,0 +1,4 @@
++package view.ProfileMenu.ChangeSlogan;
++
++public class ChangeSloganMenuController {
++}
+Index: src/main/resources/fxml/ChangeAvatarMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ChangeAvatarMenu.fxml b/src/main/resources/fxml/ChangeAvatarMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1687902422026)
++++ b/src/main/resources/fxml/ChangeAvatarMenu.fxml	(date 1687902422026)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import java.lang.*?>
++<?import java.util.*?>
++<?import javafx.scene.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
++
++<BorderPane xmlns="http://javafx.com/javafx"
++            xmlns:fx="http://javafx.com/fxml"
++            fx:controller="view.ProfileMenu.ChangeAvatar.ChangeAvatarMenuController"
++            prefHeight="400.0" prefWidth="600.0">
++
++</BorderPane>
+Index: src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java b/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java
+new file mode 100644
+--- /dev/null	(date 1687902992560)
++++ b/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java	(date 1687902992560)
+@@ -0,0 +1,22 @@
++package view.ProfileMenu.ChangeSlogan;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.layout.BorderPane;
++import javafx.stage.Stage;
++import view.ProfileMenu.ProfileMenu;
++
++import java.net.URL;
++
++public class ChangeSloganMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangeSloganMenu.class.getResource("/fxml/ChangeSloganMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: src/main/java/view/ProfileMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu.java b/src/main/java/view/ProfileMenu/ProfileMenu.java
+rename from src/main/java/view/ProfileMenu.java
+rename to src/main/java/view/ProfileMenu/ProfileMenu.java
+--- a/src/main/java/view/ProfileMenu.java	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/src/main/java/view/ProfileMenu/ProfileMenu.java	(date 1687900869348)
+@@ -1,4 +1,4 @@
+-package view;
++package view.ProfileMenu;
+ 
+ import controller.LoginMenuController;
+ import controller.ProfileMenuController;
+Index: src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java b/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java
+new file mode 100644
+--- /dev/null	(date 1688127398229)
++++ b/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java	(date 1688127398229)
+@@ -0,0 +1,95 @@
++package view.ProfileMenu.ChangePassword;
++
++import controller.SignUpMenuController;
++import javafx.scene.control.*;
++import javafx.scene.input.MouseEvent;
++import javafx.scene.paint.Paint;
++import javafx.util.Duration;
++import model.App;
++import view.Main;
++import view.ProfileMenu.ProfileMenuRun;
++
++public class ChangePasswordMenuController {
++    public PasswordField currentPassword;
++    public PasswordField newPassword;
++    public Label result1;
++    public Label result2;
++    public Label finalResult;
++    public CheckBox checkBox1;
++    public CheckBox checkBox2;
++    public boolean problem1=true;
++    public boolean problem2=true;
++    public boolean hidePassword1=true;
++    public boolean hidePassword2=true;
++    public void initialize(){
++        currentPassword.textProperty().addListener((observable, oldText, newText) -> {
++            if (SignUpMenuController.passwordValidationFx(newText)) {
++                result1.setText("*Valid password format*");
++                currentPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                currentPassword.getStyleClass().add("acceptedField");
++                problem1 = false;
++            } else if (newText.equals("")) {
++                currentPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                problem1 = true;
++            } else {
++                result1.setText("*Invalid password format*");
++                currentPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                currentPassword.getStyleClass().add("errorField");
++                problem1 = true;
++            }
++        });
++
++        newPassword.textProperty().addListener((observable, oldText, newText) -> {
++            if (SignUpMenuController.passwordValidationFx(newText)) {
++                result2.setText("*Valid password format*");
++                newPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                newPassword.getStyleClass().add("acceptedField");
++                problem2 = false;
++            } else if (newText.equals("")) {
++                newPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                problem2 = true;
++            } else {
++                result2.setText("*Invalid password format*");
++                newPassword.getStyleClass().removeAll("errorField", "acceptedField");
++                newPassword.getStyleClass().add("errorField");
++                problem2 = true;
++            }
++        });
++
++    }
++    public void submit(MouseEvent mouseEvent) {
++        if (currentPassword.getText().isEmpty()) {
++            currentPassword.getStyleClass().removeAll("errorField", "acceptedField");
++            currentPassword.getStyleClass().add("errorField");
++        }
++        if (newPassword.getText().isEmpty()) {
++            newPassword.getStyleClass().removeAll("errorField", "acceptedField");
++            newPassword.getStyleClass().add("errorField");
++        }
++        if(!problem1 && !problem2){
++            if(!currentPassword.equals(App.getCurrentUser().getPassword())){
++                finalResult.setText("Incorrect Password!");
++                finalResult.setTextFill(Paint.valueOf("Red"));
++            }
++            else {
++                finalResult.setText("Successfully changed!");
++                finalResult.setTextFill(Paint.valueOf("#16ae46"));
++                App.getCurrentUser().setPassword(newPassword.getText());
++            }
++        }
++    }
++
++    public void Back(MouseEvent mouseEvent) throws Exception {
++        new ProfileMenuRun().start(Main.stage);
++    }
++
++    public void checkBox1(MouseEvent mouseEvent) {
++        if(checkBox1.isSelected()) hidePassword1=true;
++        else hidePassword1=false;
++    }
++
++    public void checkBox2(MouseEvent mouseEvent) {
++        if(checkBox2.isSelected()) hidePassword2=true;
++        else hidePassword2=false;
++    }
++}
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module Project {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n    requires javafx.media;\r\n    requires com.google.gson;\r\n\r\n\r\n    exports view;\r\n    opens view to javafx.fxml;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/src/main/java/module-info.java	(date 1688126906238)
+@@ -7,4 +7,12 @@
+ 
+     exports view;
+     opens view to javafx.fxml;
++    exports view.ProfileMenu;
++    opens view.ProfileMenu to javafx.fxml;
++    exports view.ProfileMenu.ChangeUsername;
++    opens view.ProfileMenu.ChangeUsername to javafx.fxml;
++    exports view.ProfileMenu.ChangePassword;
++    opens view.ProfileMenu.ChangePassword to javafx.fxml;
++    exports view.ProfileMenu.ChangeNickname;
++    opens view.ProfileMenu.ChangeNickname to javafx.fxml;
+ }
+\ No newline at end of file
+Index: src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java b/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java
+new file mode 100644
+--- /dev/null	(date 1687902046523)
++++ b/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java	(date 1687902046523)
+@@ -0,0 +1,4 @@
++package view.ProfileMenu.ChangeAvatar;
++
++public class ChangeAvatarMenuController {
++}
+Index: src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java b/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java
+new file mode 100644
+--- /dev/null	(date 1688124907389)
++++ b/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java	(date 1688124907389)
+@@ -0,0 +1,34 @@
++package view.ProfileMenu.ChangePassword;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.control.Tooltip;
++import javafx.scene.image.Image;
++import javafx.scene.layout.*;
++import javafx.stage.Stage;
++import javafx.util.Duration;
++import view.Main;
++import view.ProfileMenu.ProfileMenu;
++
++import java.net.URL;
++
++public class ChangePasswordMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangePasswordMenu.class.getResource("/fxml/ChangePasswordMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
++        BackgroundImage bImg = new BackgroundImage(img,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundPosition.DEFAULT,
++                BackgroundSize.DEFAULT);
++        Background bGround = new Background(bImg);
++        borderPane.setBackground(bGround);
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java b/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java
+new file mode 100644
+--- /dev/null	(date 1687902992583)
++++ b/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java	(date 1687902992583)
+@@ -0,0 +1,22 @@
++package view.ProfileMenu.ChangeAvatar;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.layout.BorderPane;
++import javafx.stage.Stage;
++import view.ProfileMenu.ProfileMenu;
++
++import java.net.URL;
++
++public class ChangeAvatarMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangeAvatarMenu.class.getResource("/fxml/ChangeAvatarMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java b/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java
+new file mode 100644
+--- /dev/null	(date 1688126906180)
++++ b/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java	(date 1688126906180)
+@@ -0,0 +1,61 @@
++package view.ProfileMenu.ChangeUsername;
++
++import controller.SignUpMenuController;
++import javafx.fxml.FXML;
++import javafx.scene.control.Label;
++import javafx.scene.control.TextField;
++import javafx.scene.input.MouseEvent;
++import javafx.scene.paint.Paint;
++import model.App;
++import view.Main;
++import view.ProfileMenu.ProfileMenu;
++import view.ProfileMenu.ProfileMenuRun;
++
++import static view.Main.stage;
++
++public class ChangeUsernameMenuController {
++    public Label result;
++    public TextField username;
++    public Label result2;
++    private boolean problem1=true;
++    public void initialize(){
++        username.textProperty().addListener((observable, oldText, newText) -> {
++            if (SignUpMenuController.usernameValidationFx(newText)) {
++                result.setText("*Valid username format*");
++                username.getStyleClass().removeAll("errorField", "acceptedField");
++                username.getStyleClass().add("acceptedField");
++                problem1=false;
++            } else if (newText.equals("")) {
++                username.getStyleClass().removeAll("errorField", "acceptedField");
++                problem1=true;
++            } else {
++                result.setText("*Invalid username format*");
++                username.getStyleClass().removeAll("errorField", "acceptedField");
++                username.getStyleClass().add("errorField");
++                problem1=true;
++            }
++        });
++    }
++    public void submit(MouseEvent mouseEvent) {
++        if (username.getText().isEmpty()) {
++            username.getStyleClass().removeAll("errorField", "acceptedField");
++            username.getStyleClass().add("errorField");
++        }
++
++        if (!problem1) {
++            if(App.getUserByUsername(username.getText())==null) {
++                result2.setText("successfully changed!");
++                result2.setTextFill(Paint.valueOf("#16ae46"));
++                App.getCurrentUser().setUsername(username.getText());
++            }
++            else {
++                result2.setText("username is valid!");
++                result2.setTextFill(Paint.valueOf("Red"));
++            }
++        }
++    }
++
++    public void Back(MouseEvent mouseEvent) throws Exception {
++        new ProfileMenuRun().start(stage);
++    }
++}
+Index: src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java b/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java
+new file mode 100644
+--- /dev/null	(date 1688127398236)
++++ b/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java	(date 1688127398236)
+@@ -0,0 +1,48 @@
++package view.ProfileMenu.ChangeEmail;
++
++import controller.SignUpMenuController;
++import javafx.scene.control.Label;
++import javafx.scene.control.TextField;
++import javafx.scene.input.MouseEvent;
++import model.App;
++import view.Main;
++import view.ProfileMenu.ProfileMenuRun;
++
++public class ChangeEmailMenuController {
++    public TextField email;
++    public Label result1;
++    public Label result2;
++    public boolean problem1;
++    public void initialize(){
++        email.textProperty().addListener((observable, oldText, newText) -> {
++            if (SignUpMenuController.emailValidationFx(newText)) {
++                result1.setText("*Valid email format*");
++                email.getStyleClass().removeAll("errorField", "acceptedField");
++                email.getStyleClass().add("acceptedField");
++                problem1 = false;
++            } else if (newText.equals("")) {
++                email.getStyleClass().removeAll("errorField", "acceptedField");
++                problem1 = true;
++            } else {
++                result1.setText("*Invalid email format*");
++                email.getStyleClass().removeAll("errorField", "acceptedField");
++                email.getStyleClass().add("errorField");
++                problem1 = true;
++            }
++        });
++    }
++    public void submit(MouseEvent mouseEvent) {
++        if (email.getText().isEmpty()) {
++            email.getStyleClass().removeAll("errorField", "acceptedField");
++            email.getStyleClass().add("errorField");
++        }
++        if(!problem1){
++            result2.setText("Successfully changed!");
++            App.getCurrentUser().setEmail(email.getText());
++        }
++    }
++
++    public void Back(MouseEvent mouseEvent) throws Exception {
++        new ProfileMenuRun().start(Main.stage);
++    }
++}
+Index: src/main/java/controller/ProfileMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport model.App;\r\n\r\nimport java.util.Scanner;\r\nimport java.util.regex.Matcher;\r\n\r\npublic class ProfileMenuController {\r\n    public static String passwordValidation(Matcher matcher) {\r\n        String password = SignUpMenuController.deleteQuotations(matcher.group(\"newPassword\"));\r\n        if (!password.matches(\"(?=.*[a-z]).+\")) return \"Weak password: small letter leak\";\r\n        if (!password.matches(\"(?=.*[A-Z]).+\")) return \"Weak password: capital letter leak\";\r\n        if (!password.matches(\"(?=.*[0-9]).+\")) return \"Weak password: number leak\";\r\n        if (!password.matches(\"(?=.*[\\\\W]).+\")) return \"Weak password: character leak\";\r\n        if (!password.matches(\"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\\\\W]).{6,}$\"))\r\n            return \"Weak password: short length\";\r\n        return null;\r\n    }\r\n\r\n    public static String changeUsername(Matcher matcher, Scanner scanner) {\r\n        if (matcher.group(\"username\") == null)\r\n            return \"You must enter require informations for changing userName\";\r\n        String userName = SignUpMenuController.usernameValidation(matcher);\r\n        if (userName == null)\r\n            return \"userName format is invalid\";\r\n        if (App.getUserByUsername(userName) != null) {\r\n            System.out.println(\"This userName already exists\");\r\n            userName = SignUpMenuController.randomUsername(userName, scanner);\r\n            if (userName == null)\r\n                return \"changing userName failed try again\";\r\n        }\r\n        LoginMenuController.loggedInUser.setUsername(userName);\r\n        return \"UserName successfully changed!\";\r\n    }\r\n\r\n\r\n    public static String changeNickname(Matcher matcher) {\r\n        if (matcher.group(\"nickname\") == null)\r\n            return \"You must enter require informations for changing nickName\";\r\n        String nickName = SignUpMenuController.deleteQuotations(matcher.group(\"nickname\"));\r\n        LoginMenuController.loggedInUser.setNickname(nickName);\r\n        return \"NickName successfully changed!\";\r\n    }\r\n\r\n\r\n    public static String changePassword(Matcher matcher, Scanner scanner) {\r\n        if (matcher.group(\"oldPassword\") == null || matcher.group(\"newPassword\") == null)\r\n            return \"You must enter require informations for changing password\";\r\n        String oldPassword = SignUpMenuController.deleteQuotations(matcher.group(\"oldPassword\"));\r\n        String newPassword = SignUpMenuController.deleteQuotations(matcher.group(\"newPassword\"));\r\n        if (!oldPassword.equals(LoginMenuController.loggedInUser.getPassword()))\r\n            return \"Current password is incorrect!\";\r\n        if (oldPassword.equals(newPassword))\r\n            return \"Please enter a new password!\";\r\n        if (newPassword.equals(\"random\")) {\r\n            newPassword = SignUpMenuController.randomPassword(newPassword, scanner);\r\n            if (newPassword == null)\r\n                return \"Random password confirmation failed\";\r\n        } else {\r\n            String passwordValidationMessage = passwordValidation(matcher);\r\n            if (passwordValidationMessage != null)\r\n                return passwordValidationMessage;\r\n        }\r\n        LoginMenuController.loggedInUser.setPassword(newPassword);\r\n        return \"Password successfully changed!\";\r\n    }\r\n\r\n\r\n    public static String changeEmail(Matcher matcher) {\r\n        if (matcher.group(\"email\") == null)\r\n            return \"You must enter require informations for changing email\";\r\n        if (App.getUserByEmail(matcher.group(\"email\")) != null)\r\n            return \"A user with this email already exists\";\r\n        if (!matcher.group(\"email\").matches(\"^[\\\\w_.]+@[\\\\w_]+\\\\.?[\\\\w+]+\\\\.[\\\\w_]+$\"))\r\n            return \"Invalid email format\";\r\n        LoginMenuController.loggedInUser.setEmail(matcher.group(\"email\"));\r\n        return \"Email successfully changed!\";\r\n    }\r\n\r\n\r\n    public static String changeSlogan(Matcher matcher) {\r\n        if (matcher.group(\"slogan\") == null)\r\n            return \"You must enter require informations for changing slogan\";\r\n        LoginMenuController.loggedInUser.setSlogan(SignUpMenuController.slogan(matcher));\r\n        return \"Slogan successfully changed!\";\r\n    }\r\n\r\n\r\n    public static String removeSlogan() {\r\n        if (LoginMenuController.loggedInUser.getSlogan() == null) {\r\n            return \"Slogan is already empty!\";\r\n        }\r\n        LoginMenuController.loggedInUser.setSlogan(null);\r\n        return \"Slogan successfully removed!\";\r\n    }\r\n\r\n\r\n    public static String displayHighScore() {\r\n        return \"Your highSore : \" + LoginMenuController.loggedInUser.getHighScore();\r\n    }\r\n\r\n\r\n    public static String displayRank() {\r\n        return \"Your rank : \" + LoginMenuController.loggedInUser.getRank();\r\n    }\r\n\r\n\r\n    public static String displaySlogan() {\r\n        if (LoginMenuController.loggedInUser.getSlogan() == null)\r\n            return \"Slogan is empty!\";\r\n        return \"Your slogan : \" + LoginMenuController.loggedInUser.getSlogan();\r\n    }\r\n\r\n\r\n    public static String display() {\r\n        String result = \"Presentable information:\\n\" +\r\n                \"HighScore : \" + LoginMenuController.loggedInUser.getHighScore() +\r\n                \"\\nRank : \" + LoginMenuController.loggedInUser.getRank() +\r\n                \"\\nSlogan : \";\r\n        if (LoginMenuController.loggedInUser.getSlogan() == null)\r\n            result += \"Your slogan is empty!\";\r\n        result += LoginMenuController.loggedInUser.getSlogan();\r\n        return result;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/controller/ProfileMenuController.java b/src/main/java/controller/ProfileMenuController.java
+--- a/src/main/java/controller/ProfileMenuController.java	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/src/main/java/controller/ProfileMenuController.java	(date 1687947598239)
+@@ -19,7 +19,7 @@
+ 
+     public static String changeUsername(Matcher matcher, Scanner scanner) {
+         if (matcher.group("username") == null)
+-            return "You must enter require informations for changing userName";
++            return "You must enter require information for changing userName";
+         String userName = SignUpMenuController.usernameValidation(matcher);
+         if (userName == null)
+             return "userName format is invalid";
+Index: src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java b/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java
+new file mode 100644
+--- /dev/null	(date 1688127398222)
++++ b/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java	(date 1688127398222)
+@@ -0,0 +1,34 @@
++package view.ProfileMenu.ChangeEmail;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.image.Image;
++import javafx.scene.layout.*;
++import javafx.stage.Stage;
++import view.Main;
++import view.ProfileMenu.ChangeNickname.ChangeNicknameMenu;
++
++import java.net.URL;
++
++public class ChangeEmailMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangeEmailMenu.class.getResource("/fxml/ChangeEmailMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++
++        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
++        BackgroundImage bImg = new BackgroundImage(img,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundPosition.DEFAULT,
++                BackgroundSize.DEFAULT);
++        Background bGround = new Background(bImg);
++        borderPane.setBackground(bGround);
++
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: src/main/java/view/MainMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package view;\r\n\r\nimport controller.GovernanceController;\r\nimport controller.LoginMenuController;\r\nimport model.App;\r\n\r\nimport java.util.Scanner;\r\nimport java.util.regex.Matcher;\r\n\r\npublic class MainMenu {\r\n    public void run(Scanner scanner){\r\n        String command = \"\";\r\n        Matcher matcher;\r\n\r\n        while(true){\r\n            System.out.println(\"You are in main menu select game or profile menu or type exit to back to SignUp/login\");\r\n            command = scanner.nextLine();\r\n            if((matcher = LoginMenuController.getMatcher(command,\"^game\\\\s+menu$\")) != null){\r\n                GameMenu gameMenu = new GameMenu();\r\n                gameMenu.run(scanner);\r\n                if(App.nextTurn){\r\n                    App.nextTurn = false;\r\n                    return;\r\n                }\r\n            }else if((matcher = LoginMenuController.getMatcher(command,\"^profile\\\\s+menu$\")) != null){\r\n                ProfileMenu profileMenu = new ProfileMenu();\r\n                profileMenu.run(scanner);\r\n            }else  if((matcher = LoginMenuController.getMatcher(command,\"^exit$\")) != null){\r\n                return;\r\n            }else System.out.println(\"Invalid command\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/MainMenu.java b/src/main/java/view/MainMenu.java
+--- a/src/main/java/view/MainMenu.java	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/src/main/java/view/MainMenu.java	(date 1687900869319)
+@@ -1,8 +1,8 @@
+ package view;
+ 
+-import controller.GovernanceController;
+ import controller.LoginMenuController;
+ import model.App;
++import view.ProfileMenu.ProfileMenu;
+ 
+ import java.util.Scanner;
+ import java.util.regex.Matcher;
+Index: .idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml b/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml
+new file mode 100644
+--- /dev/null	(date 1687799953502)
++++ b/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml	(date 1687799953502)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.openjfx:javafx-media:17.0.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java b/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java
+new file mode 100644
+--- /dev/null	(date 1688127398242)
++++ b/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java	(date 1688127398242)
+@@ -0,0 +1,43 @@
++package view.ProfileMenu.ChangeNickname;
++
++import controller.SignUpMenuController;
++import javafx.scene.control.Label;
++import javafx.scene.control.TextField;
++import javafx.scene.input.MouseEvent;
++import model.App;
++import view.Main;
++import view.ProfileMenu.ProfileMenuRun;
++
++public class ChangeNicknameMenuController {
++    public TextField nickname;
++    public Label result1;
++    public Label result2;
++    public boolean problem1=true;
++
++    public void initialize(){
++        nickname.textProperty().addListener((observable, oldText, newText) -> {
++            if (!newText.equals("")) {
++                nickname.getStyleClass().removeAll("errorField", "acceptedField");
++                nickname.getStyleClass().add("acceptedField");
++                problem1 = false;
++            } else {
++                nickname.getStyleClass().removeAll("errorField", "acceptedField");
++                problem1 = true;
++            }
++        });
++    }
++    public void submit(MouseEvent mouseEvent) {
++        if (nickname.getText().isEmpty()) {
++            nickname.getStyleClass().removeAll("errorField", "acceptedField");
++            nickname.getStyleClass().add("errorField");
++        }
++        if(!problem1){
++            result2.setText("Successfully changed!");
++            App.getCurrentUser().setNickname(nickname.getText());
++        }
++    }
++
++    public void Back(MouseEvent mouseEvent) throws Exception {
++        new ProfileMenuRun().start(Main.stage);
++    }
++}
+Index: .idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml b/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml
+new file mode 100644
+--- /dev/null	(date 1687799953513)
++++ b/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml	(date 1687799953513)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.openjfx:javafx-media:win:17.0.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2-win.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/17.0.2/javafx-media-17.0.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java b/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java
+new file mode 100644
+--- /dev/null	(date 1688126906223)
++++ b/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java	(date 1688126906223)
+@@ -0,0 +1,35 @@
++package view.ProfileMenu.ChangeNickname;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.image.Image;
++import javafx.scene.layout.*;
++import javafx.stage.Stage;
++import view.Main;
++import view.ProfileMenu.ProfileMenu;
++
++import java.net.URL;
++
++public class ChangeNicknameMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangeNicknameMenu.class.getResource("/fxml/ChangeNicknameMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++
++        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
++        BackgroundImage bImg = new BackgroundImage(img,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundPosition.DEFAULT,
++                BackgroundSize.DEFAULT);
++        Background bGround = new Background(bImg);
++        borderPane.setBackground(bGround);
++
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++
++    }
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c6d1b963-48bf-40a9-a620-86cb451a368a\" name=\"Changes\" comment=\"fxml for signup\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/wallpaper.jpg\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/view/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/view/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/css/style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/css/style.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"module-info\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2PSlaVghk2Vv3ic8nlpDYf9mm15\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Asus/Desktop/AP-project/src/src/main/resources/images\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Asus\\Desktop\\AP-project\\src\\src\\main\\resources\\images\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Asus\\Desktop\\AP-project\\src\\.idea\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"acf370e4-c6b9-4939-a796-1712fa7bcff8\" name=\"Changes\" comment=\"\" />\r\n      <created>1683458428500</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1683458428500</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"add base of select building\">\r\n      <created>1683627476702</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683627476702</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"add base of select building\">\r\n      <created>1683629400611</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683629400611</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"add base of select building\">\r\n      <created>1683629502319</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683629502319</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"add base of select building\">\r\n      <created>1683629833972</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683629833972</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"add placement of elements\">\r\n      <created>1683816811717</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683816811717</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"add JSON\">\r\n      <created>1683834360032</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683834360032</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"start javafx\">\r\n      <created>1685882561171</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685882561171</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fxml for signup\">\r\n      <created>1685887222362</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685887222362</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"add base of select building\" />\r\n    <MESSAGE value=\"add placement of elements\" />\r\n    <MESSAGE value=\"add JSON\" />\r\n    <MESSAGE value=\"start javafx\" />\r\n    <MESSAGE value=\"fxml for signup\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fxml for signup\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/.idea/workspace.xml	(date 1688120732241)
+@@ -5,12 +5,40 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="fxml for signup">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/wallpaper.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuRun.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeAvatarMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeEmailMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeNicknameMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangePasswordMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeSloganMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeUsernameMenu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SignUpMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignUpMenu.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenu.class" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -20,9 +48,9 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="module-info" />
+         <option value="Class" />
+         <option value="FxmlFile" />
+-        <option value="module-info" />
+       </list>
+     </option>
+   </component>
+@@ -37,14 +65,17 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "last_opened_file_path": "C:/Users/Asus/Desktop/AP-project/src/src/main/resources/images"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/JavaCode/StrongHold-Project-02/project-group-44/src&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\Asus\Desktop\AP-project\src\src\main\resources\images" />
+@@ -56,7 +87,7 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="acf370e4-c6b9-4939-a796-1712fa7bcff8" name="Changes" comment="" />
++      <changelist id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="fxml for signup" />
+       <created>1683458428500</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+Index: src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java b/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java
+new file mode 100644
+--- /dev/null	(date 1688126906232)
++++ b/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java	(date 1688126906232)
+@@ -0,0 +1,35 @@
++package view.ProfileMenu.ChangeUsername;
++
++import javafx.animation.Animation;
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.image.Image;
++import javafx.scene.layout.*;
++import javafx.stage.Stage;
++import view.Main;
++import view.ProfileMenu.ProfileMenu;
++
++import java.net.URL;
++
++public class ChangeUsernameMenu extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ChangeUsernameMenu.class.getResource("/fxml/ChangeUsernameMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++
++        Image img = new Image(Main.class.getResource("/images/wallpaper.jpg").toExternalForm());
++        BackgroundImage bImg = new BackgroundImage(img,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundPosition.DEFAULT,
++                BackgroundSize.DEFAULT);
++        Background bGround = new Background(bImg);
++        borderPane.setBackground(bGround);
++
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: Project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_19\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.google.code.gson:gson:2.10.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-controls:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-controls:mac-aarch64:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-graphics:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-graphics:mac-aarch64:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-base:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-base:mac-aarch64:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-fxml:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-fxml:mac-aarch64:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-media:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.openjfx:javafx-media:mac-aarch64:17.0.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.github.cage:cage-core:0.1.4\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Project.iml b/Project.iml
+--- a/Project.iml	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/Project.iml	(date 1687800166780)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_19">
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
+     <output url="file://$MODULE_DIR$/target/classes" />
+     <output-test url="file://$MODULE_DIR$/target/test-classes" />
+     <content url="file://$MODULE_DIR$">
+@@ -12,15 +12,14 @@
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.10.1" level="project" />
+     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac-aarch64:17.0.2" level="project" />
++    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17.0.2" level="project" />
+     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac-aarch64:17.0.2" level="project" />
++    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:17.0.2" level="project" />
+     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac-aarch64:17.0.2" level="project" />
++    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:17.0.2" level="project" />
+     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac-aarch64:17.0.2" level="project" />
++    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:17.0.2" level="project" />
+     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac-aarch64:17.0.2" level="project" />
+-    <orderEntry type="library" name="Maven: com.github.cage:cage-core:0.1.4" level="project" />
++    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:win:17.0.2" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: src/main/java/view/ProfileMenu/ProfileMenuRun.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ProfileMenuRun.java b/src/main/java/view/ProfileMenu/ProfileMenuRun.java
+new file mode 100644
+--- /dev/null	(date 1687902992575)
++++ b/src/main/java/view/ProfileMenu/ProfileMenuRun.java	(date 1687902992575)
+@@ -0,0 +1,21 @@
++package view.ProfileMenu;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.layout.BorderPane;
++import javafx.stage.Stage;
++
++import java.net.URL;
++
++public class ProfileMenuRun extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        URL url = ProfileMenuRun.class.getResource("/fxml/ProfileMenu.fxml");
++        assert url != null;
++        BorderPane borderPane = FXMLLoader.load(url);
++        Scene scene=new Scene(borderPane);
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: src/main/java/view/ProfileMenu/ProfileMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/ProfileMenu/ProfileMenuController.java b/src/main/java/view/ProfileMenu/ProfileMenuController.java
+new file mode 100644
+--- /dev/null	(date 1687946723462)
++++ b/src/main/java/view/ProfileMenu/ProfileMenuController.java	(date 1687946723462)
+@@ -0,0 +1,62 @@
++package view.ProfileMenu;
++
++import javafx.scene.control.Label;
++import javafx.scene.input.MouseEvent;
++import model.App;
++import view.Main;
++import view.ProfileMenu.ChangeAvatar.ChangeAvatarMenu;
++import view.ProfileMenu.ChangeEmail.ChangeEmailMenu;
++import view.ProfileMenu.ChangeNickname.ChangeNicknameMenu;
++import view.ProfileMenu.ChangePassword.ChangePasswordMenu;
++import view.ProfileMenu.ChangeSlogan.ChangeSloganMenu;
++import view.ProfileMenu.ChangeUsername.ChangeUsernameMenu;
++
++public class ProfileMenuController {
++
++    public Label username;
++    public Label password;
++    public Label nickname;
++    public Label email;
++    public Label slogan;
++
++    public void updateLabels(){
++        username.setText(App.getCurrentUser().getUsername());
++        password.setText(App.getCurrentUser().getPassword());
++        nickname.setText(App.getCurrentUser().getNickname());
++        email.setText(App.getCurrentUser().getEmail());
++        if(App.getCurrentUser().getSlogan()!=null)
++            slogan.setText(App.getCurrentUser().getSlogan());
++        else slogan.setText("You haven't chosen slogan yet!");
++    }
++    public void changeUsername(MouseEvent mouseEvent) throws Exception {
++        new ChangeUsernameMenu().start(Main.stage);
++    }
++
++    public void changePassword(MouseEvent mouseEvent) throws Exception {
++        new ChangePasswordMenu().start(Main.stage);
++    }
++
++    public void changeNickname(MouseEvent mouseEvent) throws Exception {
++        new ChangeNicknameMenu().start(Main.stage);
++    }
++
++    public void changeEmail(MouseEvent mouseEvent) throws Exception {
++        new ChangeEmailMenu().start(Main.stage);
++    }
++
++    public void changeAvatar(MouseEvent mouseEvent) throws Exception {
++        new ChangeAvatarMenu().start(Main.stage);
++    }
++
++    public void Back(MouseEvent mouseEvent) {
++        //new MainMenu().start(Main.stage);
++    }
++
++    public void initialize(){
++        updateLabels();
++    }
++
++    public void changeSlogan(MouseEvent mouseEvent) throws Exception {
++        new ChangeSloganMenu().start(Main.stage);
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 9565b3632ae5339f4939d835705775e7fcd94844)
++++ b/.idea/misc.xml	(date 1687896190717)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-20 (2)" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/fxml/ProfileMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/ProfileMenu.fxml b/src/main/resources/fxml/ProfileMenu.fxml
+new file mode 100644
+--- /dev/null	(date 1687944498216)
++++ b/src/main/resources/fxml/ProfileMenu.fxml	(date 1687944498216)
+@@ -0,0 +1,115 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.BorderPane?>
++<?import javafx.scene.layout.HBox?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.text.Font?>
++
++<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/SignInLogInStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ProfileMenuController">
++    <center>
++        <AnchorPane prefHeight="666.0" prefWidth="1217.0" scaleShape="false" BorderPane.alignment="CENTER">
++            <children>
++                <ImageView fitHeight="756.0" fitWidth="866.0" layoutX="188.0" layoutY="-2.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="-2.0">
++                    <image>
++                        <Image url="@../images/list0.png" />
++                    </image>
++                </ImageView>
++                <VBox alignment="CENTER" layoutX="414.0" layoutY="42.0" prefHeight="200.0" prefWidth="411.0" />
++                <Label layoutX="445.0" layoutY="10.0" text="Profile Menu">
++                    <font>
++                        <Font name="Cochin" size="64.0" />
++                    </font>
++                </Label>
++            <VBox layoutX="653.0" layoutY="207.0" prefHeight="116.0" prefWidth="344.0">
++               <children>
++                  <HBox prefHeight="26.0" prefWidth="345.0">
++                     <children>
++                        <Label prefHeight="25.0" prefWidth="169.0" text="   Username       :">
++                           <font>
++                              <Font name="Verdana" size="18.0" />
++                           </font>
++                        </Label>
++                        <Label id="username" prefHeight="23.0" prefWidth="147.0" textFill="#970606">
++                           <font>
++                              <Font name="System Bold Italic" size="14.0" />
++                           </font></Label>
++                     </children>
++                  </HBox>
++                  <HBox prefHeight="25.0" prefWidth="345.0">
++                     <children>
++                        <Label prefHeight="24.0" prefWidth="169.0" text="   Password        :">
++                           <font>
++                              <Font name="Verdana" size="18.0" />
++                           </font>
++                        </Label>
++                        <Label id="password" prefHeight="32.0" prefWidth="147.0" textFill="#970606">
++                           <font>
++                              <Font size="14.0" />
++                           </font></Label>
++                     </children>
++                  </HBox>
++                  <HBox prefHeight="25.0" prefWidth="345.0">
++                     <children>
++                        <Label prefHeight="23.0" prefWidth="169.0" text="   Nickname       :">
++                           <font>
++                              <Font name="Verdana" size="18.0" />
++                           </font>
++                        </Label>
++                        <Label id="nickname" prefHeight="44.0" prefWidth="147.0" textFill="#970606">
++                           <font>
++                              <Font size="14.0" />
++                           </font></Label>
++                     </children>
++                  </HBox>
++                  <HBox prefHeight="25.0" prefWidth="345.0">
++                     <children>
++                        <Label prefHeight="25.0" prefWidth="169.0" text="   Email             :">
++                           <font>
++                              <Font name="Verdana" size="18.0" />
++                           </font>
++                        </Label>
++                        <Label id="email" prefHeight="24.0" prefWidth="146.0" textFill="#970606">
++                           <font>
++                              <Font size="14.0" />
++                           </font></Label>
++                     </children>
++                  </HBox>
++                  <HBox prefHeight="25.0" prefWidth="345.0">
++                     <children>
++                        <Label prefHeight="40.0" prefWidth="169.0" text="   Slogan           :">
++                           <font>
++                              <Font name="Verdana" size="18.0" />
++                           </font>
++                        </Label>
++                        <Label id="slogan" prefHeight="25.0" prefWidth="146.0" textFill="#970606">
++                           <font>
++                              <Font size="14.0" />
++                           </font>
++                        </Label>
++                     </children>
++                  </HBox>
++               </children>
++            </VBox>
++            <Button layoutX="432.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="25.0" prefWidth="163.0" styleClass="twinButtons" text="change Username" />
++            <Button layoutX="680.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="25.0" prefWidth="162.0" styleClass="twinButtons" text="change Password" />
++            <Button layoutX="432.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#changeNickname" prefHeight="25.0" prefWidth="162.0" styleClass="twinButtons" text="change Nickname" />
++            <Button layoutX="680.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="25.0" prefWidth="162.0" styleClass="twinButtons" text="change Email" />
++            <Button layoutX="605.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
++            <Button layoutX="432.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeAvatar" prefHeight="25.0" prefWidth="94.0" styleClass="twinButtons" text="change Avatar" />
++            <Button layoutX="680.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" styleClass="twinButtons" text="change Slogan" />
++            </children>
++        </AnchorPane>
++    </center>
++    <top>
++        <ImageView fitHeight="161.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
++            <image>
++                <Image url="@../images/SignUpMenuBG.png" />
++            </image>
++        </ImageView>
++    </top>
++</BorderPane>
