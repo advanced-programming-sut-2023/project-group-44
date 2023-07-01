@@ -158,8 +158,8 @@ public class Captcha extends Application {
                 break;
             }
         }
-        String address = "src/src/main/resources/Captcha/".concat(nameOfImage);
-        Image image = new Image(new File(address).toURI().toString());
+        String address = "/Captcha/".concat(nameOfImage);
+        Image image = new Image(Main.class.getResource(address).toExternalForm());
         captchaImage.setImage(image);
     }
 }
