@@ -2,9 +2,7 @@ package controller;
 
 import model.App;
 import model.User;
-import view.MainMenu;
 
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

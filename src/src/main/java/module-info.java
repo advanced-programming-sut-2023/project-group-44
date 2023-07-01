@@ -17,4 +17,6 @@ module Project {
     opens view.ProfileMenu.ChangeNickname to javafx.fxml;
     exports view.ProfileMenu.ChangeAvatar;
     opens view.ProfileMenu.ChangeAvatar to javafx.fxml;
+    exports view.MainMenu;
+    opens view.MainMenu to javafx.fxml;
 }

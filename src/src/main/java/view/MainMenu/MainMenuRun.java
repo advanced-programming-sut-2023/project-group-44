@@ -1,4 +1,4 @@
-package view.ProfileMenu;
+package view.MainMenu;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,13 +7,14 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import view.Main;
+import view.ProfileMenu.ProfileMenuRun;
 
 import java.net.URL;
 
-public class ProfileMenuRun extends Application {
+public class MainMenuRun extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        URL url = ProfileMenuRun.class.getResource("/fxml/ProfileMenu.fxml");
+        URL url = MainMenuRun.class.getResource("/fxml/MainMenu.fxml");
         assert url != null;
         BorderPane borderPane = FXMLLoader.load(url);
 

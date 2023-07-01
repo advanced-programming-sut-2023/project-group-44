@@ -1,7 +1,8 @@
-package view;
+package view.MainMenu;
 
 import controller.LoginMenuController;
 import model.App;
+import view.GameMenu;
 import view.ProfileMenu.ProfileMenu;
 
 import java.util.Scanner;

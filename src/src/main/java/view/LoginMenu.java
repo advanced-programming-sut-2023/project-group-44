@@ -1,14 +1,11 @@
 package view;
 
-import controller.Controller;
 import controller.LoginMenuController;
-import controller.SignUpMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,13 +18,9 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.App;
 import model.User;
+import view.MainMenu.MainMenu;
 
-import java.io.IOException;
 import java.net.URL;
-import java.nio.channels.NetworkChannel;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.*;
 
