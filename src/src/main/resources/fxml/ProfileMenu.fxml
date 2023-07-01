@@ -29,7 +29,7 @@
                               <Font name="Verdana" size="18.0" />
                            </font>
                         </Label>
-                        <Label id="username" prefHeight="23.0" prefWidth="147.0" textFill="#970606">
+                        <Label fx:id="username" prefHeight="23.0" prefWidth="147.0" textFill="#970606">
                            <font>
                               <Font name="System Bold Italic" size="14.0" />
                            </font></Label>
@@ -42,7 +42,7 @@
                               <Font name="Verdana" size="18.0" />
                            </font>
                         </Label>
-                        <Label id="password" prefHeight="32.0" prefWidth="147.0" textFill="#970606">
+                        <Label fx:id="password" prefHeight="32.0" prefWidth="147.0" textFill="#970606">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
@@ -55,7 +55,7 @@
                               <Font name="Verdana" size="18.0" />
                            </font>
                         </Label>
-                        <Label id="nickname" prefHeight="44.0" prefWidth="147.0" textFill="#970606">
+                        <Label fx:id="nickname" prefHeight="44.0" prefWidth="147.0" textFill="#970606">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
@@ -68,7 +68,7 @@
                               <Font name="Verdana" size="18.0" />
                            </font>
                         </Label>
-                        <Label id="email" prefHeight="24.0" prefWidth="146.0" textFill="#970606">
+                        <Label fx:id="email" prefHeight="24.0" prefWidth="146.0" textFill="#970606">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
@@ -81,7 +81,7 @@
                               <Font name="Verdana" size="18.0" />
                            </font>
                         </Label>
-                        <Label id="slogan" prefHeight="25.0" prefWidth="146.0" textFill="#970606">
+                        <Label fx:id="slogan" prefHeight="25.0" prefWidth="146.0" textFill="#970606">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -97,7 +97,7 @@
             <Button layoutX="605.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
             <Button layoutX="432.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeAvatar" prefHeight="25.0" prefWidth="94.0" styleClass="twinButtons" text="change Avatar" />
             <Button layoutX="680.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" styleClass="twinButtons" text="change Slogan" />
-            <ImageView id="imageView" fitHeight="190.0" fitWidth="249.0" layoutX="314.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageView" fitHeight="190.0" fitWidth="249.0" layoutX="314.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
     </center>

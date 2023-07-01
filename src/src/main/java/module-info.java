@@ -21,4 +21,6 @@ module Project {
     opens view.ProfileMenu.ChangeAvatar to javafx.fxml;
     exports view.MainMenu;
     opens view.MainMenu to javafx.fxml;
+    exports view.ProfileMenu.ChangeEmail;
+    opens view.ProfileMenu.ChangeEmail to javafx.fxml;
 }
