@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Captcha extends Application {
-    public static Stage captchaStage ;
+    public static Stage captchaStage = new Stage() ;
     @FXML
     private ImageView captchaImage;
     @FXML
@@ -57,9 +57,9 @@ public class Captcha extends Application {
         pane.setBackground(bGround);
 
         Scene scene = new Scene(pane, 350, 400);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+        captchaStage.setResizable(false);
+        captchaStage.setScene(scene);
+        captchaStage.show();
     }
 
     @FXML
