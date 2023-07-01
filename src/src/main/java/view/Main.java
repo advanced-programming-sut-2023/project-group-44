@@ -264,10 +264,11 @@ public class Main extends Application {
             String aPassword = password.getText();
             String aNickname = nickname.getText();
             String anEmail = email.getText();
-            if (sloganBox.isVisible())
+            if (sloganBox.isVisible()) {
                 MainLabel.setText(SignUpMenuController.createUser(aUsername, aPassword, aNickname, anEmail, null));
-            else
+            }else {
                 MainLabel.setText(SignUpMenuController.createUser(aUsername, aPassword, aNickname, anEmail, sloganBox.getText()));
+            }
             popup.show(stage);
         }
     }

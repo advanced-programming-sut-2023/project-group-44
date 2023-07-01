@@ -10,5 +10,11 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="view.ProfileMenu.ChangeSlogan.ChangeSloganMenuController"
             prefHeight="400.0" prefWidth="600.0">
-
+    <center>
+    <AnchorPane prefHeight="800.0" prefWidth="1200.0" scaleShape="false" BorderPane.alignment="CENTER">
+        <TextField fx:id="sloganBox" layoutX="280.0" layoutY="370.0" promptText="Your Slogan" />
+        <ComboBox fx:id="popularSlogansComboBox" layoutX="747.0" layoutY="381.0" prefHeight="26.0" prefWidth="213.0" promptText="                   Popular Slogans" style="-fx-background-color: #a9d8d1;" />
+        <CheckBox fx:id="randomSloganCheckBox" layoutX="662.0" layoutY="381.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #a9d8d1; -fx-background-radius: 3;" text="Random" />
+    </AnchorPane>
+    </center>
 </BorderPane>

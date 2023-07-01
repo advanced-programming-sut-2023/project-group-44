@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import model.App;
 import model.User;
 import view.MainMenu.MainMenu;
+import view.MainMenu.MainMenuRun;
 
 import java.net.URL;
 import java.util.Scanner;
@@ -104,7 +105,8 @@ public class LoginMenu extends Application {
 //                if (captchaVerification == true) {
 //                    loginStatus.setText("Successful Log In!");
 //                }
-                new MapMenu().start(Main.stage);
+                //new MapMenu().start(Main.stage);
+                new MainMenuRun().start(Main.stage);
 //                else{
 //                    loginStatus.setText("You Might Not Be A Human!");
 //                }
