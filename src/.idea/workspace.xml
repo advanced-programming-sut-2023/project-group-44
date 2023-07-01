@@ -4,41 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="fxml for signup">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeEmail/ChangeEmailMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeNickname/ChangeNicknameMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeSlogan/ChangeSloganMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeUsername/ChangeUsernameMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuRun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeAvatarMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeEmailMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeNicknameMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangePasswordMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeSloganMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeUsernameMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="assign profile menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChangeAvatarMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangeAvatarMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685887222362</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="assign profile menu">
+      <created>1688208851598</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688208851598</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +152,7 @@
     <MESSAGE value="add JSON" />
     <MESSAGE value="start javafx" />
     <MESSAGE value="fxml for signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="fxml for signup" />
+    <MESSAGE value="assign profile menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="assign profile menu" />
   </component>
 </project>

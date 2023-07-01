@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ public class User {
     private int score;
     private int highScore;
     private Governance governance;
+    private Image profileImage;
     private ArrayList<Requests> listOfRequests;
 
     private int numberOfSecurityQuestion;
@@ -26,6 +29,7 @@ public class User {
         this.score=0;
         this.highScore=0;
         this.listOfRequests=new ArrayList<>();
+        this.profileImage=new Image(getClass().getResource("/images/default.png").toString());
     }
 
     public String getUsername() {
@@ -129,5 +133,13 @@ public class User {
 
     public ArrayList<Requests> getListOfRequests() {
         return listOfRequests;
+    }
+
+    public Image getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(Image profileImage) {
+        this.profileImage = profileImage;
     }
 }

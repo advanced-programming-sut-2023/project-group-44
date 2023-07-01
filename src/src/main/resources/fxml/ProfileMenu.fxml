@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/SignInLogInStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ProfileMenuController">
+<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/SignInLogInStyle.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ProfileMenuController">
     <center>
         <AnchorPane prefHeight="666.0" prefWidth="1217.0" scaleShape="false" BorderPane.alignment="CENTER">
             <children>
@@ -102,6 +97,7 @@
             <Button layoutX="605.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
             <Button layoutX="432.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeAvatar" prefHeight="25.0" prefWidth="94.0" styleClass="twinButtons" text="change Avatar" />
             <Button layoutX="680.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" styleClass="twinButtons" text="change Slogan" />
+            <ImageView id="imageView" fitHeight="190.0" fitWidth="249.0" layoutX="314.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
     </center>

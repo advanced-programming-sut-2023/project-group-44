@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.scene.image.Image;
 import model.App;
 
 import java.util.Scanner;
@@ -121,6 +122,10 @@ public class ProfileMenuController {
             result += "Your slogan is empty!";
         result += LoginMenuController.loggedInUser.getSlogan();
         return result;
+    }
+
+    public static void addImageToProfile(Image image){
+        App.getCurrentUser().setProfileImage(image);
     }
 
 

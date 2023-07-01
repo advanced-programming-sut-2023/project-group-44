@@ -1,6 +1,8 @@
 package view.ProfileMenu;
 
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import model.App;
 import view.Main;
@@ -18,6 +20,7 @@ public class ProfileMenuController {
     public Label nickname;
     public Label email;
     public Label slogan;
+    public ImageView imageView;
 
     public void updateLabels(){
         username.setText(App.getCurrentUser().getUsername());
@@ -54,6 +57,8 @@ public class ProfileMenuController {
 
     public void initialize(){
         updateLabels();
+        Image image=App.getCurrentUser().getProfileImage();
+        imageView.setImage(image);
     }
 
     public void changeSlogan(MouseEvent mouseEvent) throws Exception {
