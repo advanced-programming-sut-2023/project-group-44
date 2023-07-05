@@ -20,22 +20,22 @@ public class ChangeAvatarMenuController {
     public void submit(ActionEvent actionEvent) {
         Image image;
         if(one.isSelected()){
-            image=new Image(getClass().getResource("/Images/image1.jpg").toString());
+            image=new Image(getClass().getResource("/images/image1.png").toString());
             ProfileMenuController.addImageToProfile(image);
             result.setText("successfully changed!");
         }
         else if(two.isSelected()){
-            image=new Image(getClass().getResource("/Images/image2.jpg").toString());
+            image=new Image(getClass().getResource("/images/image2.png").toString());
             ProfileMenuController.addImageToProfile(image);
             result.setText("successfully changed!");
         }
         else if(three.isSelected()){
-            image=new Image(getClass().getResource("/Images/image3.jpg").toString());
+            image=new Image(getClass().getResource("/images/image3.png").toString());
             ProfileMenuController.addImageToProfile(image);
             result.setText("successfully changed!");
         }
         else if(four.isSelected()){
-            image=new Image(getClass().getResource("/Images/image4.jpg").toString());
+            image=new Image(getClass().getResource("/images/image4.png").toString());
             ProfileMenuController.addImageToProfile(image);
             result.setText("successfully changed!");
         }

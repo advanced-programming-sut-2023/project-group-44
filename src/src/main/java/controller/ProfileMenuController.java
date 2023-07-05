@@ -2,7 +2,10 @@ package controller;
 
 import javafx.scene.image.Image;
 import model.App;
+import model.User;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
@@ -126,6 +129,19 @@ public class ProfileMenuController {
 
     public static void addImageToProfile(Image image){
         App.getCurrentUser().setProfileImage(image);
+    }
+    public static ArrayList<User> sortUsersByDifficulty(){
+        int n=App.getUsers().size();
+        ArrayList<User> list= new ArrayList<>();
+        list.addAll(App.getUsers());
+                for(int i=0;i<n-1;i++){
+                    for(int j=0;j<n-i-1;j++){
+                        if(list.get(j).getScore()>list.get(j+1).getScore()){
+                            Collections.swap(list,j,j+1);
+                        }
+                    }
+                }
+        return list;
     }
 
 

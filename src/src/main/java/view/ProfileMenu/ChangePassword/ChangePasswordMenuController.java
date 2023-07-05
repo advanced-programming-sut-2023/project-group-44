@@ -67,7 +67,7 @@ public class ChangePasswordMenuController {
             newPassword.getStyleClass().add("errorField");
         }
         if(!problem1 && !problem2){
-            if(!currentPassword.equals(App.getCurrentUser().getPassword())){
+            if(!currentPassword.getText().equals(App.getCurrentUser().getPassword())){
                 finalResult.setText("Incorrect Password!");
                 finalResult.setTextFill(Paint.valueOf("Red"));
             }

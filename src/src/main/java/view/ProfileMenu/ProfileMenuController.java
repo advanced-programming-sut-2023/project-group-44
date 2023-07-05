@@ -12,6 +12,7 @@ import view.ProfileMenu.ChangeNickname.ChangeNicknameMenu;
 import view.ProfileMenu.ChangePassword.ChangePasswordMenu;
 import view.ProfileMenu.ChangeSlogan.ChangeSloganMenu;
 import view.ProfileMenu.ChangeUsername.ChangeUsernameMenu;
+import view.ProfileMenu.ScoreTable.ScoreTableMenu;
 
 public class ProfileMenuController {
 
@@ -63,5 +64,9 @@ public class ProfileMenuController {
 
     public void changeSlogan(MouseEvent mouseEvent) throws Exception {
         new ChangeSloganMenu().start(Main.stage);
+    }
+
+    public void scoreBoard(MouseEvent mouseEvent) throws Exception {
+        new ScoreTableMenu().start(Main.stage);
     }
 }
