@@ -23,4 +23,6 @@ module Project {
     opens view.MainMenu to javafx.fxml;
     exports view.ProfileMenu.ChangeEmail;
     opens view.ProfileMenu.ChangeEmail to javafx.fxml;
+    exports view.ProfileMenu.ScoreTable;
+    opens view.ProfileMenu.ScoreTable to javafx.fxml;
 }
