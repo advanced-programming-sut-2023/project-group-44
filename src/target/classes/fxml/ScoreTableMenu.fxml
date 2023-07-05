@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenu.ScoreTable.ScoreTableMenuController">
+    <center>
+        <VBox alignment="CENTER" spacing="20.0">
+            <Label fx:id="label" text="Score Table">
+                <font>
+                    <Font name="System Bold" size="36.0" />
+                </font>
+            </Label>
+            <TableView fx:id="scoreTable" editable="true" prefHeight="422.0" prefWidth="1193.0">
+                <columns>
+                    <TableColumn prefWidth="100" text="Rank">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="rank" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="150" text="Username">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="username" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="150" text="Score">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="score" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <Button layoutX="605.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#Back" prefHeight="42.0" prefWidth="41.0" style="-fx-background-radius: 100; -fx-background-color: #720c0c;" text="Back" textFill="WHITE" />
+        </VBox>
+    </center>
+
+</BorderPane>
