@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="correct profileMenu">
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangeAvatar/ChangeAvatarMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ChangePassword/ChangePasswordMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenu/ProfileMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChangePasswordMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChangePasswordMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProfileMenu.fxml" afterDir="false" />
+    <list default="true" id="c6d1b963-48bf-40a9-a620-86cb451a368a" name="Changes" comment="scoreTable">
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChangePasswordMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChangePasswordMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fxml/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ProfileMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenu/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenu/ProfileMenuController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688242762389</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="scoreTable">
+      <created>1688579117905</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1688579117905</updated>
+    </task>
+    <task id="LOCAL-00021" summary="scoreTable">
+      <created>1688579132952</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1688579132952</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +239,7 @@
     <MESSAGE value="complete change slogan" />
     <MESSAGE value="complete change captcha" />
     <MESSAGE value="correct profileMenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct profileMenu" />
+    <MESSAGE value="scoreTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="scoreTable" />
   </component>
 </project>
