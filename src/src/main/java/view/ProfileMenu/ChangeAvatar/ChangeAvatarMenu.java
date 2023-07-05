@@ -48,8 +48,6 @@ public class ChangeAvatarMenu extends Application {
                 System.out.println("You must handle the error: " + e.getMessage());
             }
         });
-
-
         borderPane.setLeft(button);
 
         borderPane.setBackground(bGround);
